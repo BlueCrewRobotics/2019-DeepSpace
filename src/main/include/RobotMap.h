@@ -72,5 +72,12 @@ constexpr int PEAK_CURRENT_LIMIT = 150;
 // Peak current duration for Talons in ms 
 constexpr int DURATION_CURRENT_LIMIT = 30;
 
+// Ramp Time
+constexpr int RAMP_TIME = 0;
+
 // Maximum velocity in units/100ms
-constexpr int VELOCITY_MAX = 3000;
+constexpr int VELOCITY_MAX_HG = 6000;
+constexpr int VELOCITY_SP_MAX_HG = 5000;
+constexpr int VELOCITY_MAX_LG = 2600;
+constexpr int VELOCITY_SP_MAX_LG = 1300;
+

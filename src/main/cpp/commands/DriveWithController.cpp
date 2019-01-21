@@ -23,7 +23,7 @@ void DriveWithController::Initialize() {
   // Maybe add the Robot::m_subDriveTrain.Configure(); here to initialize, because the
   // Command will always be scheduled never end unless we do below in the End()
   // Robot::m_subDriveTrain.Drive(0,0);  Currently Robot::m_subDriveTrain.Configure();
-  // is run in the RobotInit()
+  // is run in the RobotInit() leaving there for now
   
 } 
 
@@ -32,36 +32,17 @@ void DriveWithController::Execute()
 {
     double velocity;
 
-    //These should probably be stored in the subDrivetrain class but that's more code work
-    /*
-    if(Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG)>0 ){
-      velocity = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG);
-    }
-    else if(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG)>0){
-      velocity = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG)*-1;
-    }
-    */
-    double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG);
     double velocityReverse = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG)*-1;
-    double rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX);
-
-     
-    //Robot::m_subDriveTrain.DriveVelocityControl(velocity,rotation);
-    //double velocity = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG);
-    //double rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG);
-  
-  if(Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG) > 0)
+    double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG);
+    double rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-1;
+   
+  if(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG) > 0)
   {
-
-    Robot::m_subDriveTrain.Drive(velocityForward,rotation);
-    //Robot::m_subDriveTrain.DriveVelocityControl(velocityForward,rotation);
-
+    Robot::m_subDriveTrain.Drive(velocityReverse,rotation);
   }
   else
-  {
-    
-    Robot::m_subDriveTrain.Drive(((velocityReverse)),rotation);
-    //Robot::m_subDriveTrain.DriveVelocityControl(velocityReverse,rotation);
+  {    
+    Robot::m_subDriveTrain.Drive(((velocityForward)),rotation);
   }
 
 }

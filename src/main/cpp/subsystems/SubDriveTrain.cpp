@@ -152,7 +152,7 @@ void SubDriveTrain::DriveVelocityControl(double speed, double rotation) {
 
   
   
-    /* append more signals to print when in speed mode. */
+    /* append more signals to print when in speed mode.
     std::cout << "\L_err:";
     std::cout << leftDriveMotor->GetClosedLoopError(0);
     std::cout << "\L_setpoint:";
@@ -162,7 +162,7 @@ void SubDriveTrain::DriveVelocityControl(double speed, double rotation) {
     std::cout << rightDriveMotor->GetClosedLoopError(0);
     std::cout << "\R_setpoint:";
     std::cout << rightDriveSetpoint;
-
+    */
 
 }
 

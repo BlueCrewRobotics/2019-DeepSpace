@@ -74,3 +74,17 @@ constexpr int DURATION_CURRENT_LIMIT = 30;
 
 // Maximum velocity in units/100ms
 constexpr int VELOCITY_MAX = 3000;
+
+// Bottom PCM CAN ID
+constexpr int PCM_BOTTOM = 9;
+constexpr int PCM_TOP = 8;
+
+// Solenoids mapping
+constexpr int SOLENOID_0 = 0;
+constexpr int SOLENOID_1 = 1;
+constexpr int SOLENOID_2 = 2;
+constexpr int SOLENOID_3 = 3;
+constexpr int SOLENOID_4 = 4;
+constexpr int SOLENOID_5 = 5;
+constexpr int SOLENOID_6 = 6;
+constexpr int SOLENOID_7 = 7;

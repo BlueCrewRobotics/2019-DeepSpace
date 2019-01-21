@@ -15,7 +15,7 @@ ExampleSubsystem Robot::m_subsystem;
 OI Robot::m_oi;
 
 SubDriveTrain Robot::m_subDriveTrain;
-
+SubPCM Robot::m_subPCM;
 
 
 void Robot::RobotInit() {
@@ -24,7 +24,7 @@ void Robot::RobotInit() {
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 
   m_subDriveTrain.Configure();
-
+  m_subPCM.Configure();
 }
 
 /**

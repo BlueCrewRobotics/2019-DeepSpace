@@ -74,3 +74,8 @@ constexpr int DURATION_CURRENT_LIMIT = 30;
 
 // Maximum velocity in units/100ms
 constexpr int VELOCITY_MAX = 3000;
+
+// Port numbers for each pneumatic relay
+constexpr int ARM_GRABBER_FORWARD = 2;
+constexpr int ARM_GRABBER_REVERSE = 3;
+

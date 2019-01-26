@@ -91,11 +91,16 @@ constexpr int SOLENOID_0 = 0;
 constexpr int SOLENOID_1 = 1;
 constexpr int ARM_GRABBER_FORWARD = 2;
 constexpr int ARM_GRABBER_REVERSE = 3;
-constexpr int SOLENOID_4 = 4;
+constexpr int BALL_INTAKE_SOLENOID = 4;
 constexpr int SOLENOID_5 = 5;
 constexpr int SOLENOID_6 = 6;
 constexpr int SOLENOID_7 = 7;
 
 // Port numbers for each pneumatic relay
 
+
+// CAN Address for Aux motors
+
+constexpr int BALL_INTAKE_LEFT = 11;
+constexpr int BALL_INTAKE_RIGHT = 12;
 

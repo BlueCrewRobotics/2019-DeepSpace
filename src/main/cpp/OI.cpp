@@ -11,7 +11,7 @@
 OI::OI() {
   // Process operator interface input here.
 
-  //driverController_button_a->WhenPressed(Command *command);
+  driverController_button_rbump->ToggleWhenPressed(new CmdSwitchGear());
   
   
   

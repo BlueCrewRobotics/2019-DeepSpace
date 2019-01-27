@@ -19,7 +19,7 @@ class SubPCM : public frc::Subsystem {
   void InitDefaultCommand() override;
   void Configure();
   // Example solenoid
-  frc::Solenoid* exampleSolenoid = new frc::Solenoid(PCM_BOTTOM, SOLENOID_0);
+  frc::Solenoid* ptr_GearSoleniod = new frc::Solenoid(PCM_BOTTOM, SOLENOID_0);
 
  private:
   // It's desirable that everything possible under private except

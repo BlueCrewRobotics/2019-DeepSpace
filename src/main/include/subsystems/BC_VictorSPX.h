@@ -19,6 +19,6 @@ class BC_VictorSPX : public virtual frc::SpeedController {
 
     VictorSPX* ptr_VictorSPX = nullptr;  
    private:
-    double m_iSpeed = 0; 
+    double m_dSpeed = 0; 
 
 };

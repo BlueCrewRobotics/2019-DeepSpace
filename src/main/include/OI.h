@@ -8,6 +8,7 @@
 #pragma once
 
 #include <frc/WPILib.h>
+#include "commands/CmdSwitchGear.h"
 #include "RobotMap.h"
 
 class OI {

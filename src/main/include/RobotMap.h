@@ -36,16 +36,16 @@ constexpr int AUX_CONTROLLER = 1;
     Game controller button and joystick addressing.
     Access in code by including RobotMap.h and using BUTTON_A
 */
-constexpr int BUTTON_A = 0;
-constexpr int BUTTON_B = 1;
-constexpr int BUTTON_X = 2;
-constexpr int BUTTON_Y = 3;
-constexpr int BUTTON_L_BUMP = 4;
-constexpr int BUTTON_R_BUMP = 5;
-constexpr int BUTTON_SELECT = 6;
-constexpr int BUTTON_START = 7;
-constexpr int BUTTON_L3 = 8;
-constexpr int BUTTON_R3 = 9;
+constexpr int BUTTON_A = 1;
+constexpr int BUTTON_B = 2;
+constexpr int BUTTON_X = 3;
+constexpr int BUTTON_Y = 4;
+constexpr int BUTTON_L_BUMP = 5;
+constexpr int BUTTON_R_BUMP = 6;
+constexpr int BUTTON_SELECT = 7;
+constexpr int BUTTON_START = 8;
+constexpr int BUTTON_L3 = 9;
+constexpr int BUTTON_R3 = 10;
 
 constexpr int AXIS_LX = 0;          // Steer left/right
 constexpr int AXIS_LY = 1;
@@ -72,15 +72,41 @@ constexpr int PEAK_CURRENT_LIMIT = 150;
 // Peak current duration for Talons in ms 
 constexpr int DURATION_CURRENT_LIMIT = 30;
 
-// Ramp Time
-constexpr int RAMP_TIME = 0;
+// Ramp Times for level of elevator heights and high and low gear
+constexpr int RAMP_TIME = 0.2;
+
 
 // Maximum velocity in units/100ms
-constexpr int VELOCITY_MAX_HG = 6000;
-constexpr int VELOCITY_SP_MAX_HG = 5000;
-constexpr int VELOCITY_MAX_LG = 2600;
-constexpr int VELOCITY_SP_MAX_LG = 1300;
 constexpr int VELOCITY_MAX = 3000;
+constexpr int VELOCITY_SP_MAX_HG = 3000;
+constexpr int VELOCITY_SP_MAX_LG = 1400;
+
+
+// PID constants PID[0] Used for low speed right side
+constexpr double RIGHT_KF_0 = 0.6576;   // 0.6576
+constexpr double RIGHT_KP_0 = 0.73;     // 0.73
+constexpr double RIGHT_KI_0 = 0.0;
+constexpr double RIGHT_KD_0 = 0.0;
+
+// PID constants PID[1] uesd for high speed left side
+constexpr double RIGHT_KF_1 = 0.296;    // 0.296
+constexpr double RIGHT_KP_1 = 0;
+constexpr double RIGHT_KI_1 = 0;
+constexpr double RIGHT_KD_1 = 0;
+
+// PID constants PID[0] Used for low speed right side
+constexpr double LEFT_KF_0 = 0.6941;    // 0.6941
+constexpr double LEFT_KP_0 = 0.73;      // 0.73
+constexpr double LEFT_KI_0 = 0.0;
+constexpr double LEFT_KD_0 = 0;
+
+// PID constants PID[1] uesd for high speed left side
+constexpr double LEFT_KF_1 = 0.32;      // 0.32
+constexpr double LEFT_KP_1 = 0;
+constexpr double LEFT_KI_1 = 0;
+constexpr double LEFT_KD_1 = 0;
+
+
 
 // Bottom PCM CAN ID
 constexpr int PCM_BOTTOM = 9;

@@ -41,7 +41,7 @@ constexpr int BUTTON_B = 2;
 constexpr int BUTTON_X = 3;
 constexpr int BUTTON_Y = 4;
 constexpr int BUTTON_L_BUMP = 5;
-constexpr int BUTTON_R_BUMP = 6;
+constexpr int BUTTON_R_BUMP = 6;    // Drive gear sifting
 constexpr int BUTTON_SELECT = 7;
 constexpr int BUTTON_START = 8;
 constexpr int BUTTON_L3 = 9;
@@ -123,5 +123,10 @@ constexpr int SOLENOID_6 = 6;
 constexpr int SOLENOID_7 = 7;
 
 // Port numbers for each pneumatic relay
+
+
+// Elevator configuration
+constexpr int ELEVATOR_DRIVE_CAN_ADDR = 5;
+
 
 

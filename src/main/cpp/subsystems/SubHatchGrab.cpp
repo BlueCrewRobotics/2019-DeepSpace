@@ -5,11 +5,12 @@ SubHatchGrab::SubHatchGrab() : frc::Subsystem("SubHatchGrab"){}
 void SubHatchGrab::Configure(){
 
 }
-
-void SubHatchGrab::Grab(){
-				armPTC->Set(frc::DoubleSolenoid::Value::kForward);
+ 
+void SubHatchGrab::Set(bool state){
+				if(state){
+					armPTC->Set(frc::DoubleSolenoid::Value::kForward);
+				} else {
+					armPTC->Set(frc::DoubleSolenoid::Value::kReverse);
+				}
 }
 
-void SubHatchGrab::Deploy(){
-				armPTC->Set(frc::DoubleSolenoid::Value::kReverse);
-}

@@ -8,24 +8,22 @@
 #pragma once
 
 #include <frc/commands/Subsystem.h>
-#include <frc/WPILib.h>
-#include "frc/Compressor.h"
+#include <ctre/Phoenix.h>
 #include "RobotMap.h"
 
-class SubPCM : public frc::Subsystem {
+class SubElevator : public frc::Subsystem {
  public:
-
-  SubPCM();
+  SubElevator();
   void InitDefaultCommand() override;
-  void Configure();
-  // Example solenoid
-  frc::Solenoid* ptr_GearSoleniod = new frc::Solenoid(PCM_BOTTOM, SOLENOID_0);
+
+  // Set limit switches top and bottom
+  // Configure TalonSRX for position control
+  //
+
+TalonSRX* elevatorDrive = new TalonSRX(ELEVATOR_DRIVE_CAN_ADDR);
 
  private:
   // It's desirable that everything possible under private except
   // for methods that implement subsystem capabilities
-  frc::Compressor* compressor = new frc::Compressor(0);
-  // frc::Solenoid exampleSolenoid {1};
-  
-  
+
 };

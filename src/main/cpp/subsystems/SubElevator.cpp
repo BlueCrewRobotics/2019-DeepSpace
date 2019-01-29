@@ -5,23 +5,18 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "subsystems/SubPCM.h"
+#include "subsystems/SubElevator.h"
 
 #include "RobotMap.h"
 
-SubPCM::SubPCM() : frc::Subsystem("SubPCM") {}
+SubElevator::SubElevator() : frc::Subsystem("SubElevator") {}
 
-void SubPCM::InitDefaultCommand() {
+void SubElevator::InitDefaultCommand() {
   // Set the default command for a subsystem here.
   // SetDefaultCommand(new MySpecialCommand());
 }
 
+
+
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-
-void SubPCM::Configure() {
-  compressor->SetClosedLoopControl(true);
-  compressor->Start();
-  
-
-}

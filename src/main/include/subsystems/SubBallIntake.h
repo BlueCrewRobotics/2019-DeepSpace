@@ -11,9 +11,10 @@ class SubBallIntake : public frc::Subsystem {
 	public:
 		SubBallIntake();
 		void Configure();
+		void Prepare();
 		void Intake();
 		void Deploy();
-					
+
 	public:
 		BC_VictorSPX * leftIntake = new BC_VictorSPX(BALL_INTAKE_LEFT);
 		BC_VictorSPX * rightIntake = new BC_VictorSPX(BALL_INTAKE_RIGHT);

@@ -13,6 +13,4 @@ OI::OI() {
 
   driverController_button_rbump->ToggleWhenPressed(new CmdSwitchGear());
   
-  
-  
 }

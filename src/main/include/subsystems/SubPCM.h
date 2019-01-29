@@ -13,19 +13,18 @@
 #include "RobotMap.h"
 
 class SubPCM : public frc::Subsystem {
- public:
+	public:
 
-  SubPCM();
-  void InitDefaultCommand() override;
-  void Configure();
-  // Example solenoid
-  frc::Solenoid* ptr_GearSoleniod = new frc::Solenoid(PCM_BOTTOM, SOLENOID_0);
+		SubPCM();
+		void InitDefaultCommand() override;
+		void Configure();
+		frc::Solenoid* ptr_GearSoleniod = new frc::Solenoid(PCM_BOTTOM, SOLENOID_0);
 
- private:
-  // It's desirable that everything possible under private except
-  // for methods that implement subsystem capabilities
-  frc::Compressor* compressor = new frc::Compressor(0);
-  // frc::Solenoid exampleSolenoid {1};
-  
-  
+	private:
+		// It's desirable that everything possible under private except
+		// for methods that implement subsystem capabilities
+		frc::Compressor* compressor = new frc::Compressor(0);
+		// frc::Solenoid exampleSolenoid {1};
+
+
 };

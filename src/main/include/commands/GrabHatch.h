@@ -11,10 +11,10 @@ class GrabHatch : public frc::Command {
 	public:
 		GrabHatch();
 		void Initialize() override;
-  	void Execute() override;
-  	bool IsFinished() override;
-  	void End() override;
-  	void Interrupted() override;
+		void Execute() override;
+		bool IsFinished() override;
+		void End() override;
+		void Interrupted() override;
 	private:
 		bool state = false;
 		SubHatchGrab * hatchgrabber = new SubHatchGrab();	

@@ -6,6 +6,11 @@ void SubBallIntake::Configure(){
 
 }
 
+void SubBallIntake::Prepare(){
+	// Here will be all the code to prepare the arm 
+	// for the intake system for cargo
+}
+
 void SubBallIntake::Intake(){
 	intakeSolenoid->Set(true);		
 	leftIntake->Set(0.5);

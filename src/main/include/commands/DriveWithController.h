@@ -15,11 +15,11 @@
 #include <frc/commands/Command.h>
 
 class DriveWithController : public frc::Command {
- public:
-  DriveWithController();
-  void Initialize() override;
-  void Execute() override;
-  bool IsFinished() override;
-  void End() override;
-  void Interrupted() override;
+	public:
+		DriveWithController();
+		void Initialize() override;
+		void Execute() override;
+		bool IsFinished() override;
+		void End() override;
+		void Interrupted() override;
 };

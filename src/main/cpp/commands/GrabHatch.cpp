@@ -3,7 +3,7 @@
 #include "Robot.h"
 
 GrabHatch::GrabHatch(){
-				Requires(&Robot::m_subsystem);
+	Requires(&Robot::m_subsystem);
 }
 
 void GrabHatch::Initialize() {

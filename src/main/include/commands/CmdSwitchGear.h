@@ -10,11 +10,11 @@
 #include <frc/commands/Command.h>
 
 class CmdSwitchGear : public frc::Command {
- public:
-  CmdSwitchGear();
-  void Initialize() override;
-  void Execute() override;
-  bool IsFinished() override;
-  void End() override;
-  void Interrupted() override;
+	public:
+		CmdSwitchGear();
+		void Initialize() override;
+		void Execute() override;
+		bool IsFinished() override;
+		void End() override;
+		void Interrupted() override;
 };

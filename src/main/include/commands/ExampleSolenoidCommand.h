@@ -15,12 +15,12 @@
 
 
 class ExampleSolenoidCommand : public frc::Command {
- public:
-  ExampleSolenoidCommand();
-  void Initialize() override;
-  void Execute() override;
-  bool IsFinished() override;
-  void End() override;
-  void Interrupted() override;
+	public:
+		ExampleSolenoidCommand();
+		void Initialize() override;
+		void Execute() override;
+		bool IsFinished() override;
+		void End() override;
+		void Interrupted() override;
 };
 

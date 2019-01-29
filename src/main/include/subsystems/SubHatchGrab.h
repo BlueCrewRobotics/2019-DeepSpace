@@ -6,10 +6,10 @@
 
 class SubHatchGrab: public frc::Subsystem{
 	public:
-					SubHatchGrab();
-					void Configure();
-					void Set(bool state);
+		SubHatchGrab();
+		void Configure();
+		void Set(bool state);
 
 	public:
-					frc::DoubleSolenoid *armPTC = new frc::DoubleSolenoid(ARM_GRABBER_FORWARD, ARM_GRABBER_REVERSE);
+		frc::DoubleSolenoid *armPTC = new frc::DoubleSolenoid(ARM_GRABBER_FORWARD, ARM_GRABBER_REVERSE);
 };

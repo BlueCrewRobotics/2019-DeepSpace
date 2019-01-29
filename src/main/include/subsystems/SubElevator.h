@@ -12,18 +12,18 @@
 #include "RobotMap.h"
 
 class SubElevator : public frc::Subsystem {
- public:
-  SubElevator();
-  void InitDefaultCommand() override;
+	public:
+		SubElevator();
+		void InitDefaultCommand() override;
 
-  // Set limit switches top and bottom
-  // Configure TalonSRX for position control
-  //
+		// Set limit switches top and bottom
+		// Configure TalonSRX for position control
+		//
 
-TalonSRX* elevatorDrive = new TalonSRX(ELEVATOR_DRIVE_CAN_ADDR);
+		TalonSRX* elevatorDrive = new TalonSRX(ELEVATOR_DRIVE_CAN_ADDR);
 
- private:
-  // It's desirable that everything possible under private except
-  // for methods that implement subsystem capabilities
+	private:
+		// It's desirable that everything possible under private except
+		// for methods that implement subsystem capabilities
 
 };

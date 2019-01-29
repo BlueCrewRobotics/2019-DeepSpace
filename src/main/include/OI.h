@@ -50,11 +50,13 @@ class OI {
   frc::JoystickButton* auxController_button_start = new frc::JoystickButton(auxController, BUTTON_START); // Not Used
   frc::JoystickButton* auxController_button_l3 = new frc::JoystickButton(auxController, BUTTON_L3); // Not Used
   frc::JoystickButton* auxController_button_r3 = new frc::JoystickButton(auxController, BUTTON_R3); // Not Used
+
   // LEFT TRIGGER // Push out Cargo
   // RIGHT TRIGGER // Pull in Cargo
   // LEFT STICK UP // Push Swiss Army Knife out 1 stage
   // LEFT STICK LEFT // Push Swiss Army Knife out all the way
   // LEFT STICK DOWN // Pull Swiss Army Knife in 1 stage
   // LEFT STICK RIGHT // Pull Swiss Army Knife in all the way
+  
   
 };

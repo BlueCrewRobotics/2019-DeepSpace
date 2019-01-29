@@ -23,6 +23,9 @@ void Robot::RobotInit() {
   m_chooser.AddOption("My Auto", &m_myAuto);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 
+  
+  //CameraServer::getInstance().startAutomaticCapture();
+
   m_subDriveTrain.Configure();
   m_subPCM.Configure();
 }

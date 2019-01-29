@@ -28,16 +28,22 @@ void SubDriveTrain::InitDefaultCommand() {
   Configure the Talons and Victors for the drive
 */
 void SubDriveTrain::Configure() {
+
+  leftDriveMotor->ptr_talonSRX->ClearStickyFaults(30);
+  rightDriveMotor->ptr_talonSRX->ClearStickyFaults(30);
   
   // Setup followers
 	leftFollowMotor->ptr_VictorSPX->Follow(*leftDriveMotor->ptr_talonSRX);
+  leftFollowMotor->ptr_VictorSPX->SetInverted(InvertType::FollowMaster);
   rightFollowMotor->ptr_VictorSPX->Follow(*rightDriveMotor->ptr_talonSRX);
-
+  rightFollowMotor->ptr_VictorSPX->SetInverted(InvertType::FollowMaster);
 
   // Setup encoder
-  leftDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder);
+  leftDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder,0,0);
+  leftDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder,0,1);
   leftDriveMotor->ptr_talonSRX->SetSensorPhase(false);
-  rightDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder);
+  rightDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder,0,0);
+  rightDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder,0,1);
   rightDriveMotor->ptr_talonSRX->SetSensorPhase(false);
   
   // Set current limit continuous, peak, and peak duration can only be set on TalonSRX
@@ -51,37 +57,50 @@ void SubDriveTrain::Configure() {
   
   // Need to setup velocity PID controls
   leftDriveMotor->ptr_talonSRX->SelectProfileSlot(0,0);
-  leftDriveMotor->ptr_talonSRX->ConfigNominalOutputForward(0,30);
-  leftDriveMotor->ptr_talonSRX->ConfigNominalOutputReverse(0,30);
-  leftDriveMotor->ptr_talonSRX->ConfigPeakOutputForward(12,30);
-  leftDriveMotor->ptr_talonSRX->ConfigPeakOutputReverse(-12,30);
+  leftDriveMotor->ptr_talonSRX->ConfigNominalOutputForward(0,0);
+  leftDriveMotor->ptr_talonSRX->ConfigNominalOutputReverse(0,0);
+  leftDriveMotor->ptr_talonSRX->ConfigPeakOutputForward(12,0);
+  leftDriveMotor->ptr_talonSRX->ConfigPeakOutputReverse(-12,0);
 
   rightDriveMotor->ptr_talonSRX->SelectProfileSlot(0,0);
-  rightDriveMotor->ptr_talonSRX->ConfigNominalOutputForward(0,30);
-  rightDriveMotor->ptr_talonSRX->ConfigNominalOutputReverse(0,30);
-  rightDriveMotor->ptr_talonSRX->ConfigPeakOutputForward(12,30);
-  rightDriveMotor->ptr_talonSRX->ConfigPeakOutputReverse(-12,30);
+  rightDriveMotor->ptr_talonSRX->ConfigNominalOutputForward(0,0);
+  rightDriveMotor->ptr_talonSRX->ConfigNominalOutputReverse(0,0);
+  rightDriveMotor->ptr_talonSRX->ConfigPeakOutputForward(12,0);
+  rightDriveMotor->ptr_talonSRX->ConfigPeakOutputReverse(-12,0);
 
-  // PID constants for Profile 0 of Talon
-  leftDriveMotor->ptr_talonSRX->Config_kF(0,0.1097,30);
-  leftDriveMotor->ptr_talonSRX->Config_kP(0,0.22,30);
-  leftDriveMotor->ptr_talonSRX->Config_kI(0,0.0,30);
-  leftDriveMotor->ptr_talonSRX->Config_kD(0,0.0,30);
+  // PID constants for Profile 0 low gear Profile 1 high gear of Talon left
+  leftDriveMotor->ptr_talonSRX->Config_kF(0,LEFT_KF_0,0);
+  leftDriveMotor->ptr_talonSRX->Config_kP(0,LEFT_KP_0,0);
+  leftDriveMotor->ptr_talonSRX->Config_kI(0,LEFT_KI_0,0);
+  leftDriveMotor->ptr_talonSRX->Config_kD(0,LEFT_KD_0,0);
 
-  rightDriveMotor->ptr_talonSRX->Config_kF(0,0.1097,30);
-  rightDriveMotor->ptr_talonSRX->Config_kP(0,0.22,30);
-  rightDriveMotor->ptr_talonSRX->Config_kI(0,0.0,30);
-  rightDriveMotor->ptr_talonSRX->Config_kD(0,0.0,30);
+  leftDriveMotor->ptr_talonSRX->Config_kF(1,LEFT_KF_1,0);
+  leftDriveMotor->ptr_talonSRX->Config_kP(1,LEFT_KP_1,0);
+  leftDriveMotor->ptr_talonSRX->Config_kI(1,LEFT_KI_1,0);
+  leftDriveMotor->ptr_talonSRX->Config_kD(1,LEFT_KD_1,0);
+
+  // PID constants for Profile 0 low gear Profile 1 high gear of Talon Right
+  rightDriveMotor->ptr_talonSRX->Config_kF(0,RIGHT_KF_0,0);
+  rightDriveMotor->ptr_talonSRX->Config_kP(0,RIGHT_KP_0,0);
+  rightDriveMotor->ptr_talonSRX->Config_kI(0,RIGHT_KI_0,0);
+  rightDriveMotor->ptr_talonSRX->Config_kD(0,RIGHT_KD_0,0);
+
+  rightDriveMotor->ptr_talonSRX->Config_kF(1,RIGHT_KF_1,0);
+  rightDriveMotor->ptr_talonSRX->Config_kP(1,RIGHT_KP_1,0);
+  rightDriveMotor->ptr_talonSRX->Config_kI(1,RIGHT_KI_1,0);
+  rightDriveMotor->ptr_talonSRX->Config_kD(1,RIGHT_KD_1,0);
+
 
 
   // Set the Talon ramp rate in seconds from neutral to full
-  leftDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(RAMP_TIME,30);
-  rightDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(RAMP_TIME,30);
+  leftDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(RAMP_TIME,0);
+  rightDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(RAMP_TIME,0);
 }
 
 // Drive
 void SubDriveTrain::Drive(double speed, double rotation) {
   // Drive 
+  
   driveTrain->SetDeadband(0.05);
   driveTrain->ArcadeDrive(speed,rotation, false);
   

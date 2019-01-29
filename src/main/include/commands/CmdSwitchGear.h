@@ -5,23 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "subsystems/SubPCM.h"
+#pragma once
 
-#include "RobotMap.h"
+#include <frc/commands/Command.h>
 
-SubPCM::SubPCM() : frc::Subsystem("SubPCM") {}
-
-void SubPCM::InitDefaultCommand() {
-  // Set the default command for a subsystem here.
-  // SetDefaultCommand(new MySpecialCommand());
-}
-
-// Put methods for controlling this subsystem
-// here. Call these from Commands.
-
-void SubPCM::Configure() {
-  compressor->SetClosedLoopControl(true);
-  compressor->Start();
-  
-
-}
+class CmdSwitchGear : public frc::Command {
+ public:
+  CmdSwitchGear();
+  void Initialize() override;
+  void Execute() override;
+  bool IsFinished() override;
+  void End() override;
+  void Interrupted() override;
+};

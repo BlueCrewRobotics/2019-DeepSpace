@@ -30,6 +30,7 @@ void DriveWithController::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DriveWithController::Execute() 
 {
+
 				double velocity;
 
 				double velocityReverse = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG)*-1;
@@ -44,6 +45,28 @@ void DriveWithController::Execute()
 				{    
 								Robot::m_subDriveTrain.Drive(((velocityForward)),rotation);
 				}
+
+    double rotation;
+
+    double velocityReverse = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG)*-1;
+    double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG);
+  
+  if( Robot::m_subDriveTrain.leftDriveMotor->GetGear() == false) {
+    rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.75;
+  }
+  else {
+    rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.5;
+  }
+  
+  if(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG) > 0)
+  {
+    Robot::m_subDriveTrain.Drive(velocityReverse,rotation);
+  }
+  else
+  {    
+    Robot::m_subDriveTrain.Drive(((velocityForward)),rotation);
+  }
+
 
 }
 

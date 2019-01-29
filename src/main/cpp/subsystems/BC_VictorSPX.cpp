@@ -14,8 +14,8 @@ BC_VictorSPX::BC_VictorSPX(int device)  {
 
 void BC_VictorSPX::Set(double speed) {
     speed = speed*VELOCITY_SP_MAX_LG;
-    ptr_VictorSPX->Set(ControlMode::Velocity, speed);
-    m_iSpeed = speed;
+    ptr_VictorSPX->Set(ControlMode::PercentOutput, speed);
+    m_dSpeed = speed;
 }
 
 void BC_VictorSPX::PIDWrite(double output) {
@@ -23,7 +23,7 @@ void BC_VictorSPX::PIDWrite(double output) {
 }
 
 double BC_VictorSPX::Get() const {
-    return m_iSpeed;
+    return m_dSpeed;
 }
 
 void BC_VictorSPX::SetInverted(bool isInverted) {

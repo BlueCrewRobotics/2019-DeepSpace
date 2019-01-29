@@ -11,10 +11,8 @@ void GrabHatch::Initialize() {
 }
 
 void GrabHatch::Execute(){
-	if(Robot::m_oi.driverController->GetRawButton(BUTTON_A)){
-				state = !state;
-				hatchgrabber->Set(state);
-	}
+	state = !state;
+	hatchgrabber->Set(state);
 }
 
 bool GrabHatch::IsFinished(){}

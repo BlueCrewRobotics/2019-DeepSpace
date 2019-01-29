@@ -110,18 +110,15 @@ constexpr double LEFT_KD_1 = 0;
 constexpr int PCM_BOTTOM = 9;
 constexpr int PCM_TOP = 8;
 
-// Solenoids mapping
-constexpr int SOLENOID_0 = 0;
-constexpr int SOLENOID_1 = 1;
+// Solenoid Mappings for 
+constexpr int ARM_PISTON_ONE = 0;
+constexpr int ARM_PISTON_TWO = 1;
 constexpr int ARM_GRABBER_FORWARD = 2;
 constexpr int ARM_GRABBER_REVERSE = 3;
 constexpr int BALL_INTAKE_SOLENOID = 4;
-constexpr int SOLENOID_5 = 5;
-constexpr int SOLENOID_6 = 6;
+constexpr int CARGO_TILT = 5;
+constexpr int HATCH_POSITION = 6; // Might not be a solenoid, just preparing
 constexpr int SOLENOID_7 = 7;
-
-// Port numbers for each pneumatic relay
-
 
 
 // CAN Address for Aux motors

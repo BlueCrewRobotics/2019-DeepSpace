@@ -12,8 +12,8 @@
 SubElevator::SubElevator() : frc::Subsystem("SubElevator") {}
 
 void SubElevator::InitDefaultCommand() {
-  // Set the default command for a subsystem here.
-  // SetDefaultCommand(new MySpecialCommand());
+	// Set the default command for a subsystem here.
+	// SetDefaultCommand(new MySpecialCommand());
 }
 
 

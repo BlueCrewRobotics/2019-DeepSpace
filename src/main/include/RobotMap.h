@@ -25,17 +25,17 @@
 // constexpr int kRangeFinderModule = 1;
 
 /*
-    Game controller addressing.
-    Access in code by including RobotMap.h and using DRIVER_CONTROLLER
-*/
+   Game controller addressing.
+   Access in code by including RobotMap.h and using DRIVER_CONTROLLER
+   */
 
 constexpr int DRIVER_CONTROLLER = 0;
 constexpr int AUX_CONTROLLER = 1;
 
 /* 
-    Game controller button and joystick addressing.
-    Access in code by including RobotMap.h and using BUTTON_A
-*/
+   Game controller button and joystick addressing.
+   Access in code by including RobotMap.h and using BUTTON_A
+   */
 constexpr int BUTTON_A = 1;
 constexpr int BUTTON_B = 2;
 constexpr int BUTTON_X = 3;
@@ -56,9 +56,9 @@ constexpr int AXIS_RY = 5;
 
 
 /* 
-    Motor Drive Talon and Victor addressing. 
-    Access in code by including RobotMap.h and using MOTOR_LEFT_MASTER 
-*/
+   Motor Drive Talon and Victor addressing. 
+   Access in code by including RobotMap.h and using MOTOR_LEFT_MASTER 
+   */
 
 constexpr int MOTOR_LEFT_MASTER = 1;
 constexpr int MOTOR_RIGHT_MASTER = 2;

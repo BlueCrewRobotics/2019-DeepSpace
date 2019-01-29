@@ -15,7 +15,7 @@ void SubBallIntake::Intake(){
 	intakeSolenoid->Set(true);		
 	leftIntake->Set(0.5);
 	rightIntake->Set(-0.5);
-	
+
 }
 
 void SubBallIntake::Deploy(){

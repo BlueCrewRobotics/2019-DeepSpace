@@ -1,3 +1,8 @@
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
+/*     Blue Crew Robotics #6153    */
+/*         Deep Space 2019         */
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
+
 #include "subsystems/SubBallIntake.h"
 
 SubBallIntake::SubBallIntake() : frc::Subsystem("SubBallIntake"){}

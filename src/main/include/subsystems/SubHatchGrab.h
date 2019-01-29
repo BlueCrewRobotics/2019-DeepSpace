@@ -1,3 +1,8 @@
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
+/*     Blue Crew Robotics #6153    */
+/*         Deep Space 2019         */
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
+
 #pragma once
 #include <frc/WPILib.h>
 #include <frc/commands/Subsystem.h>

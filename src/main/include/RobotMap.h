@@ -110,15 +110,25 @@ constexpr double LEFT_KD_1 = 0;
 constexpr int PCM_BOTTOM = 9;
 constexpr int PCM_TOP = 8;
 
-// Solenoid Mappings for 
-constexpr int ARM_PISTON_ONE = 0;
-constexpr int ARM_PISTON_TWO = 1;
-constexpr int ARM_GRABBER_FORWARD = 2;
-constexpr int ARM_GRABBER_REVERSE = 3;
-constexpr int BALL_INTAKE_SOLENOID = 4;
-constexpr int CARGO_TILT = 5;
-constexpr int HATCH_POSITION = 6; // Might not be a solenoid, just preparing
-constexpr int SOLENOID_7 = 7;
+// Solenoid Mappings for bottom PCM
+constexpr int BTM_GEARSHIFT = 0; // Drive train gear shifter
+constexpr int BTM_SOLENOID_1 = 1;   // Spare
+constexpr int BTM_SOLENOID_2 = 2;   // Spare
+constexpr int BTM_SOLENOID_3 = 3;   // Spare
+constexpr int BTM_SOLENOID_4 = 4;   // Spare
+constexpr int BTM_SOLENOID_5 = 5;   // Spare
+constexpr int BTM_SOLENOID_6 = 6;   // Spare
+constexpr int BTM_SOLENOID_7 = 7;   // Spare
+
+// Solenoid Mapping for top PCM
+constexpr int TOP_ARM_PISTON_ONE = 0;
+constexpr int TOP_ARM_PISTON_TWO = 1;
+constexpr int TOP_ARM_GRABBER_FORWARD = 2; 
+constexpr int TOP_ARM_GRABBER_REVERSE = 3; 
+constexpr int TOP_BALL_INTAKE_SOLENOID = 4; 
+constexpr int TOP_CARGO_TILT = 5;
+constexpr int TOP_HATCH_POSITION = 6; // Might not be a solenoid, just preparing
+constexpr int TOP_SOLENOID_7 = 7;   // Spare
 
 
 // CAN Address for Aux motors

@@ -12,6 +12,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/core/core.hpp>
 #include <ctre/Phoenix.h>
+#include "cameraserver/CameraServer.h"
 
 #include "OI.h"
 #include "commands/ExampleCommand.h"
@@ -28,6 +29,7 @@ class Robot : public frc::TimedRobot {
 		static OI m_oi;
 		static SubDriveTrain m_subDriveTrain;
 		static SubPCM m_subPCM;
+    // static CameraServer m_cameraServer;
 
 		void RobotInit() override;
 		void RobotPeriodic() override;

@@ -23,6 +23,6 @@ class SubBallIntake : public frc::Subsystem {
 	public:
 		BC_VictorSPX * leftIntake = new BC_VictorSPX(BALL_INTAKE_LEFT);
 		BC_VictorSPX * rightIntake = new BC_VictorSPX(BALL_INTAKE_RIGHT);
-		frc::Solenoid * intakeSolenoid = new frc::Solenoid(BALL_INTAKE_SOLENOID);
+		frc::Solenoid * intakeSolenoid = new frc::Solenoid(TOP_BALL_INTAKE_SOLENOID);
 
 };

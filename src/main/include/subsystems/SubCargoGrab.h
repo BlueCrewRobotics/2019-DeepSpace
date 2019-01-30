@@ -8,15 +8,28 @@
 #pragma once
 
 #include <frc/commands/Subsystem.h>
+#include <frc/WPILib.h>
+#include "RobotMap.h"
+#include "BC_VictorSPX.h"
 
 class SubCargoGrab : public frc::Subsystem {
- public:
-  SubCargoGrab();
-  void InitDefaultCommand() override;
-  void Intake(double speed);
-  void deploy(double speed);
+	public:
+		SubCargoGrab();
+		void InitDefaultCommand() override;
+		void Intake(double speed);
+		void deploy(double speed);
 
- private:
-  // It's desirable that everything possible under private except
-  // for methods that implement subsystem capabilities
+	private:
+		// It's desirable that everything possible under private except
+		// for methods that implement subsystem capabilities
+		
+		frc::Solenoid* intakePositionSolenoid = 
+			new frc::Solenoid(PCM_TOP, TOP_BALL_INTAKE_SOLENOID);
+
+		frc::Solenoid* titlePositionSolenoid = new frc::Solenoid(PCM_TOP, TOP_CARGO_TILT);
+
+
+
+		BC_VictorSPX* leftIntakeMotor = new BC_VictorSPX(BALL_INTAKE_LEFT);
+		BC_VictorSPX* rightIntakeMotor = new BC_VictorSPX(BALL_INTAKE_RIGHT);
 };

@@ -1,3 +1,8 @@
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
+/*     Blue Crew Robotics #6153    */
+/*         Deep Space 2019         */
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
+
 #pragma once
 #include <frc/WPILib.h>
 #include <frc/commands/Subsystem.h>
@@ -6,11 +11,10 @@
 
 class SubHatchGrab: public frc::Subsystem{
 	public:
-					SubHatchGrab();
-					void Configure();
-					void Grab();
-					void Deploy();
+		SubHatchGrab();
+		void Configure();
+		void Set(bool state);
 
 	public:
-					frc::DoubleSolenoid *armPTC = new frc::DoubleSolenoid(ARM_GRABBER_FORWARD, ARM_GRABBER_REVERSE);
+		frc::DoubleSolenoid *armPTC = new frc::DoubleSolenoid(ARM_GRABBER_FORWARD, ARM_GRABBER_REVERSE);
 };

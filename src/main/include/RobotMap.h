@@ -1,9 +1,7 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
+/*     Blue Crew Robotics #6153    */
+/*         Deep Space 2019         */
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
 #pragma once
 
@@ -25,17 +23,17 @@
 // constexpr int kRangeFinderModule = 1;
 
 /*
-    Game controller addressing.
-    Access in code by including RobotMap.h and using DRIVER_CONTROLLER
-*/
+   Game controller addressing.
+   Access in code by including RobotMap.h and using DRIVER_CONTROLLER
+   */
 
 constexpr int DRIVER_CONTROLLER = 0;
 constexpr int AUX_CONTROLLER = 1;
 
 /* 
-    Game controller button and joystick addressing.
-    Access in code by including RobotMap.h and using BUTTON_A
-*/
+   Game controller button and joystick addressing.
+   Access in code by including RobotMap.h and using BUTTON_A
+   */
 constexpr int BUTTON_A = 1;
 constexpr int BUTTON_B = 2;
 constexpr int BUTTON_X = 3;
@@ -56,9 +54,9 @@ constexpr int AXIS_RY = 5;
 
 
 /* 
-    Motor Drive Talon and Victor addressing. 
-    Access in code by including RobotMap.h and using MOTOR_LEFT_MASTER 
-*/
+   Motor Drive Talon and Victor addressing. 
+   Access in code by including RobotMap.h and using MOTOR_LEFT_MASTER 
+   */
 
 constexpr int MOTOR_LEFT_MASTER = 1;
 constexpr int MOTOR_RIGHT_MASTER = 2;
@@ -117,7 +115,7 @@ constexpr int SOLENOID_0 = 0;
 constexpr int SOLENOID_1 = 1;
 constexpr int ARM_GRABBER_FORWARD = 2;
 constexpr int ARM_GRABBER_REVERSE = 3;
-constexpr int SOLENOID_4 = 4;
+constexpr int BALL_INTAKE_SOLENOID = 4;
 constexpr int SOLENOID_5 = 5;
 constexpr int SOLENOID_6 = 6;
 constexpr int SOLENOID_7 = 7;
@@ -125,8 +123,15 @@ constexpr int SOLENOID_7 = 7;
 // Port numbers for each pneumatic relay
 
 
+
+// CAN Address for Aux motors
+
+constexpr int BALL_INTAKE_LEFT = 11;
+constexpr int BALL_INTAKE_RIGHT = 12;
+
 // Elevator configuration
 constexpr int ELEVATOR_DRIVE_CAN_ADDR = 5;
+
 
 
 

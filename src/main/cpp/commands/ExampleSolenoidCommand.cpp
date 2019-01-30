@@ -1,17 +1,15 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
+/*     Blue Crew Robotics #6153    */
+/*         Deep Space 2019         */
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
 #include "commands/ExampleSolenoidCommand.h"
 
 #include "Robot.h"
 
 ExampleSolenoidCommand::ExampleSolenoidCommand() {
-  // Use Requires() here to declare subsystem dependencies
-  Requires(&Robot::m_subsystem);
+	// Use Requires() here to declare subsystem dependencies
+	Requires(&Robot::m_subsystem);
 }
 
 // Called just before this Command runs the first time

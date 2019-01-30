@@ -3,16 +3,24 @@
 /*         Deep Space 2019         */
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
-#pragma once
+#pragma once 
+
+#include "Robot.h"
+
+#include "OI.h"
+#include "subsystems/SubHatchGrab.h"
 
 #include <frc/commands/Command.h>
 
-class CmdSwitchGear : public frc::Command {
+class GrabHatch : public frc::Command {
 	public:
-		CmdSwitchGear();
+		GrabHatch();
 		void Initialize() override;
 		void Execute() override;
 		bool IsFinished() override;
 		void End() override;
 		void Interrupted() override;
+	private:
+		bool state = false;
+		SubHatchGrab * hatchgrabber = new SubHatchGrab();	
 };

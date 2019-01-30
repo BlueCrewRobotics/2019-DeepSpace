@@ -13,6 +13,8 @@ class SubCargoGrab : public frc::Subsystem {
  public:
   SubCargoGrab();
   void InitDefaultCommand() override;
+  void Intake(double speed);
+  void deploy(double speed);
 
  private:
   // It's desirable that everything possible under private except

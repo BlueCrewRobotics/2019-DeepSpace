@@ -16,5 +16,9 @@ class SubHatchGrab: public frc::Subsystem{
 		void Set(bool state);
 
 	public:
-		frc::DoubleSolenoid *armPTC = new frc::DoubleSolenoid(TOP_ARM_GRABBER_FORWARD, TOP_ARM_GRABBER_REVERSE);
+		frc::Solenoid* hatchEngageSolenoid = 
+			new frc::Solenoid(PCM_TOP, TOP_HATCH_GRABBER);
+
+		frc::DoubleSolenoid* PositionSetSolenoid = 
+			new frc::DoubleSolenoid(PCM_TOP, TOP_HATCH_POSITION_FORWARD, TOP_HATCH_POSITION_REVERSE);
 };

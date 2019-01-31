@@ -123,12 +123,12 @@ constexpr int BTM_SOLENOID_7 = 7;   // Spare
 // Solenoid Mapping for top PCM
 constexpr int TOP_ARM_PISTON_ONE = 0;
 constexpr int TOP_ARM_PISTON_TWO = 1;
-constexpr int TOP_ARM_GRABBER_FORWARD = 2; 
-constexpr int TOP_ARM_GRABBER_REVERSE = 3; 
+constexpr int TOP_HATCH_GRABBER = 2;  
+constexpr int TOP_SOLENOID_3 = 3; // Spare
 constexpr int TOP_BALL_INTAKE_SOLENOID = 4; 
 constexpr int TOP_CARGO_TILT = 5;
-constexpr int TOP_HATCH_POSITION = 6; // Might not be a solenoid, just preparing
-constexpr int TOP_SOLENOID_7 = 7;   // Spare
+constexpr int TOP_HATCH_POSITION_FORWARD = 6; // Might not be a solenoid, just preparing
+constexpr int TOP_HATCH_POSITION_REVERSE = 7;   
 
 
 // CAN Address for Aux motors

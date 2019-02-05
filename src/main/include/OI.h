@@ -7,6 +7,10 @@
 
 #include <frc/WPILib.h>
 #include "commands/CmdSwitchGear.h"
+#include "commands/CmdCargoClampClose.h"
+#include "commands/CmdCargoClampOpen.h"
+#include "commands/CmdCargoTilt.h"
+
 #include "RobotMap.h"
 
 class OI {
@@ -38,7 +42,7 @@ class OI {
 		// Setup aux controller
 		frc::Joystick* auxController = new frc::Joystick(AUX_CONTROLLER);
 		// Setup buttons on the aux controller, change the names to fit the command 
-		frc::JoystickButton* auxController_button_a = new frc::JoystickButton(auxController, BUTTON_A); // Not Used
+		frc::JoystickButton* auxController_button_a = new frc::JoystickButton(auxController, BUTTON_A); // Tilt Cargo Grab
 		frc::JoystickButton* auxController_button_b = new frc::JoystickButton(auxController, BUTTON_B); // Clamp/UnClamp Cargo claw
 		frc::JoystickButton* auxController_button_x = new frc::JoystickButton(auxController, BUTTON_X); // Not Used
 		frc::JoystickButton* auxController_button_y = new frc::JoystickButton(auxController, BUTTON_Y); // Not Used

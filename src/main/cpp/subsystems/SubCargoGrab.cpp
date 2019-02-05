@@ -8,6 +8,7 @@
 #include "subsystems/SubCargoGrab.h"
 
 #include "RobotMap.h"
+#include "Robot.h"
 
 SubCargoGrab::SubCargoGrab() : frc::Subsystem("SubCargoGrab") {}
 
@@ -20,6 +21,25 @@ void SubCargoGrab::InitDefaultCommand() {
 // here. Call these from Commands.
 //
 
-void SubCargoGrab::Intake(double speed){
-	
+void SubCargoGrab::Intake(double leftspeed, double rightspeed){
+  // This might need to be changed on the final robot
+	leftIntakeMotor->Set(leftspeed);
+  rightIntakeMotor->Set(rightspeed);
+}
+
+void SubCargoGrab::Shoot(double leftspeed, double rightspeed){
+	leftIntakeMotor->Set(leftspeed);
+  rightIntakeMotor->Set(rightspeed);
+}
+
+void SubCargoGrab::ClampSet(bool state){
+  Robot::m_subPCM.ptr_ClampSolenoid->Set(state);
+}
+
+void SubCargoGrab::SetTiltPos(bool state){
+  Robot::m_subPCM.ptr_TiltSolenoid->Set(state);
+}
+
+bool SubCargoGrab::GetTiltPos() const {
+  return m_bTiltPos;
 }

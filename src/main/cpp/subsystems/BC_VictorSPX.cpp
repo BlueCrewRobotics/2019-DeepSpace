@@ -16,7 +16,7 @@ BC_VictorSPX::BC_VictorSPX(int device)  {
 }
 
 void BC_VictorSPX::Set(double speed) {
-	speed = speed*VELOCITY_SP_MAX_LG;
+	// speed = speed*VELOCITY_SP_MAX_LG;
 	ptr_VictorSPX->Set(ControlMode::PercentOutput, speed);
 	m_dSpeed = speed;
 }

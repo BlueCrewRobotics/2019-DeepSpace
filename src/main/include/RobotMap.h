@@ -125,7 +125,7 @@ constexpr int TOP_ARM_PISTON_ONE = 0;
 constexpr int TOP_ARM_PISTON_TWO = 1;
 constexpr int TOP_HATCH_GRABBER = 2;  
 constexpr int TOP_SOLENOID_3 = 3; // Spare
-constexpr int TOP_BALL_INTAKE_SOLENOID = 4; 
+constexpr int TOP_CLAMP_SOLENOID = 4; 
 constexpr int TOP_CARGO_TILT = 5;
 constexpr int TOP_HATCH_POSITION_FORWARD = 6; // Might not be a solenoid, just preparing
 constexpr int TOP_HATCH_POSITION_REVERSE = 7;   
@@ -133,8 +133,14 @@ constexpr int TOP_HATCH_POSITION_REVERSE = 7;
 
 // CAN Address for Aux motors
 
-constexpr int BALL_INTAKE_LEFT = 11;
-constexpr int BALL_INTAKE_RIGHT = 12;
+constexpr int CARGO_LEFT_CAN_ADDR = 11;
+constexpr int CARGO_RIGHT_CAN_ADDR = 12;
+
+constexpr double CARGO_INTAKE_LEFT = 0.5;
+constexpr double CARGO_INTAKE_RIGHT = -0.5;
+constexpr double CARGO_SHOOT_LEFT = -0.5;
+constexpr double CARGO_SHOOT_RIGHT = 0.5;
+
 
 // Elevator configuration
 constexpr int ELEVATOR_DRIVE_CAN_ADDR = 5;

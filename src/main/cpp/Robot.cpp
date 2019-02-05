@@ -14,6 +14,7 @@ OI Robot::m_oi;
 
 SubDriveTrain Robot::m_subDriveTrain;
 SubPCM Robot::m_subPCM;
+SubCargoGrab Robot::m_subCargoGrab;
 // frc::CameraServer Robot::m_cameraServer;
 
 void Robot::RobotInit() {

@@ -22,12 +22,18 @@ class SubElevator : public frc::Subsystem {
         void SetPositionSoftLimits(double top, double bottom);
         void ConfigureHardLimits();
         void Configure();
+		int GetPosition();
+		void SetLevelPositionTarget(int position, int index);
+		void SetLevel(int level);
 
 
 
 	private:
 		// It's desirable that everything possible under private except
 		// for methods that implement subsystem capabilities
+
+		int a_iLevelPositions[ELEVATOR_LEVELS];
+		int m_iActiveLevel = 0;
 		
         TalonSRX* elevatorDrive = new TalonSRX(ELEVATOR_DRIVE_CAN_ADDR);
 

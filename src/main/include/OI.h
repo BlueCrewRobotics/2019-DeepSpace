@@ -7,6 +7,10 @@
 
 #include <frc/WPILib.h>
 #include "commands/CmdSwitchGear.h"
+#include "commands/CmdElevatorUpOne.h"
+#include "commands/CmdElevatorUpTop.h"
+#include "commands/CmdElevatorDownOne.h"
+#include "commands/CmdElevatorDownBottom.h"
 #include "RobotMap.h"
 
 class OI {
@@ -30,10 +34,6 @@ class OI {
 		// RIGHT TRIGGER // Drive Forwards
 		// LEFT STICK LEFT // Turn Left
 		// LEFT STICK RIGHT // Turn Right
-		// RIGHT STICK UP // Move Elevator up 1 stage
-		// RIGHT STICK LEFT // Move Elevator up all the way
-		// RIGHT STICK DOWN // Move Elevator down 1 stage
-		// RIGHT STICK RIGHT // Move Elevator down all the way
 
 		// Setup aux controller
 		frc::Joystick* auxController = new frc::Joystick(AUX_CONTROLLER);
@@ -50,9 +50,16 @@ class OI {
 		frc::JoystickButton* auxController_button_r3 = new frc::JoystickButton(auxController, BUTTON_R3); // Not Used
 		// LEFT TRIGGER // Push out Cargo
 		// RIGHT TRIGGER // Pull in Cargo
+		
 		// LEFT STICK UP // Push Swiss Army Knife out 1 stage
 		// LEFT STICK LEFT // Push Swiss Army Knife out all the way
 		// LEFT STICK DOWN // Pull Swiss Army Knife in 1 stage
 		// LEFT STICK RIGHT // Pull Swiss Army Knife in all the way
+		
+		// RIGHT STICK UP // Move Elevator up 1 stage
+		// RIGHT STICK RIGHT // Move Elevator up all the way
+		// RIGHT STICK DOWN // Move Elevator down 1 stage
+		// RIGHT STICK LEFT // Move Elevator down all the way
+
 
 };

@@ -144,12 +144,16 @@ constexpr double ELEVATOR_KP_0 = 0;
 constexpr double ELEVATOR_KI_0 = 0;
 constexpr double ELEVATOR_KD_0 = 0;
 
-constexpr int ELEVATOR_RESET_POSITION = 0;  // Used to set the elevator bottom position 
+constexpr int ELEVATOR_RESET_POSITION = 0;   // Used to set the elevator bottom position 
 constexpr int ELEVATOR_CRUISE_VELOCITY = 2000;  // Velocity for motion control units / 100ms
 constexpr int ELEVATOR_ACCELERATION = 2000;     // Acceleration in unit s/ 1 second
 
-constexpr int ELEVATOR_TOP_LIMIT = 0;           // Set the soft top limit
-constexpr int ELEVATOR_BOT_LIMIT = 0;           // Set the soft bottom limit
+constexpr bool ELEVATOR_SOFT_LIMITS_ENABLE = true;   // Disbale/Enable of soft limits
+constexpr int ELEVATOR_TOP_SOFT_LIMIT = 0;           // Set the soft top limit
+constexpr int ELEVATOR_BOT_SOFT_LIMIT = 0;           // Set the soft bottom limit
+
+constexpr int ELEVATOR_LEVELS = 5;                   // Number of elevator levels starting with 0
+
 
 
 

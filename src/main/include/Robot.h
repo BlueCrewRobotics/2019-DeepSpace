@@ -21,6 +21,7 @@
 #include "subsystems/ExampleSubsystem.h"
 #include "subsystems/SubDriveTrain.h"
 #include "subsystems/SubPCM.h"
+#include "subsystems/SubElevator.h"
 
 
 class Robot : public frc::TimedRobot {
@@ -29,6 +30,8 @@ class Robot : public frc::TimedRobot {
 		static OI m_oi;
 		static SubDriveTrain m_subDriveTrain;
 		static SubPCM m_subPCM;
+		static SubElevator m_subElevator;
+		
     // static CameraServer m_cameraServer;
 
 		void RobotInit() override;

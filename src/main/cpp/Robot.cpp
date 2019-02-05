@@ -15,6 +15,7 @@ OI Robot::m_oi;
 SubDriveTrain Robot::m_subDriveTrain;
 SubPCM Robot::m_subPCM;
 SubElevator Robot::m_subElevator;
+SubCargoGrab Robot::m_subCargoGrab;
 
 // frc::CameraServer Robot::m_cameraServer;
 
@@ -72,7 +73,8 @@ void Robot::AutonomousInit() {
 	m_autonomousCommand = m_chooser.GetSelected();
 
 	if (m_autonomousCommand != nullptr) {
-		m_autonomousCommand->Start();
+		m_autonomousCommand->Cancel();
+		m_autonomousCommand = nullptr;
 	}
 }
 

@@ -18,10 +18,15 @@
 #include "commands/ExampleCommand.h"
 #include "commands/MyAutoCommand.h"
 #include "commands/CmdSwitchGear.h"
+#include "commands/CmdCargoClampOpen.h"
+#include "commands/CmdCargoClampClose.h"
+#include "commands/CmdCargoTilt.h"
+
 #include "subsystems/ExampleSubsystem.h"
 #include "subsystems/SubDriveTrain.h"
 #include "subsystems/SubPCM.h"
 #include "subsystems/SubElevator.h"
+#include "subsystems/SubCargoGrab.h"
 
 
 class Robot : public frc::TimedRobot {
@@ -32,6 +37,7 @@ class Robot : public frc::TimedRobot {
 		static SubPCM m_subPCM;
 		static SubElevator m_subElevator;
 		
+		static SubCargoGrab m_subCargoGrab;
     // static CameraServer m_cameraServer;
 
 		void RobotInit() override;

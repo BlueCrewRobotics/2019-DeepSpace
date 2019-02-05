@@ -138,6 +138,19 @@ constexpr int BALL_INTAKE_RIGHT = 12;
 
 // Elevator configuration
 constexpr int ELEVATOR_DRIVE_CAN_ADDR = 5;
+// Elevator constants PID[0] used for postioning
+constexpr double ELEVATOR_KF_0 = 10.0;  // F-gain = (100% X 1023) / requested speed/100ms 
+constexpr double ELEVATOR_KP_0 = 0;
+constexpr double ELEVATOR_KI_0 = 0;
+constexpr double ELEVATOR_KD_0 = 0;
+
+constexpr int ELEVATOR_RESET_POSITION = 0;  // Used to set the elevator bottom position 
+constexpr int ELEVATOR_CRUISE_VELOCITY = 2000;  // Velocity for motion control units / 100ms
+constexpr int ELEVATOR_ACCELERATION = 2000;     // Acceleration in unit s/ 1 second
+
+constexpr int ELEVATOR_TOP_LIMIT = 0;           // Set the soft top limit
+constexpr int ELEVATOR_BOT_LIMIT = 0;           // Set the soft bottom limit
+
 
 
 

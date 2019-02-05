@@ -17,11 +17,18 @@ class SubElevator : public frc::Subsystem {
 		// Set limit switches top and bottom
 		// Configure TalonSRX for position control
 		//
+        void ResetPostion();
+        void RaiseElevatorToPosition(double position);
+        void SetPositionSoftLimits(double top, double bottom);
+        void ConfigureHardLimits();
+        void Configure();
 
-		TalonSRX* elevatorDrive = new TalonSRX(ELEVATOR_DRIVE_CAN_ADDR);
+
 
 	private:
 		// It's desirable that everything possible under private except
 		// for methods that implement subsystem capabilities
+		
+        TalonSRX* elevatorDrive = new TalonSRX(ELEVATOR_DRIVE_CAN_ADDR);
 
 };

@@ -1,9 +1,7 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
+/*     Blue Crew Robotics #6153    */
+/*         Deep Space 2019         */
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
 #include "subsystems/SubCargoGrab.h"
 
@@ -23,13 +21,21 @@ void SubCargoGrab::InitDefaultCommand() {
 
 void SubCargoGrab::Intake(double leftspeed, double rightspeed){
   // This might need to be changed on the final robot
+  leftspeed = leftspeed * -1;
 	leftIntakeMotor->Set(leftspeed);
   rightIntakeMotor->Set(rightspeed);
 }
 
 void SubCargoGrab::Shoot(double leftspeed, double rightspeed){
+  // This might need to be changed on the final robot
+  leftspeed = leftspeed * -1;
 	leftIntakeMotor->Set(leftspeed);
   rightIntakeMotor->Set(rightspeed);
+}
+
+void SubCargoGrab::Stop(){
+  leftIntakeMotor->Set(0);
+  rightIntakeMotor->Set(0);
 }
 
 void SubCargoGrab::ClampSet(bool state){

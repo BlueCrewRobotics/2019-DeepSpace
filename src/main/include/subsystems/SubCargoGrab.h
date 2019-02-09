@@ -10,7 +10,7 @@
 #include "RobotMap.h"
 #include "BC_VictorSPX.h"
 #include "subsystems/SubPCM.h"
-//#include "Robot.h"
+// #include "Robot.h"
 
 class SubCargoGrab : public frc::Subsystem {
 	public:
@@ -18,9 +18,11 @@ class SubCargoGrab : public frc::Subsystem {
 		void InitDefaultCommand() override;
 		void Intake(double leftspeed, double rightspeed);
 		void Shoot(double leftspeed, double rightspeed);
+		void Stop();
 		void ClampSet(bool state);
 		void SetTiltPos(bool state);
 		bool GetTiltPos() const;
+
 
 	private:
 		// It's desirable that everything possible under private except

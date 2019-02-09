@@ -14,17 +14,15 @@ class SubElevator : public frc::Subsystem {
 		SubElevator();
 		void InitDefaultCommand() override;
 
-		// Set limit switches top and bottom
-		// Configure TalonSRX for position control
 		//
-        void ResetPostion();
-        void RaiseElevatorToPosition(double position);
-        void SetPositionSoftLimits(double top, double bottom);
-        void ConfigureHardLimits();
+        void ResetHomePosition();  
+        void MoveElevatorToPosition(double position);  // Used for testing
         void Configure();
 		int GetPosition();
-		void SetLevelPositionTarget(int position, int index);
+		void SetLevelPositionTarget(int index, int position);
 		void SetLevel(int level);
+		int GetForwardLimitSwitch();
+		int GetReverseLimitSwitch();
 
 
 

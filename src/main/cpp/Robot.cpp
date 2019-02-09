@@ -29,6 +29,8 @@ void Robot::RobotInit() {
 
   m_subDriveTrain.Configure();
   m_subPCM.Configure();
+  m_subElevator.Configure();
+
 }
 
 /**

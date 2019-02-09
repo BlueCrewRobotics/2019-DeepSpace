@@ -150,7 +150,7 @@ constexpr double ELEVATOR_KP_0 = 0;
 constexpr double ELEVATOR_KI_0 = 0;
 constexpr double ELEVATOR_KD_0 = 0;
 
-constexpr int ELEVATOR_RESET_POSITION = 0;   // Used to set the elevator bottom position 
+constexpr int ELEVATOR_RESET_HOME_POS = 0;   // Used to set the elevator home position 
 constexpr int ELEVATOR_CRUISE_VELOCITY = 2000;  // Velocity for motion control units / 100ms
 constexpr int ELEVATOR_ACCELERATION = 2000;     // Acceleration in unit s/ 1 second
 
@@ -158,8 +158,23 @@ constexpr bool ELEVATOR_SOFT_LIMITS_ENABLE = true;   // Disbale/Enable of soft l
 constexpr int ELEVATOR_TOP_SOFT_LIMIT = 0;           // Set the soft top limit
 constexpr int ELEVATOR_BOT_SOFT_LIMIT = 0;           // Set the soft bottom limit
 
-constexpr int ELEVATOR_LEVELS = 5;                   // Number of elevator levels starting with 0
+constexpr int ELEVATOR_LEVELS = 6;                  // Number of elevator levels starting with 0
 
+constexpr int ELEVATOR_LEVEL_POS_HOME = 0;          // Elevator home position
+constexpr int ELEVATOR_LEVEL_BTM_POS_HATCH = 100;   // Hatch deploy 1st level position
+constexpr int ELEVATOR_LEVEL_BTM_POS_BALL = 200;    // Ball deploy 1st level position 
+constexpr int ELEVATOR_LEVEL_MID_POS_HATCH = 400;   // Hatch deploy 2nd level position 
+constexpr int ELEVATOR_LEVEL_MID_POS_BALL = 500;    // Ball deploy 2nd level position
+constexpr int ELEVATOR_LEVEL_TOP_POS_HATCH = 700;   // Hatch deploy 3rd level position
+constexpr int ELEVATOR_LEVEL_TOP_POS_BALL = 800;    // Ball deploy 3rd level position
+
+constexpr int ELEVATOR_HOME = 0;          // Elevator home position
+constexpr int ELEVATOR_BTM_HATCH = 1;   // Hatch deploy 1st level position
+constexpr int ELEVATOR_BTM_BALL = 2;    // Ball deploy 1st level position 
+constexpr int ELEVATOR_MID_HATCH = 3;   // Hatch deploy 2nd level position 
+constexpr int ELEVATOR_MID_BALL = 4;    // Ball deploy 2nd level position
+constexpr int ELEVATOR_TOP_HATCH = 5;   // Hatch deploy 3rd level position
+constexpr int ELEVATOR_TOP_BALL = 6;    // Ball deploy 3rd level position
 
 
 

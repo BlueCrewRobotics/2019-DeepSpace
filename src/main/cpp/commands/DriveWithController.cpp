@@ -31,8 +31,8 @@ void DriveWithController::Execute()
 
 	double velocity;
 
-	double velocityReverse = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG)*-1;
-	double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG);
+	double velocityReverse = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG);
+	double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG)*-1;
 	double rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-1;
 
 

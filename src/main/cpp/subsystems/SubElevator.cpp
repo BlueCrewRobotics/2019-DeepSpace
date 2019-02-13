@@ -4,6 +4,7 @@
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
 #include "subsystems/SubElevator.h"
+#include "commands/CmdElevator.h"
 
 #include "RobotMap.h"
 
@@ -12,6 +13,7 @@ SubElevator::SubElevator() : frc::Subsystem("SubElevator") {}
 void SubElevator::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
 	// SetDefaultCommand(new MySpecialCommand());
+    SetDefaultCommand(new CmdElevator());
 }
 
 // Resets the position on the Talon to the home position
@@ -22,9 +24,28 @@ void SubElevator::ResetHomePosition() {
 }
 
 // Used for testing elevator movements
-void SubElevator::MoveElevatorToPosition(double position) {
+void SubElevator::MoveElevatorToPosition(int position) {
     // Raise elevator to requested position
-    elevatorDrive->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic, position);
+    int currentPosition;
+    int moveDirection;
+
+    currentPosition = elevatorDrive->GetSensorCollection().GetQuadraturePosition();
+    moveDirection = position - currentPosition;
+    
+    if((elevatorDrive->GetSensorCollection().IsFwdLimitSwitchClosed() == 1) && (moveDirection > 0))  {
+        elevatorDrive->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic, position);
+    }
+    else {
+        if((elevatorDrive->GetSensorCollection().IsRevLimitSwitchClosed() ==1) && (moveDirection < 0)) {
+            elevatorDrive->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic, position);
+        }
+    }
+
+}
+
+// Servo to the requested position
+void SubElevator::ServoToPosition(double position) {
+    elevatorDrive->Set(ControlMode::Position,position);
 }
 
 // Configure the elevator Talon
@@ -48,6 +69,11 @@ void SubElevator::Configure() {
     elevatorDrive->ConfigReverseSoftLimitThreshold(ELEVATOR_BOT_SOFT_LIMIT,0);
     elevatorDrive->ConfigForwardSoftLimitEnable(ELEVATOR_SOFT_LIMITS_ENABLE,0);
     elevatorDrive->ConfigReverseSoftLimitEnable(ELEVATOR_SOFT_LIMITS_ENABLE,0);
+
+    elevatorDrive->ConfigSelectedFeedbackSensor(QuadEncoder,0,0);
+	elevatorDrive->ConfigSelectedFeedbackSensor(QuadEncoder,0,1);
+	elevatorDrive->SetSensorPhase(true);
+    elevatorDrive->SetInverted(InvertType::InvertMotorOutput);
 
     // This shouldn't be here.  But it is here for now, setting the level positions and index
     SubElevator::SetLevelPositionTarget(ELEVATOR_HOME, ELEVATOR_LEVEL_POS_HOME);
@@ -74,10 +100,13 @@ void SubElevator::SetLevelPositionTarget(int index, int position) {
 }
 
 // Sets the level of the elevator
-void SubElevator::SetLevel(int level) {
-    
-    
+void SubElevator::SetLevel(int level) {  
     m_iActiveLevel = level;
+}
+
+// Get level of elevator
+int SubElevator::GetLevel() {
+    return m_iActiveLevel;
 }
 
 // Gets the status of the forward limit switch
@@ -88,6 +117,21 @@ int SubElevator::GetForwardLimitSwitch() {
 // Gets the status of the reverse limit switch
 int SubElevator::GetReverseLimitSwitch() {
     return elevatorDrive->GetSensorCollection().IsRevLimitSwitchClosed();
+}
+
+// Drive elevator
+void SubElevator::DriveElevator(double output){
+    elevatorDrive->Set(ControlMode::PercentOutput,output);
+}
+
+// Get PID error
+int SubElevator::GetPIDerror() {
+    return elevatorDrive->GetClosedLoopError();
+}
+
+// Get PID target
+double SubElevator::GetPIDtarget() {
+    return elevatorDrive->GetClosedLoopTarget();
 }
 
 // Put methods for controlling this subsystem

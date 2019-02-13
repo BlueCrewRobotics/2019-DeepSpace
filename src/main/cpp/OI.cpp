@@ -8,31 +8,21 @@
 
 OI::OI() {
   // Process operator interface input here.
-
+  
+  // Call switch gear command
   driverController_button_rbump->ToggleWhenPressed(new CmdSwitchGear());
 
 
-  // *** Elevator command calls ***
-  if( auxController->GetRawAxis(AXIS_RX) > 0.1){
-      // Call elevator up top command
-      new CmdElevatorUpTop();
 
-  }
-  if( auxController->GetRawAxis(AXIS_RY) > 0.1){
-      // Call elevator up one level command
-      new CmdElevatorUpOne();
+  // Elevator testing
+  driverController_button_a->WhileActive(new CmdElevatorTestDown());
+  driverController_button_a->WhenReleased(new CmdElevatorTestStop());
+  driverController_button_y->WhileActive(new CmdElevatorTestUp());
+  driverController_button_y->WhenReleased(new CmdElevatorTestStop());
 
-  }
-  if( auxController->GetRawAxis(AXIS_RX) < -0.1){
-      // Call elevator down bottom command
-      new CmdElevatorDownBottom();
+  // Reset elevator home position to zero.  Must be at the home position all the way down
+  auxController_button_start->ToggleWhenPressed(new CmdElevatorResetHome());
 
-  }
-  if( auxController->GetRawAxis(AXIS_RY) < -0.1){
-      // Call elevator down one level command
-      new CmdElevatorDownOne();
-
-  }
   
   
   auxController_button_b->WhileActive(new CmdCargoClampOpen());

@@ -81,25 +81,25 @@ constexpr int VELOCITY_SP_MAX_LG = 1400;
 
 
 // PID constants PID[0] Used for low speed right side
-constexpr double RIGHT_KF_0 = 0.6576;   // 0.6576
-constexpr double RIGHT_KP_0 = 0.73;     // 0.73
+constexpr double RIGHT_KF_0 = 0.6;   // 0.6576
+constexpr double RIGHT_KP_0 = 0.0;     // 0.73
 constexpr double RIGHT_KI_0 = 0.0;
 constexpr double RIGHT_KD_0 = 0.0;
 
 // PID constants PID[1] uesd for high speed left side
-constexpr double RIGHT_KF_1 = 0.296;    // 0.296
+constexpr double RIGHT_KF_1 = 0.3;    // 0.296
 constexpr double RIGHT_KP_1 = 0;
 constexpr double RIGHT_KI_1 = 0;
 constexpr double RIGHT_KD_1 = 0;
 
 // PID constants PID[0] Used for low speed right side
-constexpr double LEFT_KF_0 = 0.6941;    // 0.6941
-constexpr double LEFT_KP_0 = 0.73;      // 0.73
+constexpr double LEFT_KF_0 = 0.6;    // 0.6941
+constexpr double LEFT_KP_0 = 0.0;      // 0.73
 constexpr double LEFT_KI_0 = 0.0;
 constexpr double LEFT_KD_0 = 0;
 
 // PID constants PID[1] uesd for high speed left side
-constexpr double LEFT_KF_1 = 0.32;      // 0.32
+constexpr double LEFT_KF_1 = 0.3;      // 0.32
 constexpr double LEFT_KP_1 = 0;
 constexpr double LEFT_KI_1 = 0;
 constexpr double LEFT_KD_1 = 0;
@@ -145,8 +145,8 @@ constexpr double CARGO_SHOOT_RIGHT = 0.5;
 // Elevator configuration
 constexpr int ELEVATOR_DRIVE_CAN_ADDR = 5;
 // Elevator constants PID[0] used for postioning
-constexpr double ELEVATOR_KF_0 = 10.0;  // F-gain = (100% X 1023) / requested speed/100ms 
-constexpr double ELEVATOR_KP_0 = 0;
+constexpr double ELEVATOR_KF_0 = 0;  
+constexpr double ELEVATOR_KP_0 = 0.485;  // (0.50 X 1023) / 1024
 constexpr double ELEVATOR_KI_0 = 0;
 constexpr double ELEVATOR_KD_0 = 0;
 
@@ -155,18 +155,18 @@ constexpr int ELEVATOR_CRUISE_VELOCITY = 2000;  // Velocity for motion control u
 constexpr int ELEVATOR_ACCELERATION = 2000;     // Acceleration in unit s/ 1 second
 
 constexpr bool ELEVATOR_SOFT_LIMITS_ENABLE = true;   // Disbale/Enable of soft limits
-constexpr int ELEVATOR_TOP_SOFT_LIMIT = 0;           // Set the soft top limit
+constexpr int ELEVATOR_TOP_SOFT_LIMIT = 130000;       // Set the soft top limit
 constexpr int ELEVATOR_BOT_SOFT_LIMIT = 0;           // Set the soft bottom limit
 
 constexpr int ELEVATOR_LEVELS = 6;                  // Number of elevator levels starting with 0
 
 constexpr int ELEVATOR_LEVEL_POS_HOME = 0;          // Elevator home position
-constexpr int ELEVATOR_LEVEL_BTM_POS_HATCH = 100;   // Hatch deploy 1st level position
-constexpr int ELEVATOR_LEVEL_BTM_POS_BALL = 200;    // Ball deploy 1st level position 
-constexpr int ELEVATOR_LEVEL_MID_POS_HATCH = 400;   // Hatch deploy 2nd level position 
-constexpr int ELEVATOR_LEVEL_MID_POS_BALL = 500;    // Ball deploy 2nd level position
-constexpr int ELEVATOR_LEVEL_TOP_POS_HATCH = 700;   // Hatch deploy 3rd level position
-constexpr int ELEVATOR_LEVEL_TOP_POS_BALL = 800;    // Ball deploy 3rd level position
+constexpr int ELEVATOR_LEVEL_BTM_POS_HATCH = 20000;   // Hatch deploy 1st level position
+constexpr int ELEVATOR_LEVEL_BTM_POS_BALL = 40000;    // Ball deploy 1st level position 
+constexpr int ELEVATOR_LEVEL_MID_POS_HATCH = 60000;   // Hatch deploy 2nd level position 
+constexpr int ELEVATOR_LEVEL_MID_POS_BALL = 80000;    // Ball deploy 2nd level position
+constexpr int ELEVATOR_LEVEL_TOP_POS_HATCH = 100000;   // Hatch deploy 3rd level position
+constexpr int ELEVATOR_LEVEL_TOP_POS_BALL = 120000;    // Ball deploy 3rd level position
 
 constexpr int ELEVATOR_HOME = 0;          // Elevator home position
 constexpr int ELEVATOR_BTM_HATCH = 1;   // Hatch deploy 1st level position

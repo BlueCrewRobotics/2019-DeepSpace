@@ -36,8 +36,12 @@ class SubDriveTrain : public frc::Subsystem  {
 
 		BC_TalonSRX* leftDriveMotor = new BC_TalonSRX(MOTOR_LEFT_MASTER);
 		BC_TalonSRX* rightDriveMotor = new BC_TalonSRX(MOTOR_RIGHT_MASTER);
-		BC_VictorSPX* leftFollowMotor = new BC_VictorSPX(MOTOR_LEFT_FOLLOWER);
-		BC_VictorSPX* rightFollowMotor = new BC_VictorSPX(MOTOR_RIGHT_FOLLOWER);
+
+		BC_TalonSRX* leftFollowMotor = new BC_TalonSRX(MOTOR_LEFT_FOLLOWER);
+		BC_TalonSRX* rightFollowMotor = new BC_TalonSRX(MOTOR_RIGHT_FOLLOWER);
+
+//		BC_VictorSPX* leftFollowMotor = new BC_VictorSPX(MOTOR_LEFT_FOLLOWER);
+//		BC_VictorSPX* rightFollowMotor = new BC_VictorSPX(MOTOR_RIGHT_FOLLOWER);
 
 
 		/*

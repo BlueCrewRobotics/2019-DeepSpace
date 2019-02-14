@@ -5,11 +5,18 @@
 
 #include "subsystems/SubHatchGrab.h"
 
-SubHatchGrab::SubHatchGrab() : frc::Subsystem("SubHatchGrab"){}
+#include "RobotMap.h"
+#include "Robot.h"
 
-void SubHatchGrab::Configure(){
+SubHatchGrab::SubHatchGrab() : frc::Subsystem("SubHatchGrab") {}
 
+void SubHatchGrab::InitDefaultCommand() {
+	// Set the default command for a subsystem here.
+	// SetDefaultCommand(new MySpecialCommand());
 }
+
+// Put methods for controlling this subsystem
+// here. Call these from Commands.
 
 void SubHatchGrab::Set(bool state){
 		hatchReleaseSolenoid->Set(state);
@@ -23,6 +30,6 @@ void SubHatchGrab::Extend7(bool state){
 	hatchExtend7->Set(state);
 }
 
-
-
-
+bool SubHatchGrab::GetPos() const{
+	return m_bEngageState;
+}

@@ -37,4 +37,6 @@ OI::OI() {
       // Call Cargo Shoot Command
       new CmdCargoShoot();
   }
+
+  auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
 }

@@ -3,35 +3,35 @@
 /*         Deep Space 2019         */
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
-#include "commands/CmdCargoIntake.h"
+#include "commands/CmdCargoTest.h"
 
 #include "Robot.h"
 
-CmdCargoIntake::CmdCargoIntake() {
+CmdCargoTest::CmdCargoTest() {
 	// Use Requires() here to declare subsystem dependencies
 	Requires(&Robot::m_subsystem);
 }
 
 // Called just before this Command runs the first time
-void CmdCargoIntake::Initialize() {
+void CmdCargoTest::Initialize() {
   // SetTimeout(4);  // set 4 second timeout
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdCargoIntake::Execute() {
-  Robot::m_subCargoGrab.Intake(0.5, 0.5);
+void CmdCargoTest::Execute() {
+  Robot::m_subCargoGrab.Stop();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool CmdCargoIntake::IsFinished() {
+bool CmdCargoTest::IsFinished() {
    // return true || IsTimedOut(); 
-   // Robot::m_subCargoGrab.Stop();
+   
    return true;
    }
 
 // Called once after isFinished returns true
-void CmdCargoIntake::End() {}
+void CmdCargoTest::End() {}
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void CmdCargoIntake::Interrupted() {}
+void CmdCargoTest::Interrupted() {}

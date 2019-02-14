@@ -10,6 +10,8 @@
 
 SubCargoGrab::SubCargoGrab() : frc::Subsystem("SubCargoGrab") {}
 
+
+
 void SubCargoGrab::InitDefaultCommand() {
   // Set the default command for a subsystem here.
   // SetDefaultCommand(new MySpecialCommand());
@@ -44,8 +46,17 @@ void SubCargoGrab::ClampSet(bool state){
 
 void SubCargoGrab::SetTiltPos(bool state){
   Robot::m_subPCM.ptr_TiltSolenoid->Set(state);
+  m_bTiltPos = state;
 }
 
-bool SubCargoGrab::GetTiltPos() const {
+bool SubCargoGrab::GetTiltPos(){
   return m_bTiltPos;
+}
+
+void SubCargoGrab::Extend5(bool state){
+  cargoExtend5->Set(state);
+}
+
+void SubCargoGrab::Extend7(bool state){
+  cargoExtend7->Set(state);
 }

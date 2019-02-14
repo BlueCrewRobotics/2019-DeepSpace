@@ -15,14 +15,16 @@ class SubHatchGrab : public frc::Subsystem {
 		SubHatchGrab();
 		void InitDefaultCommand() override;
         void Set(bool state);
-        bool GetPos() const;
+        bool GetPos();
 		void Extend4(bool state);
 		void Extend7(bool state);
+		
 	private:
 		// It's desirable that everything possible under private except
 		// for methods that implement subsystem capabilities
 
 		frc::Solenoid* hatchReleaseSolenoid = new frc::Solenoid(PCM_TOP, TOP_HATCH_GRABBER);
+
 		frc::Solenoid* hatchExtend4 = new frc::Solenoid(PCM_TOP,TOP_HATCH_EXT_4);
 		frc::Solenoid* hatchExtend7 = new frc::Solenoid(PCM_TOP,TOP_HATCH_EXT_7);
 		

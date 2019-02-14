@@ -19,7 +19,8 @@ void SubHatchGrab::InitDefaultCommand() {
 // here. Call these from Commands.
 
 void SubHatchGrab::Set(bool state){
-		hatchReleaseSolenoid->Set(state);
+		Robot::m_subPCM.ptr_HatchSolenoid->Set(state);
+		m_bEngageState = state;
 }
 
 void SubHatchGrab::Extend4(bool state){
@@ -30,6 +31,6 @@ void SubHatchGrab::Extend7(bool state){
 	hatchExtend7->Set(state);
 }
 
-bool SubHatchGrab::GetPos() const{
+bool SubHatchGrab::GetPos(){
 	return m_bEngageState;
 }

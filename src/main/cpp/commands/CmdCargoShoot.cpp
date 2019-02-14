@@ -25,7 +25,7 @@ void CmdCargoShoot::Execute() {
 // Make this return true when this Command no longer needs to run execute()
 bool CmdCargoShoot::IsFinished() {
    // return true || IsTimedOut();
-   Robot::m_subCargoGrab.Stop();
+   // Robot::m_subCargoGrab.Stop();
    return true; 
    }
 

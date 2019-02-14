@@ -3,33 +3,33 @@
 /*         Deep Space 2019         */
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
-#include "commands/CmdElevatorDownOne.h"
+#include "commands/CmdElevatorTestStop.h"
 
 #include "Robot.h"
 
-CmdElevatorDownOne::CmdElevatorDownOne() {
+CmdElevatorTestStop::CmdElevatorTestStop() {
 	// Use Requires() here to declare subsystem dependencies
 	Requires(&Robot::m_subElevator);
 }
 
 // Called just before this Command runs the first time
-void CmdElevatorDownOne::Initialize() {
-  SetTimeout(4);  // set 4 second timeout
+void CmdElevatorTestStop::Initialize() {
+  //SetTimeout(4);  // set 4 second timeout
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdElevatorDownOne::Execute() {
-    
+void CmdElevatorTestStop::Execute() {
+   Robot::m_subElevator.DriveElevator(0);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool CmdElevatorDownOne::IsFinished() {
-   return true || IsTimedOut(); 
+bool CmdElevatorTestStop::IsFinished() {
+   return true; //|| IsTimedOut(); 
    }
 
 // Called once after isFinished returns true
-void CmdElevatorDownOne::End() {}
+void CmdElevatorTestStop::End() {}
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void CmdElevatorDownOne::Interrupted() {}
+void CmdElevatorTestStop::Interrupted() {}

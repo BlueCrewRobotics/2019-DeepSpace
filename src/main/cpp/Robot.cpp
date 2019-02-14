@@ -16,6 +16,7 @@ SubDriveTrain Robot::m_subDriveTrain;
 SubPCM Robot::m_subPCM;
 SubElevator Robot::m_subElevator;
 SubCargoGrab Robot::m_subCargoGrab;
+SubHatchGrab Robot::m_subHatchGrab;
 
 // frc::CameraServer Robot::m_cameraServer;
 

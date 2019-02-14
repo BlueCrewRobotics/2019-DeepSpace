@@ -6,10 +6,11 @@
 #pragma once
 
 #include <frc/commands/Command.h>
+#include "subsystems/SubElevator.h"
 
-class GrabHatch : public frc::Command {
+class CmdElevatorTestDown : public frc::Command {
 	public:
-		GrabHatch();
+		CmdElevatorTestDown();
 		void Initialize() override;
 		void Execute() override;
 		bool IsFinished() override;

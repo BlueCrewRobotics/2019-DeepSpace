@@ -6,10 +6,11 @@
 #pragma once
 
 #include <frc/commands/Command.h>
+#include "subsystems/SubElevator.h"
 
-class CmdElevatorDownOne : public frc::Command {
+class CmdElevator : public frc::Command {
 	public:
-		CmdElevatorDownOne();
+		CmdElevator();
 		void Initialize() override;
 		void Execute() override;
 		bool IsFinished() override;

@@ -16,6 +16,7 @@
 #include "commands/CmdCargoTilt.h"
 #include "commands/CmdCargoIntake.h"
 #include "commands/CmdCargoShoot.h"
+#include "commands/GrabHatch.h"
 
 #include "RobotMap.h"
 
@@ -49,7 +50,7 @@ class OI {
 		frc::JoystickButton* auxController_button_x = new frc::JoystickButton(auxController, BUTTON_X); // Not Used
 		frc::JoystickButton* auxController_button_y = new frc::JoystickButton(auxController, BUTTON_Y); // Not Used
 		frc::JoystickButton* auxController_button_lbump = new frc::JoystickButton(auxController, BUTTON_L_BUMP); // Grab/Let go of Hatch panel
-		frc::JoystickButton* auxController_button_rbump = new frc::JoystickButton(auxController, BUTTON_R_BUMP); // Toggle Swiss Army Knife
+		frc::JoystickButton* auxController_button_rbump = new frc::JoystickButton(auxController, BUTTON_R_BUMP); // Engage either Hatch Panel Grabber or Cargo Grabber (MUST HAVE A BIT THAT SPECIFIES WHICH IS ENGAGED FOR THE ELEVATOR)
 		frc::JoystickButton* auxController_button_select = new frc::JoystickButton(auxController, BUTTON_SELECT); // Not Used
 		frc::JoystickButton* auxController_button_start = new frc::JoystickButton(auxController, BUTTON_START); // Not Used
 		frc::JoystickButton* auxController_button_l3 = new frc::JoystickButton(auxController, BUTTON_L3); // Not Used

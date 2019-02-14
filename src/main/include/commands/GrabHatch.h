@@ -3,12 +3,7 @@
 /*         Deep Space 2019         */
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
-#pragma once 
-
-#include "Robot.h"
-
-#include "OI.h"
-#include "subsystems/SubHatchGrab.h"
+#pragma once
 
 #include <frc/commands/Command.h>
 
@@ -20,7 +15,4 @@ class GrabHatch : public frc::Command {
 		bool IsFinished() override;
 		void End() override;
 		void Interrupted() override;
-	private:
-		bool state = false;
-		SubHatchGrab * hatchgrabber = new SubHatchGrab();	
 };

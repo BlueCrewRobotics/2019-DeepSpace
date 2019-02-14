@@ -4,21 +4,25 @@
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
 #pragma once
-#include <frc/WPILib.h>
-#include <frc/commands/Subsystem.h>
-#include "ctre/Phoenix.h"
-#include "RobotMap.h"
 
-class SubHatchGrab: public frc::Subsystem{
+#include <frc/commands/Subsystem.h>
+#include <frc/WPILib.h>
+#include "RobotMap.h"
+#include "subsystems/SubPCM.h"
+
+class SubHatchGrab : public frc::Subsystem {
 	public:
 		SubHatchGrab();
-		void Configure();
-		void Set(bool state);
+		void InitDefaultCommand() override;
+        void Set(bool state);
+        bool GetPos() const;
 
-	public:
-		frc::Solenoid* hatchEngageSolenoid = 
-			new frc::Solenoid(PCM_TOP, TOP_HATCH_GRABBER);
+	private:
+		// It's desirable that everything possible under private except
+		// for methods that implement subsystem capabilities
 
-		frc::DoubleSolenoid* PositionSetSolenoid = 
-			new frc::DoubleSolenoid(PCM_TOP, TOP_HATCH_POSITION_FORWARD, TOP_HATCH_POSITION_REVERSE);
+		frc::Solenoid* hatchSolenoid = new frc::Solenoid(PCM_TOP, TOP_HATCH_GRABBER);
+
+		bool m_bEngageState = 0;
+
 };

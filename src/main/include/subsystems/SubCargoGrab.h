@@ -21,7 +21,7 @@ class SubCargoGrab : public frc::Subsystem {
 		void Stop();
 		void ClampSet(bool state);
 		void SetTiltPos(bool state);
-		bool GetTiltPos() const;
+		bool GetTiltPos();
 		void Extend5(bool state);
 		void Extend7(bool state);
 

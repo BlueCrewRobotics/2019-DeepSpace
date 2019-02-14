@@ -26,8 +26,8 @@ class SubElevator : public frc::Subsystem {
 		void SetLevel(int level);
 		void SetBallLevel(int level);
 		void SetHatchLevel(int level);
-		int GetForwardLimitSwitch();
-		int GetReverseLimitSwitch();
+		int GetUpLimitSwitch();
+		int GetDownLimitSwitch();
 		void DriveElevator(double output);
 		void ServoToPosition(double position);
 		int GetLevel();

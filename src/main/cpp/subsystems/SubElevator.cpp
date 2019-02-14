@@ -155,12 +155,12 @@ int SubElevator::GetHatchLevel() {
 }
 
 // Gets the status of the forward limit switch
-int SubElevator::GetForwardLimitSwitch() {
+int SubElevator::GetUpLimitSwitch() {
     return elevatorDrive->GetSensorCollection().IsFwdLimitSwitchClosed();
 }
 
 // Gets the status of the reverse limit switch
-int SubElevator::GetReverseLimitSwitch() {
+int SubElevator::GetDownLimitSwitch() {
     return elevatorDrive->GetSensorCollection().IsRevLimitSwitchClosed();
 }
 

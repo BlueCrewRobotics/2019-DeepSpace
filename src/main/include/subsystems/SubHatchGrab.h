@@ -14,11 +14,15 @@ class SubHatchGrab: public frc::Subsystem{
 		SubHatchGrab();
 		void Configure();
 		void Set(bool state);
+		void Extend4(bool state);
+		void Extend7(bool state);
 
 	public:
-		frc::Solenoid* hatchEngageSolenoid = 
-			new frc::Solenoid(PCM_TOP, TOP_HATCH_GRABBER);
+		frc::Solenoid* hatchReleaseSolenoid = new frc::Solenoid(PCM_TOP, TOP_HATCH_GRABBER);
 
-		frc::DoubleSolenoid* PositionSetSolenoid = 
-			new frc::DoubleSolenoid(PCM_TOP, TOP_HATCH_POSITION_FORWARD, TOP_HATCH_POSITION_REVERSE);
+		frc::Solenoid* hatchExtend4 = new frc::Solenoid(PCM_TOP,TOP_HATCH_EXT_4);
+		frc::Solenoid* hatchExtend7 = new frc::Solenoid(PCM_TOP,TOP_HATCH_EXT_7);
+
+		//frc::DoubleSolenoid* PositionSetSolenoid = 
+		//	new frc::DoubleSolenoid(PCM_TOP, TOP_HATCH_POSITION_FORWARD, TOP_HATCH_POSITION_REVERSE);
 };

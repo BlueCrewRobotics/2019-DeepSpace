@@ -121,15 +121,14 @@ constexpr int BTM_SOLENOID_6 = 6;   // Spare
 constexpr int BTM_SOLENOID_7 = 7;   // Spare
 
 // Solenoid Mapping for top PCM
-constexpr int TOP_ARM_PISTON_ONE = 0;
-constexpr int TOP_ARM_PISTON_TWO = 1;
-constexpr int TOP_HATCH_GRABBER = 2;  
-constexpr int TOP_SOLENOID_3 = 3; // Spare
-constexpr int TOP_CLAMP_SOLENOID = 4; 
-constexpr int TOP_CARGO_TILT = 5;
-constexpr int TOP_HATCH_POSITION_FORWARD = 6; // Might not be a solenoid, just preparing
-constexpr int TOP_HATCH_POSITION_REVERSE = 7;   
-
+constexpr int TOP_HATCH_EXT_4 = 0;     // TOP PCM 0 - Hatch 4" extend forward
+constexpr int TOP_HATCH_EXT_7 = 1;     // TOP PCM 1 - Hatch 7" extend forward
+constexpr int TOP_CARGO_EXT_5 = 2;     // TOP PCM 2 - Cargo 5" extend forward
+constexpr int TOP_CARGO_EXT_7 = 3;     // TOP PCM 3 - Cargo 7" extend forward
+constexpr int TOP_CARGO_TILT = 4;      // TOP PCM 4 - Cargo tilt up
+constexpr int TOP_CLAMP_SOLENOID = 5;  // TOP PCM 5 - Cargo grab open
+constexpr int TOP_HATCH_GRABBER = 6;   // TOP PCM 6 - Hatch release
+constexpr int TOP_SPARE_7 = 7;         // TOP PCM 7 - Spare
 
 // CAN Address for Aux motors
 
@@ -155,18 +154,41 @@ constexpr int ELEVATOR_CRUISE_VELOCITY = 2000;  // Velocity for motion control u
 constexpr int ELEVATOR_ACCELERATION = 2000;     // Acceleration in unit s/ 1 second
 
 constexpr bool ELEVATOR_SOFT_LIMITS_ENABLE = true;   // Disbale/Enable of soft limits
-constexpr int ELEVATOR_TOP_SOFT_LIMIT = 130000;       // Set the soft top limit
-constexpr int ELEVATOR_BOT_SOFT_LIMIT = 0;           // Set the soft bottom limit
+constexpr int ELEVATOR_TOP_SOFT_LIMIT = 26000;       // Set the soft top limit
+constexpr int ELEVATOR_BOT_SOFT_LIMIT = 100;           // Set the soft bottom limit
 
-constexpr int ELEVATOR_LEVELS = 6;                  // Number of elevator levels starting with 0
+constexpr int ELEVATOR_LEVELS = 7;                  // Number of elevator levels starting with 0
 
-constexpr int ELEVATOR_LEVEL_POS_HOME = 0;          // Elevator home position
-constexpr int ELEVATOR_LEVEL_BTM_POS_HATCH = 20000;   // Hatch deploy 1st level position
-constexpr int ELEVATOR_LEVEL_BTM_POS_BALL = 40000;    // Ball deploy 1st level position 
-constexpr int ELEVATOR_LEVEL_MID_POS_HATCH = 60000;   // Hatch deploy 2nd level position 
-constexpr int ELEVATOR_LEVEL_MID_POS_BALL = 80000;    // Ball deploy 2nd level position
-constexpr int ELEVATOR_LEVEL_TOP_POS_HATCH = 100000;   // Hatch deploy 3rd level position
-constexpr int ELEVATOR_LEVEL_TOP_POS_BALL = 120000;    // Ball deploy 3rd level position
+constexpr int ELEVATOR_BALL_LEVELS = 6;
+constexpr int ELEVATOR_HATCH_LEVELS = 4;
+
+constexpr int ELEV_BALL_GRAB = 0;
+constexpr int ELEV_BALL_GRAB_POS = 0;
+constexpr int ELEV_BALL_ROCKET_BTM = 0;
+constexpr int ELEV_BALL_ROCKET_BTM_POS = 5000;
+constexpr int ELEV_BALL_CONTAINER = 1;
+constexpr int ELEV_BALL_CONTAINER_POS = 10000;
+constexpr int ELEV_BALL_ROCKET_MID = 2;
+constexpr int ELEV_BALL_ROCKET_MID_POS = 15000;
+constexpr int ELEV_BALL_ROCKET_TOP = 3;
+constexpr int ELEV_BALL_ROCKET_TOP_POS = 20000;
+
+constexpr int ELEV_HATCH_ROCKET_BTM = 0;
+constexpr int ELEV_HATCH_ROCKET_BTM_POS = 0;
+constexpr int ELEV_HATCH_ROCKET_MID = 2;
+constexpr int ELEV_HATCH_ROCKET_MID_POS = 14000;
+constexpr int ELEV_HATCH_ROCKET_TOP = 3;
+constexpr int ELEV_HATCH_ROCKET_TOP_POS = 19000;
+
+
+
+constexpr int ELEVATOR_LEVEL_POS_HOME = 100;          // Elevator home position
+constexpr int ELEVATOR_LEVEL_BTM_POS_HATCH = 3000;   // Hatch deploy 1st level position
+constexpr int ELEVATOR_LEVEL_BTM_POS_BALL = 6000;    // Ball deploy 1st level position 
+constexpr int ELEVATOR_LEVEL_MID_POS_HATCH = 9000;   // Hatch deploy 2nd level position 
+constexpr int ELEVATOR_LEVEL_MID_POS_BALL = 12000;    // Ball deploy 2nd level position
+constexpr int ELEVATOR_LEVEL_TOP_POS_HATCH = 15000;   // Hatch deploy 3rd level position
+constexpr int ELEVATOR_LEVEL_TOP_POS_BALL = 18000;    // Ball deploy 3rd level position
 
 constexpr int ELEVATOR_HOME = 0;          // Elevator home position
 constexpr int ELEVATOR_BTM_HATCH = 1;   // Hatch deploy 1st level position

@@ -84,6 +84,15 @@ void SubElevator::Configure() {
     SubElevator::SetLevelPositionTarget(ELEVATOR_TOP_HATCH, ELEVATOR_LEVEL_TOP_POS_HATCH);
     SubElevator::SetLevelPositionTarget(ELEVATOR_TOP_BALL, ELEVATOR_LEVEL_TOP_POS_BALL);
 
+    SubElevator::SetBallPositionTarget(ELEV_BALL_GRAB, ELEV_BALL_GRAB_POS);
+    SubElevator::SetBallPositionTarget(ELEV_BALL_ROCKET_BTM, ELEV_BALL_ROCKET_BTM_POS);
+    SubElevator::SetBallPositionTarget(ELEV_BALL_CONTAINER, ELEV_BALL_CONTAINER_POS);
+    SubElevator::SetBallPositionTarget(ELEV_BALL_ROCKET_MID, ELEV_BALL_ROCKET_MID_POS);
+    SubElevator::SetBallPositionTarget(ELEV_BALL_ROCKET_TOP, ELEV_BALL_ROCKET_TOP_POS);
+
+    SubElevator::SetHatchPositionTarget(ELEV_HATCH_ROCKET_BTM, ELEV_HATCH_ROCKET_BTM_POS);
+    SubElevator::SetHatchPositionTarget(ELEV_HATCH_ROCKET_MID, ELEV_HATCH_ROCKET_MID_POS);
+    SubElevator::SetHatchPositionTarget(ELEV_HATCH_ROCKET_TOP, ELEV_HATCH_ROCKET_TOP_POS);
 }
 
 // get the current elevator position
@@ -99,14 +108,50 @@ void SubElevator::SetLevelPositionTarget(int index, int position) {
 
 }
 
+// Sets the position location position target for ball deploy
+void SubElevator::SetBallPositionTarget(int index, int position) {
+    if((0 <= index) && (index <= ELEVATOR_BALL_LEVELS)){
+        a_iBallLevelPos[index] = position;
+    }
+
+}
+
+// Sets the position location position target for hatch deploy
+void SubElevator::SetHatchPositionTarget(int index, int position) {
+    if((0 <= index) && (index <= ELEVATOR_HATCH_LEVELS)){
+        a_iHatchLevelPos[index] = position;
+    }
+
+}
+
 // Sets the level of the elevator
 void SubElevator::SetLevel(int level) {  
     m_iActiveLevel = level;
 }
 
+// Sets the level of the ball deploy
+void SubElevator::SetBallLevel(int level) {  
+    m_iBallLevel = level;
+}
+
+// Sets the level of the hatch deploy
+void SubElevator::SetHatchLevel(int level) {  
+    m_iHatchLevel = level;
+}
+
 // Get level of elevator
 int SubElevator::GetLevel() {
     return m_iActiveLevel;
+}
+
+// Get level of elevator
+int SubElevator::GetBallLevel() {
+    return m_iBallLevel;
+}
+
+// Get level of elevator
+int SubElevator::GetHatchLevel() {
+    return m_iHatchLevel;
 }
 
 // Gets the status of the forward limit switch

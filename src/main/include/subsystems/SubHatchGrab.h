@@ -18,6 +18,7 @@ class SubHatchGrab : public frc::Subsystem {
         bool GetPos() const;
 		void Extend4(bool state);
 		void Extend7(bool state);
+		
 	private:
 		// It's desirable that everything possible under private except
 		// for methods that implement subsystem capabilities

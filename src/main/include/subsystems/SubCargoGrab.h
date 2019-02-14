@@ -22,12 +22,17 @@ class SubCargoGrab : public frc::Subsystem {
 		void ClampSet(bool state);
 		void SetTiltPos(bool state);
 		bool GetTiltPos() const;
+		void Extend5(bool state);
+		void Extend7(bool state);
 
 
 	private:
 		// It's desirable that everything possible under private except
 		// for methods that implement subsystem capabilities
 		
+		frc::Solenoid* cargoExtend5 = new frc::Solenoid(PCM_TOP,TOP_CARGO_EXT_5);
+		frc::Solenoid* cargoExtend7 = new frc::Solenoid(PCM_TOP,TOP_CARGO_EXT_7);
+
 		frc::Solenoid* clampSolenoid = new frc::Solenoid(PCM_TOP, TOP_CLAMP_SOLENOID);
 
 		frc::Solenoid* tiltPositionSolenoid = new frc::Solenoid(PCM_TOP, TOP_CARGO_TILT);

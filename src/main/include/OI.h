@@ -18,6 +18,7 @@
 #include "commands/CmdElevatorTestUp.h"
 #include "commands/CmdElevatorTestStop.h"
 #include "commands/CmdElevatorResetHome.h"
+#include "commands/CmdCargoTest.h"
 
 #include "RobotMap.h"
 
@@ -28,10 +29,10 @@ class OI {
 		// Setup driver controller 
 		frc::Joystick* driverController = new frc::Joystick(DRIVER_CONTROLLER);
 		// Setup buttons on the driver controller, change the name to fit the command
-		frc::JoystickButton* driverController_button_a = new frc::JoystickButton(driverController, BUTTON_A); // Not Used
+		frc::JoystickButton* driverController_button_a = new frc::JoystickButton(driverController, BUTTON_A); // Manual Elevator
 		frc::JoystickButton* driverController_button_b = new frc::JoystickButton(driverController, BUTTON_B); // Not Used
 		frc::JoystickButton* driverController_button_x = new frc::JoystickButton(driverController, BUTTON_X); // Not Used
-		frc::JoystickButton* driverController_button_y = new frc::JoystickButton(driverController, BUTTON_Y); // Not Used
+		frc::JoystickButton* driverController_button_y = new frc::JoystickButton(driverController, BUTTON_Y); // Manual Elevator 
 		frc::JoystickButton* driverController_button_lbump = new frc::JoystickButton(driverController, BUTTON_L_BUMP); // Not Used
 		frc::JoystickButton* driverController_button_rbump = new frc::JoystickButton(driverController, BUTTON_R_BUMP);  // Used in gear shifting
 		frc::JoystickButton* driverController_button_select = new frc::JoystickButton(driverController, BUTTON_SELECT); // Lineup button
@@ -61,15 +62,10 @@ class OI {
 		
 		
 		
-		// LEFT STICK UP // Push Swiss Army Knife out 1 stage
-		// LEFT STICK LEFT // Push Swiss Army Knife out all the way
-		// LEFT STICK DOWN // Pull Swiss Army Knife in 1 stage
-		// LEFT STICK RIGHT // Pull Swiss Army Knife in all the way
-		
-		// RIGHT STICK UP // Move Elevator up 1 stage
-		// RIGHT STICK RIGHT // Move Elevator up all the way
-		// RIGHT STICK DOWN // Move Elevator down 1 stage
-		// RIGHT STICK LEFT // Move Elevator down all the way
+		// D PAD UP // Move Elevator up 1 stage
+		// D PAD RIGHT // Move Elevator up all the way
+		// D PAD DOWN // Move Elevator down 1 stage
+		// D PAD LEFT // Move Elevator down all the way
 
 
 };

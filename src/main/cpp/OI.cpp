@@ -31,7 +31,7 @@ OI::OI() {
   auxController_button_a->ToggleWhenPressed(new CmdCargoTilt());
 
   if( auxController->GetRawAxis(AXIS_R_TRIG) > 0.1){
-      // Call Cargo Intake Command
+      // Call Cargo Intake CommandCmdCargoIntake
       new CmdCargoIntake();
   } else if( auxController->GetRawAxis(AXIS_L_TRIG) > 0.1){
       // Call Cargo Shoot Command
@@ -39,4 +39,7 @@ OI::OI() {
   }
 
   auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
+
+  auxController_button_x->ToggleWhenPressed(new CmdCargoTest());
+  
 }

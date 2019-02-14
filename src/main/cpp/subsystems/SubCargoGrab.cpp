@@ -49,3 +49,11 @@ void SubCargoGrab::SetTiltPos(bool state){
 bool SubCargoGrab::GetTiltPos() const {
   return m_bTiltPos;
 }
+
+void SubCargoGrab::Extend5(bool state){
+  cargoExtend5->Set(state);
+}
+
+void SubCargoGrab::Extend7(bool state){
+  cargoExtend7->Set(state);
+}

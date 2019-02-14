@@ -7,16 +7,17 @@
 
 #include <frc/WPILib.h>
 #include "commands/CmdSwitchGear.h"
-#include "commands/CmdElevatorUpOne.h"
-#include "commands/CmdElevatorUpTop.h"
-#include "commands/CmdElevatorDownOne.h"
-#include "commands/CmdElevatorDownBottom.h"
+#include "commands/CmdElevator.h"
 #include "commands/CmdCargoClampClose.h"
 #include "commands/CmdCargoClampOpen.h"
 #include "commands/CmdCargoTilt.h"
 #include "commands/CmdCargoIntake.h"
 #include "commands/CmdCargoShoot.h"
 #include "commands/GrabHatch.h"
+#include "commands/CmdElevatorTestDown.h"
+#include "commands/CmdElevatorTestUp.h"
+#include "commands/CmdElevatorTestStop.h"
+#include "commands/CmdElevatorResetHome.h"
 
 #include "RobotMap.h"
 
@@ -52,7 +53,7 @@ class OI {
 		frc::JoystickButton* auxController_button_lbump = new frc::JoystickButton(auxController, BUTTON_L_BUMP); // Grab/Let go of Hatch panel
 		frc::JoystickButton* auxController_button_rbump = new frc::JoystickButton(auxController, BUTTON_R_BUMP); // Engage either Hatch Panel Grabber or Cargo Grabber (MUST HAVE A BIT THAT SPECIFIES WHICH IS ENGAGED FOR THE ELEVATOR)
 		frc::JoystickButton* auxController_button_select = new frc::JoystickButton(auxController, BUTTON_SELECT); // Not Used
-		frc::JoystickButton* auxController_button_start = new frc::JoystickButton(auxController, BUTTON_START); // Not Used
+		frc::JoystickButton* auxController_button_start = new frc::JoystickButton(auxController, BUTTON_START); // Reset elevator home position
 		frc::JoystickButton* auxController_button_l3 = new frc::JoystickButton(auxController, BUTTON_L3); // Not Used
 		frc::JoystickButton* auxController_button_r3 = new frc::JoystickButton(auxController, BUTTON_R3); // Not Used
 		 // LEFT TRIGGER // Push out Cargo

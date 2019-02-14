@@ -3,34 +3,33 @@
 /*         Deep Space 2019         */
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
-#include "commands/CmdElevatorUpTop.h"
+#include "commands/CmdElevatorResetHome.h"
 
 #include "Robot.h"
 
-CmdElevatorUpTop::CmdElevatorUpTop() {
-	  // Use Requires() here to declare subsystem dependencies
-	  Requires(&Robot::m_subElevator);
+CmdElevatorResetHome::CmdElevatorResetHome() {
+	// Use Requires() here to declare subsystem dependencies
+	Requires(&Robot::m_subsystem);
 }
 
 // Called just before this Command runs the first time
-void CmdElevatorUpTop::Initialize() {
-    SetTimeout(4);  // set 4 second timeout
+void CmdElevatorResetHome::Initialize() {
+  //SetTimeout(4);  // set 4 second timeout
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdElevatorUpTop::Execute() {
-    
-
+void CmdElevatorResetHome::Execute() {
+  Robot::m_subElevator.ResetHomePosition();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool CmdElevatorUpTop::IsFinished() {
-    return true || IsTimedOut(); 
-}
+bool CmdElevatorResetHome::IsFinished() {
+   return true; //|| IsTimedOut(); 
+   }
 
 // Called once after isFinished returns true
-void CmdElevatorUpTop::End() {}
+void CmdElevatorResetHome::End() {}
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void CmdElevatorUpTop::Interrupted() {}
+void CmdElevatorResetHome::Interrupted() {}

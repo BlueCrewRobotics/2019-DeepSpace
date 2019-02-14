@@ -7,9 +7,9 @@
 
 #include <frc/commands/Command.h>
 
-class CmdElevatorUpTop : public frc::Command {
+class CmdElevatorResetHome : public frc::Command {
 	public:
-		CmdElevatorUpTop();
+		CmdElevatorResetHome();
 		void Initialize() override;
 		void Execute() override;
 		bool IsFinished() override;

@@ -39,8 +39,8 @@ class SubCargoGrab : public frc::Subsystem {
 
 		frc::Solenoid* tiltPositionSolenoid = new frc::Solenoid(PCM_TOP, TOP_CARGO_TILT);
 
-		BC_VictorSPX* leftIntakeMotor = new BC_VictorSPX(CARGO_LEFT_CAN_ADDR);
-		BC_VictorSPX* rightIntakeMotor = new BC_VictorSPX(CARGO_RIGHT_CAN_ADDR);
+		VictorSPX* leftIntakeMotor = new VictorSPX(CARGO_LEFT_CAN_ADDR);
+		VictorSPX* rightIntakeMotor = new VictorSPX(CARGO_RIGHT_CAN_ADDR);
 
 		bool m_bTiltPos = 0;
 		bool m_bExtend5Pos = 0;

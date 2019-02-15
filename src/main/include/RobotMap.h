@@ -155,48 +155,48 @@ constexpr int ELEVATOR_ACCELERATION = 2000;     // Acceleration in unit s/ 1 sec
 
 constexpr bool ELEVATOR_SOFT_LIMITS_ENABLE = true;   // Disbale/Enable of soft limits
 constexpr int ELEVATOR_TOP_SOFT_LIMIT = 26000;       // Set the soft top limit
-constexpr int ELEVATOR_BOT_SOFT_LIMIT = 100;           // Set the soft bottom limit
+constexpr int ELEVATOR_BOT_SOFT_LIMIT = 0;           // Set the soft bottom limit
 
-constexpr int ELEVATOR_LEVELS = 7;                  // Number of elevator levels starting with 0
+//constexpr int ELEVATOR_LEVELS = 7;                  // Number of elevator levels starting with 0
 
-constexpr int ELEVATOR_BALL_LEVELS = 6;
-constexpr int ELEVATOR_HATCH_LEVELS = 4;
+constexpr int ELEVATOR_BALL_LEVELS = 4;
+constexpr int ELEVATOR_HATCH_LEVELS = 2;
 
 constexpr int ELEV_BALL_GRAB = 0;
 constexpr int ELEV_BALL_GRAB_POS = 0;
-constexpr int ELEV_BALL_ROCKET_BTM = 0;
+constexpr int ELEV_BALL_ROCKET_BTM = 1;
 constexpr int ELEV_BALL_ROCKET_BTM_POS = 5000;
-constexpr int ELEV_BALL_CONTAINER = 1;
+constexpr int ELEV_BALL_CONTAINER = 2;
 constexpr int ELEV_BALL_CONTAINER_POS = 10000;
-constexpr int ELEV_BALL_ROCKET_MID = 2;
+constexpr int ELEV_BALL_ROCKET_MID = 3;
 constexpr int ELEV_BALL_ROCKET_MID_POS = 15000;
-constexpr int ELEV_BALL_ROCKET_TOP = 3;
+constexpr int ELEV_BALL_ROCKET_TOP = 4;
 constexpr int ELEV_BALL_ROCKET_TOP_POS = 20000;
 
 constexpr int ELEV_HATCH_ROCKET_BTM = 0;
 constexpr int ELEV_HATCH_ROCKET_BTM_POS = 0;
-constexpr int ELEV_HATCH_ROCKET_MID = 2;
+constexpr int ELEV_HATCH_ROCKET_MID = 1;
 constexpr int ELEV_HATCH_ROCKET_MID_POS = 14000;
-constexpr int ELEV_HATCH_ROCKET_TOP = 3;
+constexpr int ELEV_HATCH_ROCKET_TOP = 2;
 constexpr int ELEV_HATCH_ROCKET_TOP_POS = 19000;
 
 
 
-constexpr int ELEVATOR_LEVEL_POS_HOME = 100;          // Elevator home position
-constexpr int ELEVATOR_LEVEL_BTM_POS_HATCH = 3000;   // Hatch deploy 1st level position
-constexpr int ELEVATOR_LEVEL_BTM_POS_BALL = 6000;    // Ball deploy 1st level position 
-constexpr int ELEVATOR_LEVEL_MID_POS_HATCH = 9000;   // Hatch deploy 2nd level position 
-constexpr int ELEVATOR_LEVEL_MID_POS_BALL = 12000;    // Ball deploy 2nd level position
-constexpr int ELEVATOR_LEVEL_TOP_POS_HATCH = 15000;   // Hatch deploy 3rd level position
-constexpr int ELEVATOR_LEVEL_TOP_POS_BALL = 18000;    // Ball deploy 3rd level position
+//constexpr int ELEVATOR_LEVEL_POS_HOME = 100;          // Elevator home position
+//constexpr int ELEVATOR_LEVEL_BTM_POS_HATCH = 3000;   // Hatch deploy 1st level position
+//constexpr int ELEVATOR_LEVEL_BTM_POS_BALL = 6000;    // Ball deploy 1st level position 
+//constexpr int ELEVATOR_LEVEL_MID_POS_HATCH = 9000;   // Hatch deploy 2nd level position 
+//constexpr int ELEVATOR_LEVEL_MID_POS_BALL = 12000;    // Ball deploy 2nd level position
+//constexpr int ELEVATOR_LEVEL_TOP_POS_HATCH = 15000;   // Hatch deploy 3rd level position
+//constexpr int ELEVATOR_LEVEL_TOP_POS_BALL = 18000;    // Ball deploy 3rd level position
 
-constexpr int ELEVATOR_HOME = 0;          // Elevator home position
-constexpr int ELEVATOR_BTM_HATCH = 1;   // Hatch deploy 1st level position
-constexpr int ELEVATOR_BTM_BALL = 2;    // Ball deploy 1st level position 
-constexpr int ELEVATOR_MID_HATCH = 3;   // Hatch deploy 2nd level position 
-constexpr int ELEVATOR_MID_BALL = 4;    // Ball deploy 2nd level position
-constexpr int ELEVATOR_TOP_HATCH = 5;   // Hatch deploy 3rd level position
-constexpr int ELEVATOR_TOP_BALL = 6;    // Ball deploy 3rd level position
+//constexpr int ELEVATOR_HOME = 0;          // Elevator home position
+//constexpr int ELEVATOR_BTM_HATCH = 1;   // Hatch deploy 1st level position
+//constexpr int ELEVATOR_BTM_BALL = 2;    // Ball deploy 1st level position 
+//constexpr int ELEVATOR_MID_HATCH = 3;   // Hatch deploy 2nd level position 
+//constexpr int ELEVATOR_MID_BALL = 4;    // Ball deploy 2nd level position
+//constexpr int ELEVATOR_TOP_HATCH = 5;   // Hatch deploy 3rd level position
+//constexpr int ELEVATOR_TOP_BALL = 6;    // Ball deploy 3rd level position
 
 
 

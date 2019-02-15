@@ -20,17 +20,17 @@ class SubElevator : public frc::Subsystem {
         void MoveElevatorToPosition(int position);  // Used for testing
         void Configure();
 		int GetPosition();
-		void SetLevelPositionTarget(int index, int position);
+		//void SetLevelPositionTarget(int index, int position);
 		void SetBallPositionTarget(int index, int position);
 		void SetHatchPositionTarget(int idex, int position);
-		void SetLevel(int level);
+		//void SetLevel(int level);
 		void SetBallLevel(int level);
 		void SetHatchLevel(int level);
 		int GetUpLimitSwitch();
 		int GetDownLimitSwitch();
 		void DriveElevator(double output);
 		void ServoToPosition(double position);
-		int GetLevel();
+		//int GetLevel();
 		int GetBallLevel();
 		int GetHatchLevel();
 		int GetPIDerror();
@@ -38,7 +38,7 @@ class SubElevator : public frc::Subsystem {
 		
 		
 
-		int a_iLevelPositions[ELEVATOR_LEVELS];
+		//int a_iLevelPositions[ELEVATOR_LEVELS];
 
 		int a_iBallLevelPos[ELEVATOR_BALL_LEVELS];		// Ball deploy locations
 		int a_iHatchLevelPos[ELEVATOR_HATCH_LEVELS];	// Hatch deploy locations

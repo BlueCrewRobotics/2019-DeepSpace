@@ -75,14 +75,21 @@ void SubElevator::Configure() {
 	elevatorDrive->SetSensorPhase(true);
     elevatorDrive->SetInverted(InvertType::InvertMotorOutput);
 
+    elevatorDrive->ConfigPeakCurrentDuration(1,0);
+    elevatorDrive->ConfigPeakCurrentLimit(20,0);
+    elevatorDrive->ConfigContinuousCurrentLimit(20,0);
+    elevatorDrive->EnableCurrentLimit(true);
+
+    elevatorDrive->ConfigClosedloopRamp(0.25,0);
+
     // This shouldn't be here.  But it is here for now, setting the level positions and index
-    SubElevator::SetLevelPositionTarget(ELEVATOR_HOME, ELEVATOR_LEVEL_POS_HOME);
-    SubElevator::SetLevelPositionTarget(ELEVATOR_BTM_HATCH, ELEVATOR_LEVEL_BTM_POS_HATCH);
-    SubElevator::SetLevelPositionTarget(ELEVATOR_BTM_BALL, ELEVATOR_LEVEL_BTM_POS_BALL);
-    SubElevator::SetLevelPositionTarget(ELEVATOR_MID_HATCH, ELEVATOR_LEVEL_MID_POS_HATCH);
-    SubElevator::SetLevelPositionTarget(ELEVATOR_MID_BALL, ELEVATOR_LEVEL_MID_POS_BALL);   
-    SubElevator::SetLevelPositionTarget(ELEVATOR_TOP_HATCH, ELEVATOR_LEVEL_TOP_POS_HATCH);
-    SubElevator::SetLevelPositionTarget(ELEVATOR_TOP_BALL, ELEVATOR_LEVEL_TOP_POS_BALL);
+    //SubElevator::SetLevelPositionTarget(ELEVATOR_HOME, ELEVATOR_LEVEL_POS_HOME);
+    //SubElevator::SetLevelPositionTarget(ELEVATOR_BTM_HATCH, ELEVATOR_LEVEL_BTM_POS_HATCH);
+    //SubElevator::SetLevelPositionTarget(ELEVATOR_BTM_BALL, ELEVATOR_LEVEL_BTM_POS_BALL);
+    //SubElevator::SetLevelPositionTarget(ELEVATOR_MID_HATCH, ELEVATOR_LEVEL_MID_POS_HATCH);
+    //SubElevator::SetLevelPositionTarget(ELEVATOR_MID_BALL, ELEVATOR_LEVEL_MID_POS_BALL);   
+    //SubElevator::SetLevelPositionTarget(ELEVATOR_TOP_HATCH, ELEVATOR_LEVEL_TOP_POS_HATCH);
+    //SubElevator::SetLevelPositionTarget(ELEVATOR_TOP_BALL, ELEVATOR_LEVEL_TOP_POS_BALL);
 
     SubElevator::SetBallPositionTarget(ELEV_BALL_GRAB, ELEV_BALL_GRAB_POS);
     SubElevator::SetBallPositionTarget(ELEV_BALL_ROCKET_BTM, ELEV_BALL_ROCKET_BTM_POS);
@@ -101,12 +108,12 @@ int SubElevator::GetPosition() {
 }
 
 // Sets the position location level and position target
-void SubElevator::SetLevelPositionTarget(int index, int position) {
-    if((0 <= index) && (index <= ELEVATOR_LEVELS)){
-        a_iLevelPositions[index] = position;
-    }
+//void SubElevator::SetLevelPositionTarget(int index, int position) {
+//    if((0 <= index) && (index <= ELEVATOR_LEVELS)){
+//        a_iLevelPositions[index] = position;
+//    }
 
-}
+//}
 
 // Sets the position location position target for ball deploy
 void SubElevator::SetBallPositionTarget(int index, int position) {
@@ -125,9 +132,9 @@ void SubElevator::SetHatchPositionTarget(int index, int position) {
 }
 
 // Sets the level of the elevator
-void SubElevator::SetLevel(int level) {  
-    m_iActiveLevel = level;
-}
+//void SubElevator::SetLevel(int level) {  
+//    m_iActiveLevel = level;
+//}
 
 // Sets the level of the ball deploy
 void SubElevator::SetBallLevel(int level) {  
@@ -140,9 +147,9 @@ void SubElevator::SetHatchLevel(int level) {
 }
 
 // Get level of elevator
-int SubElevator::GetLevel() {
-    return m_iActiveLevel;
-}
+//int SubElevator::GetLevel() {
+//    return m_iActiveLevel;
+//}
 
 // Get level of elevator
 int SubElevator::GetBallLevel() {

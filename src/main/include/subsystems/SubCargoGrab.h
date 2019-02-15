@@ -22,8 +22,10 @@ class SubCargoGrab : public frc::Subsystem {
 		void ClampSet(bool state);
 		void SetTiltPos(bool state);
 		bool GetTiltPos();
-		void Extend5(bool state);
-		void Extend7(bool state);
+		void SetExtend5(bool state);
+		bool GetExtend5();
+		void SetExtend7(bool state);
+		bool GetExtend7();
 
 
 	private:
@@ -41,4 +43,6 @@ class SubCargoGrab : public frc::Subsystem {
 		BC_VictorSPX* rightIntakeMotor = new BC_VictorSPX(CARGO_RIGHT_CAN_ADDR);
 
 		bool m_bTiltPos = 0;
+		bool m_bExtend5Pos = 0;
+		bool m_bExtend7Pos = 0;
 };

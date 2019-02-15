@@ -53,10 +53,24 @@ bool SubCargoGrab::GetTiltPos(){
   return m_bTiltPos;
 }
 
-void SubCargoGrab::Extend5(bool state){
+// Extend the 5 inch piston
+void SubCargoGrab::SetExtend5(bool state){
   cargoExtend5->Set(state);
+  m_bExtend5Pos = state;
 }
 
-void SubCargoGrab::Extend7(bool state){
+// Get the 5 inch piston location
+bool SubCargoGrab::GetExtend5(){
+  return m_bExtend5Pos;
+}
+
+// Extend the 7 inch pistion
+void SubCargoGrab::SetExtend7(bool state){
   cargoExtend7->Set(state);
+  m_bExtend7Pos = state;
+}
+
+// Get the 7 inch pistion location
+bool SubCargoGrab::GetExtend7(){
+  return m_bExtend7Pos;
 }

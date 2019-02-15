@@ -51,14 +51,14 @@ void CmdElevator::Execute() {
   if( Robot::m_oi.auxController->GetPOV(0) == 0 && Robot::m_subElevator.m_iSelection == 1){
     // Call elevator up one level command
     if(hatchBallSelection == 1){ // Ball deploy selected
-      if (ballLevel < ELEVATOR_BALL_LEVELS) {
+      if (ballLevel < ELEVATOR_BALL_LEVELS+1) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iBallLevelPos[(Robot::m_subElevator.GetBallLevel()+1)]);
         Robot::m_subElevator.SetBallLevel(Robot::m_subElevator.GetBallLevel()+1);
         Robot::m_subElevator.m_iSelection = 0;
       }
     } 
     if(hatchBallSelection == 0){ // Hatch deploy selected
-      if (hatchLevel < ELEVATOR_HATCH_LEVELS) {
+      if (hatchLevel < ELEVATOR_HATCH_LEVELS+1) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iHatchLevelPos[(Robot::m_subElevator.GetHatchLevel()+1)]);
         Robot::m_subElevator.SetHatchLevel(Robot::m_subElevator.GetHatchLevel()+1);
         Robot::m_subElevator.m_iSelection = 0;
@@ -88,14 +88,14 @@ void CmdElevator::Execute() {
   if( Robot::m_oi.auxController->GetPOV(0) == 180 && Robot::m_subElevator.m_iSelection == 1){
       // Call elevator down one level command
     if(hatchBallSelection == 1){ // Ball deploy selected
-      if (ballLevel > ELEV_BALL_GRAB) {
+      if (ballLevel > ELEV_BALL_GRAB-1) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iBallLevelPos[(Robot::m_subElevator.GetBallLevel()-1)]);
         Robot::m_subElevator.SetBallLevel(Robot::m_subElevator.GetBallLevel()-1);
         Robot::m_subElevator.m_iSelection = 0;
       }
     } 
     if(hatchBallSelection == 0){ // Hatch deploy selected
-      if (hatchLevel > ELEV_HATCH_ROCKET_BTM) {
+      if (hatchLevel > ELEV_HATCH_ROCKET_BTM-1) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iHatchLevelPos[(Robot::m_subElevator.GetHatchLevel()-1)]);
         Robot::m_subElevator.SetHatchLevel(Robot::m_subElevator.GetHatchLevel()-1);
         Robot::m_subElevator.m_iSelection = 0;

@@ -31,6 +31,6 @@ void SubHatchGrab::Extend7(bool state){
 	hatchExtend7->Set(state);
 }
 
-bool SubHatchGrab::GetPos(){
+bool SubHatchGrab::GetHatchPos(){
 	return m_bEngageState;
 }

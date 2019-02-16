@@ -19,6 +19,7 @@
 #include "commands/CmdElevatorTestStop.h"
 #include "commands/CmdElevatorResetHome.h"
 #include "commands/CmdCargoTest.h"
+#include "commands/CmdHatchExt.h"
 
 #include "RobotMap.h"
 

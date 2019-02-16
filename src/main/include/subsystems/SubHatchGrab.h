@@ -9,13 +9,14 @@
 #include <frc/WPILib.h>
 #include "RobotMap.h"
 #include "subsystems/SubPCM.h"
+#include "frc/Compressor.h"
 
 class SubHatchGrab : public frc::Subsystem {
 	public:
 		SubHatchGrab();
 		void InitDefaultCommand() override;
-        void Set(bool state);
-        bool GetPos();
+        void Set(bool state);,
+        bool GetHatchPos();
 		void Extend4(bool state);
 		void Extend7(bool state);
 		

@@ -39,6 +39,10 @@ OI::OI() {
   }
 
   auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
+  auxController_button_rbump->ToggleWhenPressed(new CmdHatchExt(2));
+  auxController_button_x->ToggleWhenPressed(new CmdHatchExt(0));
+  auxController_button_y->ToggleWhenPressed(new CmdHatchExt(1));
+
 
   auxController_button_x->ToggleWhenPressed(new CmdCargoTest());
   

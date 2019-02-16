@@ -20,7 +20,7 @@ void GrabHatch::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void GrabHatch::Execute() {
     bool state;
-    state = Robot::m_subHatchGrab.GetPos();
+    state = Robot::m_subHatchGrab.GetHatchPos();
     state = !state;
     Robot::m_subHatchGrab.Set(state);
 }

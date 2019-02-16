@@ -28,7 +28,7 @@ void CmdSwitchGear::Execute() {
 	Robot::m_subDriveTrain.leftDriveMotor->SetGear(lGear);
 	Robot::m_subDriveTrain.rightDriveMotor->SetGear(rGear);
 
-	Robot::m_subPCM.ptr_GearSoleniod->Set(lGear);
+	Robot::m_subPCM.ptr_GearSolenoid->Set(lGear);
 
 }
 

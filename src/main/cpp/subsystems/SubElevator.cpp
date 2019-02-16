@@ -76,8 +76,8 @@ void SubElevator::Configure() {
     elevatorDrive->SetInverted(InvertType::InvertMotorOutput);
 
     elevatorDrive->ConfigPeakCurrentDuration(1,0);
-    elevatorDrive->ConfigPeakCurrentLimit(20,0);
-    elevatorDrive->ConfigContinuousCurrentLimit(20,0);
+    elevatorDrive->ConfigPeakCurrentLimit(15,0);
+    elevatorDrive->ConfigContinuousCurrentLimit(15,0);
     elevatorDrive->EnableCurrentLimit(true);
 
     elevatorDrive->ConfigClosedloopRamp(0.25,0);

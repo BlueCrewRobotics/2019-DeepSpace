@@ -159,11 +159,11 @@ constexpr int ELEVATOR_BOT_SOFT_LIMIT = 0;           // Set the soft bottom limi
 
 //constexpr int ELEVATOR_LEVELS = 7;                  // Number of elevator levels starting with 0
 
-constexpr int ELEVATOR_BALL_LEVELS = 4;
-constexpr int ELEVATOR_HATCH_LEVELS = 2;
+constexpr int ELEVATOR_BALL_LEVELS = 5;
+constexpr int ELEVATOR_HATCH_LEVELS = 3;
 
 constexpr int ELEV_BALL_GRAB = 0;
-constexpr int ELEV_BALL_GRAB_POS = 0;
+constexpr int ELEV_BALL_GRAB_POS = 200;
 constexpr int ELEV_BALL_ROCKET_BTM = 1;
 constexpr int ELEV_BALL_ROCKET_BTM_POS = 5000;
 constexpr int ELEV_BALL_CONTAINER = 2;
@@ -174,11 +174,11 @@ constexpr int ELEV_BALL_ROCKET_TOP = 4;
 constexpr int ELEV_BALL_ROCKET_TOP_POS = 20000;
 
 constexpr int ELEV_HATCH_ROCKET_BTM = 0;
-constexpr int ELEV_HATCH_ROCKET_BTM_POS = 0;
+constexpr int ELEV_HATCH_ROCKET_BTM_POS = 200;
 constexpr int ELEV_HATCH_ROCKET_MID = 1;
-constexpr int ELEV_HATCH_ROCKET_MID_POS = 14000;
+constexpr int ELEV_HATCH_ROCKET_MID_POS = 5000;
 constexpr int ELEV_HATCH_ROCKET_TOP = 2;
-constexpr int ELEV_HATCH_ROCKET_TOP_POS = 19000;
+constexpr int ELEV_HATCH_ROCKET_TOP_POS = 18000;
 
 
 

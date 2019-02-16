@@ -15,10 +15,10 @@ OI::OI() {
 
 
   // Elevator testing
-  driverController_button_a->WhileActive(new CmdElevatorTestDown());
-  driverController_button_a->WhenReleased(new CmdElevatorTestStop());
-  driverController_button_y->WhileActive(new CmdElevatorTestUp());
-  driverController_button_y->WhenReleased(new CmdElevatorTestStop());
+  //driverController_button_a->WhileActive(new CmdElevatorTestDown());
+  //driverController_button_a->WhenReleased(new CmdElevatorTestStop());
+  //driverController_button_y->WhileActive(new CmdElevatorTestUp());
+  //driverController_button_y->WhenReleased(new CmdElevatorTestStop());
 
   // Reset elevator home position to zero.  Must be at the home position all the way down
   auxController_button_start->ToggleWhenPressed(new CmdElevatorResetHome());
@@ -40,6 +40,6 @@ OI::OI() {
 
   auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
 
-  auxController_button_x->ToggleWhenPressed(new CmdCargoTest());
+  //auxController_button_x->ToggleWhenPressed(new CmdCargoTest());
   
 }

@@ -71,7 +71,7 @@ class OI {
 		BC_Trigger* cargoStop;
 		BC_Trigger* cargoTiltTrigger;
 
-		
+		//bool m_bHatchCargoSelect = 0;
 		
 		// D PAD UP // Move Elevator up 1 stage
 		// D PAD RIGHT // Move Elevator up all the way

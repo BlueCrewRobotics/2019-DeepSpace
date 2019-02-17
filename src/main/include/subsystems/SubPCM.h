@@ -17,9 +17,9 @@ class SubPCM : public frc::Subsystem {
 		void InitDefaultCommand() override;
 		void Configure();
 		frc::Solenoid* ptr_GearSolenoid = new frc::Solenoid(PCM_BOTTOM, BTM_GEARSHIFT);
-		frc::Solenoid* ptr_ClampSolenoid = new frc::Solenoid(PCM_TOP, TOP_CLAMP_SOLENOID);
-		frc::Solenoid* ptr_TiltSolenoid = new frc::Solenoid(PCM_TOP, TOP_CARGO_TILT);
-		frc::Solenoid* ptr_HatchSolenoid = new frc::Solenoid(PCM_TOP, TOP_HATCH_GRABBER);
+		// frc::Solenoid* ptr_ClampSolenoid = new frc::Solenoid(PCM_TOP, TOP_CLAMP_SOLENOID);
+		// frc::Solenoid* ptr_TiltSolenoid = new frc::Solenoid(PCM_TOP, TOP_CARGO_TILT);
+		// frc::Solenoid* ptr_HatchSolenoid = new frc::Solenoid(PCM_TOP, TOP_HATCH_GRABBER);
 
 	private:
 		// It's desirable that everything possible under private except

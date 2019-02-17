@@ -34,7 +34,7 @@ void CmdCargoExtend::Execute() {
     Robot::m_subCargoGrab.SetExtend7(false);
   } else if( m_iPosition == 3){
     Robot::m_subCargoGrab.SetExtend5(true);
-    Robot::m_subCargoGrab.SetExtend7(false);
+    Robot::m_subCargoGrab.SetExtend7(true);
   }
 }
 

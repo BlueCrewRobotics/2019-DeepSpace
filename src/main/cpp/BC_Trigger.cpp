@@ -6,7 +6,7 @@
 #include "BC_Trigger.h"
 
 
-BC_Trigger::BC_Trigger(){
+BC_Trigger::BC_Trigger() {
 
 }
 

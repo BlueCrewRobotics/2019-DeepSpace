@@ -17,18 +17,18 @@ OI::OI() {
   //driverController_button_a->WhenReleased(new CmdElevatorTestStop());
   //driverController_button_y->WhileActive(new CmdElevatorTestUp());
   //driverController_button_y->WhenReleased(new CmdElevatorTestStop());
+  // Maybe make a hold position on test if needed 
 
   // Reset elevator home position to zero.  Must be at the home position all the way down
   auxController_button_start->ToggleWhenPressed(new CmdElevatorResetHome());
   
-  auxController_button_b->WhileActive(new CmdCargoClampOpen());
+  auxController_button_b->WhenPressed(new CmdCargoClampOpen());
   auxController_button_b->WhenReleased(new CmdCargoClampClose());
 
 //auxController_button_a->ToggleWhenPressed(new CmdCargoTilt());
 
 // Cargo intake, shoot and stop
-
-  if( auxController->GetRawAxis(AXIS_R_TRIG) > 0.1){
+/*  if( auxController->GetRawAxis(AXIS_R_TRIG) > 0.1){
       // Call Cargo Intake CommandCmdCargoIntake
       cargoIntakeTrigger->Set(true);
   } else {
@@ -49,17 +49,34 @@ OI::OI() {
   cargoIntakeTrigger->WhileActive(new CmdCargoIntake());
   cargoShootTrigger->WhileActive(new CmdCargoShoot());
 
+  cargoTiltTrigger->WhileActive(new CmdCargoTilt());
+*/  
+
   //auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
-  auxController_button_lbump->WhileActive(new CmdHatchRelease());
+  // Hatch grab and release
+  auxController_button_lbump->WhenPressed(new CmdHatchRelease());
   auxController_button_lbump->WhenReleased(new CmdHatchGrab());
-
   
-  auxController_button_rbump->ToggleWhenPressed(new CmdHatchExt(2));
 
+  // Hatch extend to deploy position while button is held return when released
+  auxController_button_rbump->WhenPressed(new CmdHatchExt(2));
+  auxController_button_rbump->WhenReleased(new CmdHatchExt(1));
+
+  // Hatch return to home position
   auxController_button_x->ToggleWhenPressed(new CmdHatchExt(0));
+  
+  // Hatch extend to mid position
   auxController_button_y->ToggleWhenPressed(new CmdHatchExt(1));
+  
+
+  // Cargo extend to out position
+  auxController_button_y->ToggleWhenPressed(new CmdCargoExtend(3));
+ 
+
+  auxController_button_a->WhenPressed(new CmdCargoExtend(3));
+  auxController_button_a->WhenReleased(new CmdCargoExtend(0));
 
 
-  //auxController_button_x->ToggleWhenPressed(new CmdCargoStop());
+
   
 }

@@ -42,11 +42,11 @@ void SubCargoGrab::Stop(){
 }
 
 void SubCargoGrab::ClampSet(bool state){
-  Robot::m_subPCM.ptr_ClampSolenoid->Set(state);
+  clampSolenoid->Set(state);
 }
 
 void SubCargoGrab::SetTiltPos(bool state){
-  Robot::m_subPCM.ptr_TiltSolenoid->Set(state);
+  tiltPositionSolenoid->Set(state);
   m_bTiltPos = state;
 }
 

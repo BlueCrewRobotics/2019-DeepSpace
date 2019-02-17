@@ -7,10 +7,8 @@
 #include <frc/WPILib.h>
 
 class BC_Trigger : public virtual frc::Trigger {
-
 	public: 
 		BC_Trigger();
-
 		// Overides for the Trigger class
 		bool Get();
         void Set(bool trigger);

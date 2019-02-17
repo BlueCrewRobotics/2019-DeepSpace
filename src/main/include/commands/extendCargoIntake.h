@@ -6,8 +6,7 @@
 #pragma once
 #include <frc/commands/CommandGroup.h>
 #include "commands/CmdCargoTilt.h"
-#include "commands/CmdCargoExtend5.h"
-#include "commands/CmdCargoExtend7.h"
+#include "commands/CmdCargoExtend.h"
 
 class extendCargoIntake: public frc::CommandGroup {
 	public:

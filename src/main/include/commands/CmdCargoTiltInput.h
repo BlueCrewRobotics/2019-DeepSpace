@@ -7,12 +7,14 @@
 
 #include <frc/commands/Command.h>
 
-class CmdCargoExtend5 : public frc::Command {
+class CmdCargoTiltInput : public frc::Command {
 	public:
-		CmdCargoExtend5();
+		CmdCargoTiltInput(bool position);
 		void Initialize() override;
 		void Execute() override;
 		bool IsFinished() override;
 		void End() override;
 		void Interrupted() override;
+	private:
+		bool m_bPosition;
 };

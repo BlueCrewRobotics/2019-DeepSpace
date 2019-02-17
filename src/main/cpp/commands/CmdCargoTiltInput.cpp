@@ -3,37 +3,39 @@
 /*         Deep Space 2019         */
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
-#include "commands/CmdCargoExtend7.h"
+#include "commands/CmdCargoTiltInput.h"
 
 #include "Robot.h"
 
-CmdCargoExtend7::CmdCargoExtend7() {
+CmdCargoTiltInput::CmdCargoTiltInput(bool position) {
 	// Use Requires() here to declare subsystem dependencies
+  this->m_bPosition = position;
 	Requires(&Robot::m_subCargoGrab);
 }
 
 // Called just before this Command runs the first time
-void CmdCargoExtend7::Initialize() {
+void CmdCargoTiltInput::Initialize() {
   // SetTimeout(4);  // set 4 second timeout
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdCargoExtend7::Execute() {
-    bool state;
-    state = Robot::m_subCargoGrab.GetExtend7();
-    state = !state;
-    Robot::m_subCargoGrab.SetExtend7(state);
+void CmdCargoTiltInput::Execute() {
+    if( m_bPosition == 0){
+    Robot::m_subCargoGrab.SetTiltPos(false);
+  } else if( m_bPosition == 1){
+    Robot::m_subCargoGrab.SetTiltPos(true);
+  }
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool CmdCargoExtend7::IsFinished() {
+bool CmdCargoTiltInput::IsFinished() {
    // return true || IsTimedOut(); 
    return true;
    }
 
 // Called once after isFinished returns true
-void CmdCargoExtend7::End() {}
+void CmdCargoTiltInput::End() {}
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void CmdCargoExtend7::Interrupted() {}
+void CmdCargoTiltInput::Interrupted() {}

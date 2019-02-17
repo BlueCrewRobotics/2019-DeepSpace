@@ -20,6 +20,8 @@
 #include "commands/CmdElevatorResetHome.h"
 #include "commands/CmdCargoTest.h"
 #include "commands/CmdHatchExt.h"
+#include "commands/CmdCargoExtend.h"
+#include "commands/CmdCargoTiltInput.h"
 
 #include "RobotMap.h"
 

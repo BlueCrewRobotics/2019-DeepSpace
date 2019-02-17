@@ -7,12 +7,14 @@
 
 #include <frc/commands/Command.h>
 
-class CmdCargoExtend7 : public frc::Command {
+class CmdCargoExtend : public frc::Command {
 	public:
-		CmdCargoExtend7();
+		CmdCargoExtend(int position);
 		void Initialize() override;
 		void Execute() override;
 		bool IsFinished() override;
 		void End() override;
 		void Interrupted() override;
+	private:
+		int m_iPosition;
 };

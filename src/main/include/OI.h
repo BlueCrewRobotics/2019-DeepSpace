@@ -18,8 +18,11 @@
 #include "commands/CmdElevatorTestUp.h"
 #include "commands/CmdElevatorTestStop.h"
 #include "commands/CmdElevatorResetHome.h"
-#include "commands/CmdCargoTest.h"
+#include "commands/CmdCargoStop.h"
 #include "commands/CmdHatchExt.h"
+#include "commands/CmdHatchGrab.h"
+#include "commands/CmdHatchRelease.h"
+#include "BC_Trigger.h"
 
 #include "RobotMap.h"
 
@@ -61,6 +64,12 @@ class OI {
 		 // LEFT TRIGGER // Push out Cargo
 		 // RIGHT TRIGGER // Pull in Cargo
 		
+	 
+		BC_Trigger* cargoIntakeTrigger;
+		BC_Trigger* cargoShootTrigger;
+		BC_Trigger* cargoStop;
+		BC_Trigger* cargoTiltTrigger;
+
 		
 		
 		// D PAD UP // Move Elevator up 1 stage

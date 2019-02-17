@@ -7,9 +7,9 @@
 
 #include <frc/commands/Command.h>
 
-class CmdCargoTest : public frc::Command {
+class CmdHatchGrab : public frc::Command {
 	public:
-		CmdCargoTest();
+		CmdHatchGrab();
 		void Initialize() override;
 		void Execute() override;
 		bool IsFinished() override;

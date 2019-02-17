@@ -24,12 +24,12 @@ void CmdElevator::Execute() {
   int ballLevel = Robot::m_subElevator.GetBallLevel();
   int hatchLevel = Robot::m_subElevator.GetHatchLevel();
 
-  bool hatchBallSelection = 1;
+  bool hatchBallSelection = 0;
 
   if(Robot::m_oi.auxController->GetPOV(0) == -1 ){
       Robot::m_subElevator.m_iSelection = 1;
   }
-
+/*
 // If right is pressed
   if( Robot::m_oi.auxController->GetPOV(0) == 90 && Robot::m_subElevator.m_iSelection == 1){
       // Call elevator up to top hatch or ball deploy 
@@ -46,7 +46,7 @@ void CmdElevator::Execute() {
       }
        
   }
-
+*/
 // If up is pressed
   if( Robot::m_oi.auxController->GetPOV(0) == 0 && Robot::m_subElevator.m_iSelection == 1){
     // Call elevator up one level command
@@ -55,6 +55,12 @@ void CmdElevator::Execute() {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iBallLevelPos[(Robot::m_subElevator.GetBallLevel()+1)]);
         Robot::m_subElevator.SetBallLevel(Robot::m_subElevator.GetBallLevel()+1);
         Robot::m_subElevator.m_iSelection = 0;
+        if(ballLevel == (ELEVATOR_BALL_LEVELS-1)){
+          Robot::m_oi.cargoTiltTrigger->Set(true);
+        }
+        else {
+          Robot::m_oi.cargoTiltTrigger->Set(false);
+        }
       }
     } 
     if(hatchBallSelection == 0){ // Hatch deploy selected
@@ -67,7 +73,7 @@ void CmdElevator::Execute() {
     }
 
   }
-
+/*
 // If left is pressed
   if( Robot::m_oi.auxController->GetPOV(0) == 270 && Robot::m_subElevator.m_iSelection == 1){
       // Call elevator down bottom command
@@ -87,7 +93,7 @@ void CmdElevator::Execute() {
     }
 
   }
-
+*/
 //if down is pressed
   if( Robot::m_oi.auxController->GetPOV(0) == 180 && Robot::m_subElevator.m_iSelection == 1){
       // Call elevator down one level command

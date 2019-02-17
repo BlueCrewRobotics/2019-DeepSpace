@@ -97,8 +97,8 @@ void SubDriveTrain::Configure() {
 
 
 	// Set the Talon ramp rate in seconds from neutral to full
-	leftDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(RAMP_TIME,0);
-	rightDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(RAMP_TIME,0);
+	leftDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(DRIVE_RAMP_TIME,0);
+	rightDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(DRIVE_RAMP_TIME,0);
 }
 
 // Drive

@@ -24,7 +24,7 @@ void SubElevator::ResetHomePosition() {
 }
 
 // Used for testing elevator movements
-void SubElevator::MoveElevatorToPosition(int position) {
+/*void SubElevator::MoveElevatorToPosition(int position) {
     // Raise elevator to requested position
     int currentPosition;
     int moveDirection;
@@ -42,6 +42,7 @@ void SubElevator::MoveElevatorToPosition(int position) {
     }
 
 }
+*/
 
 // Servo to the requested position
 void SubElevator::ServoToPosition(double position) {

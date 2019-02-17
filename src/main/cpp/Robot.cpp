@@ -25,12 +25,12 @@ void Robot::RobotInit() {
 	m_chooser.AddOption("My Auto", &m_myAuto);
 	frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 
-  // m_cameraServer.GetInstance();
-  // m_cameraServer.StartAutomaticCapture(cs::VideoSource::kUsb);
+	frc::Command* cmdCargoIntake = new CmdCargoIntake();
+	frc::Command* cmdCargoShoot = new CmdCargoShoot();
 
-  m_subDriveTrain.Configure();
-  m_subPCM.Configure();
-  m_subElevator.Configure();
+  	m_subDriveTrain.Configure();
+  	m_subPCM.Configure();
+  	m_subElevator.Configure();
 
 }
 

@@ -70,8 +70,8 @@ constexpr int PEAK_CURRENT_LIMIT = 150;
 // Peak current duration for Talons in ms 
 constexpr int DURATION_CURRENT_LIMIT = 30;
 
-// Ramp Times for level of elevator heights and high and low gear
-constexpr int RAMP_TIME = 0.2;
+// Ramp Times for drive starting and stopping
+constexpr double DRIVE_RAMP_TIME = 0.2;
 
 
 // Maximum velocity in units/100ms
@@ -176,9 +176,9 @@ constexpr int ELEV_BALL_ROCKET_TOP_POS = 20000;
 constexpr int ELEV_HATCH_ROCKET_BTM = 0;
 constexpr int ELEV_HATCH_ROCKET_BTM_POS = 200;
 constexpr int ELEV_HATCH_ROCKET_MID = 1;
-constexpr int ELEV_HATCH_ROCKET_MID_POS = 5000;
+constexpr int ELEV_HATCH_ROCKET_MID_POS = 10500;
 constexpr int ELEV_HATCH_ROCKET_TOP = 2;
-constexpr int ELEV_HATCH_ROCKET_TOP_POS = 18000;
+constexpr int ELEV_HATCH_ROCKET_TOP_POS = 21500;
 
 
 

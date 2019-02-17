@@ -28,22 +28,45 @@ OI::OI() {
   auxController_button_b->WhileActive(new CmdCargoClampOpen());
   auxController_button_b->WhenReleased(new CmdCargoClampClose());
 
-  auxController_button_a->ToggleWhenPressed(new CmdCargoTilt());
+//auxController_button_a->ToggleWhenPressed(new CmdCargoTilt());
+
+// Cargo intake, shoot and stop
 
   if( auxController->GetRawAxis(AXIS_R_TRIG) > 0.1){
       // Call Cargo Intake CommandCmdCargoIntake
-      new CmdCargoIntake();
-  } else if( auxController->GetRawAxis(AXIS_L_TRIG) > 0.1){
-      // Call Cargo Shoot Command
-      new CmdCargoShoot();
+      cargoIntakeTrigger->Set(true);
+  } else {
+      cargoIntakeTrigger->Set(false);
   }
 
-  auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
+  if( auxController->GetRawAxis(AXIS_L_TRIG) > 0.1){
+      // Call Cargo Shoot Command
+      cargoShootTrigger->Set(true);
+  } else {
+      cargoShootTrigger->Set(false);
+  }
+  
+  if( cargoIntakeTrigger->Get() == false && cargoShootTrigger->Get() == false){
+      cargoStop->WhenInactive(new CmdCargoStop());
+  } 
+
+  cargoIntakeTrigger->WhileActive(new CmdCargoIntake());
+  cargoShootTrigger->WhileActive(new CmdCargoShoot());
+
+  //auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
+  auxController_button_lbump->WhileActive(new CmdHatchRelease());
+  auxController_button_lbump->WhenReleased(new CmdHatchGrab());
+
+  
   auxController_button_rbump->ToggleWhenPressed(new CmdHatchExt(2));
+  
+
+
+
   auxController_button_x->ToggleWhenPressed(new CmdHatchExt(0));
   auxController_button_y->ToggleWhenPressed(new CmdHatchExt(1));
 
 
-  //auxController_button_x->ToggleWhenPressed(new CmdCargoTest());
+  //auxController_button_x->ToggleWhenPressed(new CmdCargoStop());
   
 }

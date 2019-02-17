@@ -9,7 +9,7 @@
 
 CmdCargoIntake::CmdCargoIntake() {
 	// Use Requires() here to declare subsystem dependencies
-	Requires(&Robot::m_subsystem);
+	Requires(&Robot::m_subCargoGrab);
 }
 
 // Called just before this Command runs the first time
@@ -19,6 +19,7 @@ void CmdCargoIntake::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void CmdCargoIntake::Execute() {
+
   Robot::m_subCargoGrab.Intake(0.5, 0.5);
 }
 

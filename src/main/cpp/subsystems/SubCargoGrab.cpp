@@ -14,7 +14,8 @@ SubCargoGrab::SubCargoGrab() : frc::Subsystem("SubCargoGrab") {}
 
 void SubCargoGrab::InitDefaultCommand() {
   // Set the default command for a subsystem here.
-  // SetDefaultCommand(new MySpecialCommand());
+  //SetDefaultCommand(new CmdCargoIntake());
+  //SetDefaultCommand(new CmdCargoShoot());
 }
 
 // Put methods for controlling this subsystem
@@ -30,7 +31,7 @@ void SubCargoGrab::Intake(double leftspeed, double rightspeed){
 
 void SubCargoGrab::Shoot(double leftspeed, double rightspeed){
   // This might need to be changed on the final robot
-  leftspeed = leftspeed * -1;
+  rightspeed = rightspeed * -1;
 	leftIntakeMotor->Set(ControlMode::PercentOutput, leftspeed);
   rightIntakeMotor->Set(ControlMode::PercentOutput, rightspeed);
 }

@@ -23,6 +23,7 @@
 #include "commands/CmdHatchGrab.h"
 #include "commands/CmdHatchRelease.h"
 #include "BC_Trigger.h"
+#include "commands/CmdCargoExtend.h"
 
 #include "RobotMap.h"
 

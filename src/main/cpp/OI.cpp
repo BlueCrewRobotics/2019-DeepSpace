@@ -12,8 +12,6 @@ OI::OI() {
   // Call switch gear command
   driverController_button_rbump->ToggleWhenPressed(new CmdSwitchGear());
 
-
-
   // Elevator testing
   //driverController_button_a->WhileActive(new CmdElevatorTestDown());
   //driverController_button_a->WhenReleased(new CmdElevatorTestStop());
@@ -22,8 +20,6 @@ OI::OI() {
 
   // Reset elevator home position to zero.  Must be at the home position all the way down
   auxController_button_start->ToggleWhenPressed(new CmdElevatorResetHome());
-
-  
   
   auxController_button_b->WhileActive(new CmdCargoClampOpen());
   auxController_button_b->WhenReleased(new CmdCargoClampClose());
@@ -56,7 +52,7 @@ OI::OI() {
   //auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
   auxController_button_lbump->WhileActive(new CmdHatchRelease());
   auxController_button_lbump->WhenReleased(new CmdHatchGrab());
-  
+
   
   auxController_button_rbump->ToggleWhenPressed(new CmdHatchExt(2));
 

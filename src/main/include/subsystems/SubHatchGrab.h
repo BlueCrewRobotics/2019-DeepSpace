@@ -19,6 +19,7 @@ class SubHatchGrab : public frc::Subsystem {
         bool GetHatchPos();
 		void Extend4(bool state);
 		void Extend7(bool state);
+		bool hatchIsOn();
 		
 	private:
 		// It's desirable that everything possible under private except
@@ -28,6 +29,8 @@ class SubHatchGrab : public frc::Subsystem {
 
 		frc::Solenoid* hatchExtend4 = new frc::Solenoid(PCM_TOP,TOP_HATCH_EXT_4);
 		frc::Solenoid* hatchExtend7 = new frc::Solenoid(PCM_TOP,TOP_HATCH_EXT_7);
+
+		frc::DigitalInput * hatchDetectHallEffect = new frc::DigitalInput(HATCH_HALL_EFFECT);
 		
 		bool m_bEngageState = 0;
 

@@ -34,6 +34,8 @@ OI::OI() {
     // Cargo tilt
     cargoTilt->WhenPressed(new CmdCargoTilt(true));
     cargoTilt->WhenReleased(new CmdCargoTilt(false));
+
+	detectHatch->WhenPressed(new CmdHatchRelease());
   
 
 
@@ -80,6 +82,11 @@ void OI::PollController() {
        //std::cout << "L_trig = 0" << std::endl;
   }
 
+  if(Robot::m_subHatchGrab.hatchIsOn()){
+	  detectHatch->SetPressed(true);
+  }else{
+	  detectHatch->SetPressed(false);
+  }
 
       // Add more if statements
 }
@@ -108,3 +115,5 @@ void OI::SwitchControl(){
     auxController_button_lbump->WhenReleased(new CmdHatchGrab());  
   }
 }
+
+

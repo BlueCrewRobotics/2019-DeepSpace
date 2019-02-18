@@ -6,6 +6,7 @@
 #include "commands/CmdElevator.h"
 
 #include "Robot.h"
+#include <iostream>
 
 CmdElevator::CmdElevator() {
 	// Use Requires() here to declare subsystem dependencies
@@ -51,16 +52,19 @@ void CmdElevator::Execute() {
   if( Robot::m_oi.auxController->GetPOV(0) == 0 && Robot::m_subElevator.m_iSelection == 1){
     // Call elevator up one level command
     if(hatchBallSelection == 1){ // Ball deploy selected
-      if (ballLevel < ELEVATOR_BALL_LEVELS) {
+      if (ballLevel < ELEVATOR_BALL_LEVELS-1) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iBallLevelPos[(ballLevel+1)]);
         Robot::m_subElevator.SetBallLevel(ballLevel+1);
         Robot::m_subElevator.m_iSelection = 0;
+        std::cout << Robot::m_subElevator.GetBallLevel() << std::endl;
         // Automation tilt the cargo holder for shooting
-        if(ballLevel == (ELEVATOR_BALL_LEVELS-1)){
+        if(Robot::m_subElevator.GetBallLevel() == (ELEVATOR_BALL_LEVELS-1)){
           Robot::m_oi.cargoTilt->SetPressed(true);
+          //std::cout << "Elev Tilt up " << Robot::m_oi.cargoTilt->Get() << std::endl;
         }
         else {
           Robot::m_oi.cargoTilt->SetPressed(false);
+          //std::cout << "Elev Tilt down " << Robot::m_oi.cargoTilt->Get() << std::endl;
         }
         // Set the ramp level when higher than first level
         if (ballLevel > 1){
@@ -72,7 +76,7 @@ void CmdElevator::Execute() {
       }
     } 
     if(hatchBallSelection == 0){ // Hatch deploy selected
-      if (hatchLevel < ELEVATOR_HATCH_LEVELS) {
+      if (hatchLevel < ELEVATOR_HATCH_LEVELS-1) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iHatchLevelPos[(hatchLevel+1)]);
         Robot::m_subElevator.SetHatchLevel(hatchLevel+1);
         Robot::m_subElevator.m_iSelection = 0;
@@ -113,12 +117,12 @@ void CmdElevator::Execute() {
   if( Robot::m_oi.auxController->GetPOV(0) == 180 && Robot::m_subElevator.m_iSelection == 1){
       // Call elevator down one level command
     if(hatchBallSelection == 1){ // Ball deploy selected
-      if (ballLevel > (ELEV_BALL_GRAB-1)) {
+      if (ballLevel > (ELEV_BALL_GRAB)) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iBallLevelPos[(ballLevel-1)]);
         Robot::m_subElevator.SetBallLevel(ballLevel-1);
         Robot::m_subElevator.m_iSelection = 0;
       }
-      if(ballLevel < (ELEVATOR_BALL_LEVELS-1)){
+      if(Robot::m_subElevator.GetBallLevel() < (ELEVATOR_BALL_LEVELS-1)){
         Robot::m_oi.cargoTilt->SetPressed(false);
       }
     } 

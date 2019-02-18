@@ -4,9 +4,13 @@
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
 #include "OI.h"
+#include "Robot.h"
+#include <iostream>
+
 
 
 OI::OI() {
+
   // Process operator interface input here.
   
   // Call switch gear command
@@ -19,11 +23,7 @@ OI::OI() {
   //driverController_button_y->WhenReleased(new CmdElevatorTestStop());
   // Maybe make a hold position on test if needed 
 
-  // Reset elevator home position to zero.  Must be at the home position all the way down
-  auxController_button_start->ToggleWhenPressed(new CmdElevatorResetHome());
   
-  auxController_button_b->WhenPressed(new CmdCargoClampOpen());
-  auxController_button_b->WhenReleased(new CmdCargoClampClose());
 
 //auxController_button_a->ToggleWhenPressed(new CmdCargoTilt());
 
@@ -53,30 +53,68 @@ OI::OI() {
 */  
 
   //auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
-  // Hatch grab and release
-  auxController_button_lbump->WhenPressed(new CmdHatchRelease());
-  auxController_button_lbump->WhenReleased(new CmdHatchGrab());
   
+  // Reset elevator home position to zero.  Must be at the home position all the way down
+  auxController_button_start->ToggleWhenPressed(new CmdElevatorResetHome());
 
-  // Hatch extend to deploy position while button is held return when released
-  auxController_button_rbump->WhenPressed(new CmdHatchExt(2));
-  auxController_button_rbump->WhenReleased(new CmdHatchExt(1));
 
   // Hatch return to home position
-  auxController_button_x->ToggleWhenPressed(new CmdHatchExt(0));
+  auxController_button_x->ToggleWhenPressed(new CmdHatchCargoNeutral());
   
   // Hatch extend to mid position
-  auxController_button_y->ToggleWhenPressed(new CmdHatchExt(1));
+  auxController_button_y->ToggleWhenPressed(new CmdHatchCargoSwitch());
   
-
   // Cargo extend to out position
-  auxController_button_y->ToggleWhenPressed(new CmdCargoExtend(3));
- 
+  // auxController_button_y->ToggleWhenPressed(new CmdCargoExtend(3));
 
-  auxController_button_a->WhenPressed(new CmdCargoExtend(3));
-  auxController_button_a->WhenReleased(new CmdCargoExtend(0));
+  /*
+  if( Robot::m_subCargoGrab.m_bHatchCargoCurrent == 0){
+    
+    // Extend Cargo
+    auxController_button_rbump->WhenPressed(new CmdCargoExtend(3));
+    auxController_button_rbump->WhenReleased(new CmdCargoExtend(1));
 
+    // Opens and Closes Cargo Clamp
+    auxController_button_lbump->WhenPressed(new CmdCargoClampOpen());
+    auxController_button_lbump->WhenReleased(new CmdCargoClampClose());
 
+  }
 
+  if( Robot::m_oi.m_bHatchCargoCurrent == 1){
+    
+    // Hatch extend to deploy position while button is held return when released
+    auxController_button_rbump->WhenPressed(new CmdHatchExt(2));
+    auxController_button_rbump->WhenReleased(new CmdHatchExt(1));   
+
+    // Hatch grab and release
+    auxController_button_lbump->WhenPressed(new CmdHatchRelease());
+    auxController_button_lbump->WhenReleased(new CmdHatchGrab());  
+  }
+*/
   
+}
+
+void OI::SwitchControl(){
+  if( Robot::m_subCargoGrab.m_bHatchCargoCurrent == 0){
+    
+    // Extend Cargo
+    auxController_button_rbump->WhenPressed(new CmdCargoExtend(3));
+    auxController_button_rbump->WhenReleased(new CmdCargoExtend(1));
+
+    // Opens and Closes Cargo Clamp
+    auxController_button_lbump->WhenPressed(new CmdCargoClampOpen());
+    auxController_button_lbump->WhenReleased(new CmdCargoClampClose());
+
+  }
+
+  if( Robot::m_oi.m_bHatchCargoCurrent == 1){
+    
+    // Hatch extend to deploy position while button is held return when released
+    auxController_button_rbump->WhenPressed(new CmdHatchExt(2));
+    auxController_button_rbump->WhenReleased(new CmdHatchExt(1));   
+
+    // Hatch grab and release
+    auxController_button_lbump->WhenPressed(new CmdHatchRelease());
+    auxController_button_lbump->WhenReleased(new CmdHatchGrab());  
+  }
 }

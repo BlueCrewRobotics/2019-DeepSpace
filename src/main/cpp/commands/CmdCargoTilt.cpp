@@ -7,7 +7,8 @@
 
 #include "Robot.h"
 
-CmdCargoTilt::CmdCargoTilt() {
+CmdCargoTilt::CmdCargoTilt(bool state) {
+  this->m_bState = state;
 	// Use Requires() here to declare subsystem dependencies
 	Requires(&Robot::m_subCargoGrab);
 }
@@ -19,11 +20,11 @@ void CmdCargoTilt::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void CmdCargoTilt::Execute() {
-    bool state;
-    state = Robot::m_oi.cargoTiltTrigger->Get();
+    //bool state;
+    //state = Robot::m_oi.cargoTiltTrigger->Get();
     //state = Robot::m_subCargoGrab.GetTiltPos();
     //state = !state;
-    Robot::m_subCargoGrab.SetTiltPos(state);
+    Robot::m_subCargoGrab.SetTiltPos(m_bState);
 }
 
 // Make this return true when this Command no longer needs to run execute()

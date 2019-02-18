@@ -7,8 +7,6 @@
 #include "Robot.h"
 #include <iostream>
 
-
-
 OI::OI() {
 
   // Process operator interface input here.
@@ -23,75 +21,67 @@ OI::OI() {
   //driverController_button_y->WhenReleased(new CmdElevatorTestStop());
   // Maybe make a hold position on test if needed 
 
+
+    //auxController_button_a->ToggleWhenPressed(new CmdCargoTilt());
+
   
 
-//auxController_button_a->ToggleWhenPressed(new CmdCargoTilt());
+    // Cargo intake shoot and stop
+    cargoIntake->WhenActive(new CmdCargoIntake());
+    cargoShoot->WhenActive(new CmdCargoShoot());
+    cargoStop->WhenPressed( new CmdCargoStop());
 
-// Cargo intake, shoot and stop
-/*  if( auxController->GetRawAxis(AXIS_R_TRIG) > 0.1){
-      // Call Cargo Intake CommandCmdCargoIntake
-      cargoIntakeTrigger->Set(true);
-  } else {
-      cargoIntakeTrigger->Set(false);
-  }
-
-  if( auxController->GetRawAxis(AXIS_L_TRIG) > 0.1){
-      // Call Cargo Shoot Command
-      cargoShootTrigger->Set(true);
-  } else {
-      cargoShootTrigger->Set(false);
-  }
+    // Cargo tilt
+    cargoTilt->WhenPressed(new CmdCargoTilt(true));
+    cargoTilt->WhenReleased(new CmdCargoTilt(false));
   
-  if( cargoIntakeTrigger->Get() == false && cargoShootTrigger->Get() == false){
-      cargoStop->WhenInactive(new CmdCargoStop());
-  } 
 
-  cargoIntakeTrigger->WhileActive(new CmdCargoIntake());
-  cargoShootTrigger->WhileActive(new CmdCargoShoot());
 
-  cargoTiltTrigger->WhileActive(new CmdCargoTilt());
-*/  
-
-  //auxController_button_lbump->ToggleWhenPressed(new GrabHatch());
-  
   // Reset elevator home position to zero.  Must be at the home position all the way down
   auxController_button_start->ToggleWhenPressed(new CmdElevatorResetHome());
-
-
-  // Hatch return to home position
+   
+  
+  // Returns Cargo and Hatch to Neutral Position
   auxController_button_x->ToggleWhenPressed(new CmdHatchCargoNeutral());
   
-  // Hatch extend to mid position
+  // Switches between Cargo and Hatch systems
   auxController_button_y->ToggleWhenPressed(new CmdHatchCargoSwitch());
   
-  // Cargo extend to out position
-  // auxController_button_y->ToggleWhenPressed(new CmdCargoExtend(3));
+}
 
-  /*
-  if( Robot::m_subCargoGrab.m_bHatchCargoCurrent == 0){
-    
-    // Extend Cargo
-    auxController_button_rbump->WhenPressed(new CmdCargoExtend(3));
-    auxController_button_rbump->WhenReleased(new CmdCargoExtend(1));
-
-    // Opens and Closes Cargo Clamp
-    auxController_button_lbump->WhenPressed(new CmdCargoClampOpen());
-    auxController_button_lbump->WhenReleased(new CmdCargoClampClose());
-
+// Checks controller triggers and presses internal button based on value 
+void OI::PollController() {
+  // Cargo intake, shoot and stop
+  if(auxController->GetRawAxis(AXIS_R_TRIG) < 0.1 && auxController->GetRawAxis(AXIS_L_TRIG) < 0.1){
+      cargoStop->SetPressed(true);
+  } 
+  else {
+      cargoStop->SetPressed(false);
+  }
+  if( auxController->GetRawAxis(AXIS_R_TRIG) > 0.1 ){
+       //std::cout << "R_trig = 1" << std::endl;
+       cargoShoot->SetPressed(false);
+       cargoIntake->SetPressed(true);
+  } 
+  else {
+       cargoIntake->SetPressed(false);
+       //std::cout << "R_trig = 0" << std::endl;
   }
 
-  if( Robot::m_oi.m_bHatchCargoCurrent == 1){
-    
-    // Hatch extend to deploy position while button is held return when released
-    auxController_button_rbump->WhenPressed(new CmdHatchExt(2));
-    auxController_button_rbump->WhenReleased(new CmdHatchExt(1));   
 
-    // Hatch grab and release
-    auxController_button_lbump->WhenPressed(new CmdHatchRelease());
-    auxController_button_lbump->WhenReleased(new CmdHatchGrab());  
+  if( auxController->GetRawAxis(AXIS_L_TRIG) > 0.1){
+       // Call Cargo Shoot Command
+       cargoIntake->SetPressed(false);
+       cargoShoot->SetPressed(true);
+       //std::cout << "L_trig = 1" << std::endl;
+  } 
+  else {
+       cargoShoot->SetPressed(false);
+       //std::cout << "L_trig = 0" << std::endl;
   }
-*/
-  
+
+
+      // Add more if statements
 }
 
 void OI::SwitchControl(){

@@ -101,6 +101,11 @@ void SubDriveTrain::Configure() {
 	rightDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(DRIVE_RAMP_TIME,0);
 }
 
+// Set the ramp rate on the drive
+void SubDriveTrain::SetRamp(double ramp) {
+	leftDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(ramp,0);
+	rightDriveMotor->ptr_talonSRX->ConfigClosedloopRamp(ramp,0);
+}
 // Drive
 void SubDriveTrain::Drive(double speed, double rotation) {
 	// Drive 

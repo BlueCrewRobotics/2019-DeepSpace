@@ -149,15 +149,17 @@ constexpr double ELEVATOR_KP_0 = 0.485;  // (0.50 X 1023) / 1024
 constexpr double ELEVATOR_KI_0 = 0;
 constexpr double ELEVATOR_KD_0 = 0;
 
+// Elevator closed loop ramp
+constexpr double ELEVATOR_RAMP = 0.25;
+
+// Elevator position declaration
 constexpr int ELEVATOR_RESET_HOME_POS = 0;   // Used to set the elevator home position 
 constexpr int ELEVATOR_CRUISE_VELOCITY = 2000;  // Velocity for motion control units / 100ms
 constexpr int ELEVATOR_ACCELERATION = 2000;     // Acceleration in unit s/ 1 second
 
-constexpr bool ELEVATOR_SOFT_LIMITS_ENABLE = true;   // Disbale/Enable of soft limits
+constexpr bool ELEVATOR_SOFT_LIMITS_ENABLE = true;   // Disable/Enable of soft limits
 constexpr int ELEVATOR_TOP_SOFT_LIMIT = 26000;       // Set the soft top limit
 constexpr int ELEVATOR_BOT_SOFT_LIMIT = 0;           // Set the soft bottom limit
-
-//constexpr int ELEVATOR_LEVELS = 7;                  // Number of elevator levels starting with 0
 
 constexpr int ELEVATOR_BALL_LEVELS = 5;
 constexpr int ELEVATOR_HATCH_LEVELS = 3;
@@ -180,25 +182,7 @@ constexpr int ELEV_HATCH_ROCKET_MID_POS = 10500;
 constexpr int ELEV_HATCH_ROCKET_TOP = 2;
 constexpr int ELEV_HATCH_ROCKET_TOP_POS = 21500;
 
-
-
-//constexpr int ELEVATOR_LEVEL_POS_HOME = 100;          // Elevator home position
-//constexpr int ELEVATOR_LEVEL_BTM_POS_HATCH = 3000;   // Hatch deploy 1st level position
-//constexpr int ELEVATOR_LEVEL_BTM_POS_BALL = 6000;    // Ball deploy 1st level position 
-//constexpr int ELEVATOR_LEVEL_MID_POS_HATCH = 9000;   // Hatch deploy 2nd level position 
-//constexpr int ELEVATOR_LEVEL_MID_POS_BALL = 12000;    // Ball deploy 2nd level position
-//constexpr int ELEVATOR_LEVEL_TOP_POS_HATCH = 15000;   // Hatch deploy 3rd level position
-//constexpr int ELEVATOR_LEVEL_TOP_POS_BALL = 18000;    // Ball deploy 3rd level position
-
-//constexpr int ELEVATOR_HOME = 0;          // Elevator home position
-//constexpr int ELEVATOR_BTM_HATCH = 1;   // Hatch deploy 1st level position
-//constexpr int ELEVATOR_BTM_BALL = 2;    // Ball deploy 1st level position 
-//constexpr int ELEVATOR_MID_HATCH = 3;   // Hatch deploy 2nd level position 
-//constexpr int ELEVATOR_MID_BALL = 4;    // Ball deploy 2nd level position
-//constexpr int ELEVATOR_TOP_HATCH = 5;   // Hatch deploy 3rd level position
-//constexpr int ELEVATOR_TOP_BALL = 6;    // Ball deploy 3rd level position
-
-
-
+constexpr double ELEV_DRIVE_RAMP_BTM = 0.25;
+constexpr double ELEV_DRIVE_RAMP_TOP = 1.0;
 
 

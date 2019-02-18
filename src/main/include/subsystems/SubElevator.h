@@ -35,8 +35,6 @@ class SubElevator : public frc::Subsystem {
 		int GetHatchLevel();
 		int GetPIDerror();
 		double GetPIDtarget();
-		
-		
 
 		//int a_iLevelPositions[ELEVATOR_LEVELS];
 

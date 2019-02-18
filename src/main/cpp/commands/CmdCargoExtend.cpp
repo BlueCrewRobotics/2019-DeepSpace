@@ -29,10 +29,11 @@ void CmdCargoExtend::Execute() {
     Robot::m_subCargoGrab.SetExtend5(false);
     Robot::m_subCargoGrab.SetExtend7(true);
   } else if( m_iPosition == 2){
-    // Both pistions extended for placing hatch panels
+    // 5 Inch piston extended only
     Robot::m_subCargoGrab.SetExtend5(true);
     Robot::m_subCargoGrab.SetExtend7(false);
   } else if( m_iPosition == 3){
+    // Both Pistons extended for ball intake
     Robot::m_subCargoGrab.SetExtend5(true);
     Robot::m_subCargoGrab.SetExtend7(true);
   }

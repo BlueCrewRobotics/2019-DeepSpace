@@ -19,6 +19,7 @@ class SubHatchGrab : public frc::Subsystem {
         bool GetHatchPos();
 		void Extend4(bool state);
 		void Extend7(bool state);
+		bool hatchIsOn();
 		
 	private:
 		// It's desirable that everything possible under private except

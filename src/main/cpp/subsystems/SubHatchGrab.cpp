@@ -38,3 +38,7 @@ void SubHatchGrab::Extend7(bool state){
 bool SubHatchGrab::GetHatchPos(){
 	return m_bEngageState;
 }
+
+bool SubHatchGrab::hatchIsOn(){
+	return hatchDetectHallEffect->Get();
+}

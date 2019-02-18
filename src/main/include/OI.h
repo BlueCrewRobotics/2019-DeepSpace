@@ -35,6 +35,7 @@ class OI {
 
 		void PollController();
 		void SwitchControl();
+		void HatchControl();
 		bool m_bHatchCargoCurrent;
 
 		// Setup driver controller 
@@ -76,6 +77,9 @@ class OI {
 		frc::InternalButton* cargoShoot = new frc::InternalButton();
 		frc::InternalButton* cargoStop = new frc::InternalButton();
 		frc::InternalButton* cargoTilt = new frc::InternalButton();
+
+		frc::InternalButton* detectHatch = new frc::InternalButton();
+		
 
 		// D PAD UP // Move Elevator up 1 stage
 		// D PAD DOWN // Move Elevator down 1 stage

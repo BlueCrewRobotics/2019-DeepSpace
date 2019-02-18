@@ -80,7 +80,6 @@ void Robot::AutonomousInit() {
 }
 
 void Robot::AutonomousPeriodic() { 
-	m_oi.SwitchControl();
 	frc::Scheduler::GetInstance()->Run(); 
 	
 	
@@ -99,6 +98,7 @@ void Robot::TeleopInit() {
 
 void Robot::TeleopPeriodic() { 
 		m_oi.PollController();
+		m_oi.SwitchControl();
 		frc::Scheduler::GetInstance()->Run(); }
 
 void Robot::TestPeriodic() {}

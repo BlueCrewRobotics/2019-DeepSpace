@@ -7,7 +7,7 @@
 
 CmdGrpCargoExtend::CmdGrpCargoExtend(){
 	CommandGroup::AddSequential(new CmdCargoTilt(true));
-	CommandGroup::AddParallel(new CmdCargoExtend(3)); // Needs to change (0)
+	CommandGroup::AddSequential(new CmdCargoExtend(3)); 
 	CommandGroup::AddSequential(new CmdCargoTilt(false));
 }
 

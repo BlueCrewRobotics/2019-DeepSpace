@@ -25,6 +25,8 @@
 #include "commands/CmdCargoExtend.h"
 #include "commands/CmdHatchCargoSwitch.h"
 #include "commands/CmdHatchCargoNeutral.h"
+#include "commands/CmdGrpCargoExtend.h"
+#include "commands/CmdGrpCargoRetract.h"
 
 #include "RobotMap.h"
 
@@ -77,6 +79,14 @@ class OI {
 		frc::InternalButton* cargoShoot = new frc::InternalButton();
 		frc::InternalButton* cargoStop = new frc::InternalButton();
 		frc::InternalButton* cargoTilt = new frc::InternalButton();
+		frc::InternalButton* cargoExtend = new frc::InternalButton();
+		frc::InternalButton* cargoClamp = new frc::InternalButton();
+
+		// Hatch Panel Internal Buttons
+		frc::InternalButton* hatchExtend = new frc::InternalButton();
+		frc::InternalButton* hatchGrabOrRelease = new frc::InternalButton();
+
+
 
 		frc::InternalButton* detectHatch = new frc::InternalButton();
 		

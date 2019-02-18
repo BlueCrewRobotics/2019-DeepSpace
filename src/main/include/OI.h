@@ -24,13 +24,18 @@
 #include "commands/CmdHatchRelease.h"
 #include "BC_Trigger.h"
 #include "commands/CmdCargoExtend.h"
+#include "commands/CmdHatchCargoSwitch.h"
+#include "commands/CmdHatchCargoNeutral.h"
 
 #include "RobotMap.h"
+
 
 class OI {
 	public:
 		OI();
-
+		void SwitchControl();
+		bool m_bHatchCargoCurrent;
+		
 		// Setup driver controller 
 		frc::Joystick* driverController = new frc::Joystick(DRIVER_CONTROLLER);
 		// Setup buttons on the driver controller, change the name to fit the command

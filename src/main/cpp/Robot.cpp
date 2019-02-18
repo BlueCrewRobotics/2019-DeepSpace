@@ -32,6 +32,7 @@ void Robot::RobotInit() {
   	m_subPCM.Configure();
   	m_subElevator.Configure();
 
+
 }
 
 /**
@@ -81,7 +82,12 @@ void Robot::AutonomousInit() {
 	}
 }
 
-void Robot::AutonomousPeriodic() { frc::Scheduler::GetInstance()->Run(); }
+void Robot::AutonomousPeriodic() { 
+	m_oi.SwitchControl();
+	frc::Scheduler::GetInstance()->Run(); 
+	
+	
+	}
 
 void Robot::TeleopInit() {
 	// This makes sure that the autonomous stops running when

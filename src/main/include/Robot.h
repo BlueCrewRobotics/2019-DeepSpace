@@ -39,7 +39,7 @@ class Robot : public frc::TimedRobot {
 		static SubElevator m_subElevator;
 		static SubCargoGrab m_subCargoGrab;
 		static SubHatchGrab m_subHatchGrab;
-		
+
     // static CameraServer m_cameraServer;
 
 		void RobotInit() override;

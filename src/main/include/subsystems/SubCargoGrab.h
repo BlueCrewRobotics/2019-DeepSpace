@@ -26,7 +26,7 @@ class SubCargoGrab : public frc::Subsystem {
 		bool GetExtend5();
 		void SetExtend7(bool state);
 		bool GetExtend7();
-
+		bool m_bHatchCargoCurrent;
 
 	private:
 		// It's desirable that everything possible under private except

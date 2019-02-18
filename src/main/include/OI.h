@@ -22,7 +22,6 @@
 #include "commands/CmdHatchExt.h"
 #include "commands/CmdHatchGrab.h"
 #include "commands/CmdHatchRelease.h"
-#include "BC_Trigger.h"
 #include "commands/CmdCargoExtend.h"
 
 #include "RobotMap.h"
@@ -30,7 +29,7 @@
 class OI {
 	public:
 		OI();
-
+		void PollController();
 		// Setup driver controller 
 		frc::Joystick* driverController = new frc::Joystick(DRIVER_CONTROLLER);
 		// Setup buttons on the driver controller, change the name to fit the command
@@ -64,19 +63,16 @@ class OI {
 		frc::JoystickButton* auxController_button_r3 = new frc::JoystickButton(auxController, BUTTON_R3); // Not Used
 		 // LEFT TRIGGER // Push out Cargo
 		 // RIGHT TRIGGER // Pull in Cargo
-		
-	 
-		BC_Trigger* cargoIntakeTrigger;
-		BC_Trigger* cargoShootTrigger;
-		BC_Trigger* cargoStop;
-		BC_Trigger* cargoTiltTrigger;
 
-		//bool m_bHatchCargoSelect = 0;
-		
+		// Internal buttons used as triggers for automation.  See OI::Checker for pressing and releasing buttons
+		frc::InternalButton* cargoIntake = new frc::InternalButton();
+		frc::InternalButton* cargoShoot = new frc::InternalButton();
+		frc::InternalButton* cargoStop = new frc::InternalButton();
+		frc::InternalButton* cargoTilt = new frc::InternalButton();
+
 		// D PAD UP // Move Elevator up 1 stage
-		// D PAD RIGHT // Move Elevator up all the way
 		// D PAD DOWN // Move Elevator down 1 stage
-		// D PAD LEFT // Move Elevator down all the way
+	
 
 
 };

@@ -81,7 +81,8 @@ void SubElevator::Configure() {
     elevatorDrive->ConfigContinuousCurrentLimit(15,0);
     elevatorDrive->EnableCurrentLimit(true);
 
-    elevatorDrive->ConfigClosedloopRamp(0.25,0);
+    elevatorDrive->ConfigOpenloopRamp(ELEVATOR_RAMP,0);
+    elevatorDrive->ConfigClosedloopRamp(ELEVATOR_RAMP,0);
 
     // This shouldn't be here.  But it is here for now, setting the level positions and index
     //SubElevator::SetLevelPositionTarget(ELEVATOR_HOME, ELEVATOR_LEVEL_POS_HOME);
@@ -139,12 +140,18 @@ void SubElevator::SetHatchPositionTarget(int index, int position) {
 
 // Sets the level of the ball deploy
 void SubElevator::SetBallLevel(int level) {  
-    m_iBallLevel = level;
+    if (level < ELEVATOR_BALL_LEVELS && level >= 0){
+        m_iBallLevel = level;
+    }
+    
+
 }
 
 // Sets the level of the hatch deploy
 void SubElevator::SetHatchLevel(int level) {  
-    m_iHatchLevel = level;
+    if (level < ELEVATOR_HATCH_LEVELS && level >= 0){
+        m_iHatchLevel = level;
+    }
 }
 
 // Get level of elevator

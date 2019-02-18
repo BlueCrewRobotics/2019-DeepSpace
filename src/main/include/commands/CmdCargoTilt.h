@@ -9,10 +9,12 @@
 
 class CmdCargoTilt : public frc::Command {
 	public:
-		CmdCargoTilt();
+		CmdCargoTilt(bool state);
 		void Initialize() override;
 		void Execute() override;
 		bool IsFinished() override;
 		void End() override;
 		void Interrupted() override;
+	private:
+		bool m_bState = 0;
 };

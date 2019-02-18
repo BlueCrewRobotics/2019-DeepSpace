@@ -22,6 +22,7 @@ class SubDriveTrain : public frc::Subsystem  {
 		void Configure();
 		void Drive(double speed, double rotation);
 		void DriveVelocityControl(double speed, double rotation);
+		void SetRamp(double ramp);
 		//void Set(double speed) ;
 
 		//private:

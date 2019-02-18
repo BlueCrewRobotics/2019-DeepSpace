@@ -25,9 +25,6 @@ void Robot::RobotInit() {
 	m_chooser.AddOption("My Auto", &m_myAuto);
 	frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 
-	frc::Command* cmdCargoIntake = new CmdCargoIntake();
-	frc::Command* cmdCargoShoot = new CmdCargoShoot();
-
   	m_subDriveTrain.Configure();
   	m_subPCM.Configure();
   	m_subElevator.Configure();
@@ -94,7 +91,9 @@ void Robot::TeleopInit() {
 	}
 }
 
-void Robot::TeleopPeriodic() { frc::Scheduler::GetInstance()->Run(); }
+void Robot::TeleopPeriodic() { 
+		m_oi.PollController();
+		frc::Scheduler::GetInstance()->Run(); }
 
 void Robot::TestPeriodic() {}
 

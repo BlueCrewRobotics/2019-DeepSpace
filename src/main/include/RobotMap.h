@@ -159,7 +159,7 @@ constexpr int ELEVATOR_ACCELERATION = 2000;     // Acceleration in unit s/ 1 sec
 
 constexpr bool ELEVATOR_SOFT_LIMITS_ENABLE = true;   // Disable/Enable of soft limits
 constexpr int ELEVATOR_TOP_SOFT_LIMIT = 26000;       // Set the soft top limit
-constexpr int ELEVATOR_BOT_SOFT_LIMIT = 0;           // Set the soft bottom limit
+constexpr int ELEVATOR_BOT_SOFT_LIMIT = 200;           // Set the soft bottom limit
 
 constexpr int ELEVATOR_BALL_LEVELS = 5;
 constexpr int ELEVATOR_HATCH_LEVELS = 3;
@@ -167,13 +167,13 @@ constexpr int ELEVATOR_HATCH_LEVELS = 3;
 constexpr int ELEV_BALL_GRAB = 0;
 constexpr int ELEV_BALL_GRAB_POS = 200;
 constexpr int ELEV_BALL_ROCKET_BTM = 1;
-constexpr int ELEV_BALL_ROCKET_BTM_POS = 5000;
+constexpr int ELEV_BALL_ROCKET_BTM_POS = 7400;
 constexpr int ELEV_BALL_CONTAINER = 2;
-constexpr int ELEV_BALL_CONTAINER_POS = 10000;
+constexpr int ELEV_BALL_CONTAINER_POS = 12600;
 constexpr int ELEV_BALL_ROCKET_MID = 3;
-constexpr int ELEV_BALL_ROCKET_MID_POS = 15000;
+constexpr int ELEV_BALL_ROCKET_MID_POS = 18000;
 constexpr int ELEV_BALL_ROCKET_TOP = 4;
-constexpr int ELEV_BALL_ROCKET_TOP_POS = 20000;
+constexpr int ELEV_BALL_ROCKET_TOP_POS = 25250;
 
 constexpr int ELEV_HATCH_ROCKET_BTM = 0;
 constexpr int ELEV_HATCH_ROCKET_BTM_POS = 200;

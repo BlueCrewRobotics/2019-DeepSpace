@@ -28,6 +28,8 @@ class SubHatchGrab : public frc::Subsystem {
 
 		frc::Solenoid* hatchExtend4 = new frc::Solenoid(PCM_TOP,TOP_HATCH_EXT_4);
 		frc::Solenoid* hatchExtend7 = new frc::Solenoid(PCM_TOP,TOP_HATCH_EXT_7);
+
+		frc::DigitalInput * hatchDetectHallEffect = new frc::DigitalInput(HATCH_HALL_EFFECT);
 		
 		bool m_bEngageState = 0;
 

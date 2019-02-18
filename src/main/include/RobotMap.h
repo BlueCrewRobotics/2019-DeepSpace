@@ -130,6 +130,8 @@ constexpr int TOP_CLAMP_SOLENOID = 5;  // TOP PCM 5 - Cargo grab open
 constexpr int TOP_HATCH_GRABBER = 6;   // TOP PCM 6 - Hatch release
 constexpr int TOP_SPARE_7 = 7;         // TOP PCM 7 - Spare
 
+constexpr int HATCH_HALL_EFFECT = 0;
+
 // CAN Address for Aux motors
 
 constexpr int CARGO_LEFT_CAN_ADDR = 11;

@@ -82,8 +82,8 @@ constexpr int VELOCITY_SP_MAX_LG = 1400;
 
 // PID constants PID[0] Used for low speed right side
 constexpr double RIGHT_KF_0 = 0.6;   // 0.6576
-constexpr double RIGHT_KP_0 = 0.0;     // 0.73
-constexpr double RIGHT_KI_0 = 0.0;
+constexpr double RIGHT_KP_0 = 0.5;     // 0.73
+constexpr double RIGHT_KI_0 = 0.001;
 constexpr double RIGHT_KD_0 = 0.0;
 
 // PID constants PID[1] uesd for high speed left side
@@ -94,8 +94,8 @@ constexpr double RIGHT_KD_1 = 0;
 
 // PID constants PID[0] Used for low speed right side
 constexpr double LEFT_KF_0 = 0.6;    // 0.6941
-constexpr double LEFT_KP_0 = 0.0;      // 0.73
-constexpr double LEFT_KI_0 = 0.0;
+constexpr double LEFT_KP_0 = 0.5;      // 0.73
+constexpr double LEFT_KI_0 = 0.001;
 constexpr double LEFT_KD_0 = 0;
 
 // PID constants PID[1] uesd for high speed left side
@@ -184,7 +184,7 @@ constexpr int ELEV_HATCH_ROCKET_MID_POS = 10500;
 constexpr int ELEV_HATCH_ROCKET_TOP = 2;
 constexpr int ELEV_HATCH_ROCKET_TOP_POS = 21500;
 
-constexpr double ELEV_DRIVE_RAMP_BTM = 0.25;
+constexpr double ELEV_DRIVE_RAMP_BTM = 0.0;
 constexpr double ELEV_DRIVE_RAMP_TOP = 1.0;
 
 

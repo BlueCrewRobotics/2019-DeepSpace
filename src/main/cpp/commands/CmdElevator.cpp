@@ -25,7 +25,7 @@ void CmdElevator::Execute() {
   int ballLevel = Robot::m_subElevator.GetBallLevel();
   int hatchLevel = Robot::m_subElevator.GetHatchLevel();
 
-  bool hatchBallSelection = 1;  // This needs to be changed based on hatch or cargo selection
+  bool hatchBallSelection = Robot::m_oi.m_bHatchCargoCurrent;  // This needs to be changed based on hatch or cargo selection
 
   if(Robot::m_oi.auxController->GetPOV(0) == -1 ){
       Robot::m_subElevator.m_iSelection = 1;
@@ -51,20 +51,20 @@ void CmdElevator::Execute() {
 // If up is pressed
   if( Robot::m_oi.auxController->GetPOV(0) == 0 && Robot::m_subElevator.m_iSelection == 1){
     // Call elevator up one level command
-    if(hatchBallSelection == 1){ // Ball deploy selected
+    if(hatchBallSelection == 0){ // Ball deploy selected
       if (ballLevel < ELEVATOR_BALL_LEVELS-1) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iBallLevelPos[(ballLevel+1)]);
         Robot::m_subElevator.SetBallLevel(ballLevel+1);
         Robot::m_subElevator.m_iSelection = 0;
-        std::cout << Robot::m_subElevator.GetBallLevel() << std::endl;
+        //std::cout << Robot::m_subElevator.GetBallLevel() << std::endl;
         // Automation tilt the cargo holder for shooting
-        if(Robot::m_subElevator.GetBallLevel() == (ELEVATOR_BALL_LEVELS-1)){
-          Robot::m_oi.cargoTilt->SetPressed(true);
-          //std::cout << "Elev Tilt up " << Robot::m_oi.cargoTilt->Get() << std::endl;
+        if(Robot::m_subElevator.GetBallLevel() < (ELEVATOR_BALL_LEVELS-1)){
+          Robot::m_oi.elevCargoTilt->SetPressed(false);
+          //std::cout << "Elev Tilt up " << Robot::m_oi.elevCargoTilt->Get() << std::endl;
         }
         else {
-          Robot::m_oi.cargoTilt->SetPressed(false);
-          //std::cout << "Elev Tilt down " << Robot::m_oi.cargoTilt->Get() << std::endl;
+          Robot::m_oi.elevCargoTilt->SetPressed(true);
+          //std::cout << "Elev Tilt down " << Robot::m_oi.elevCargoTilt->Get() << std::endl;
         }
         // Set the ramp level when higher than first level
         if (ballLevel > 1){
@@ -75,7 +75,7 @@ void CmdElevator::Execute() {
         }
       }
     } 
-    if(hatchBallSelection == 0){ // Hatch deploy selected
+    if(hatchBallSelection == 1){ // Hatch deploy selected
       if (hatchLevel < ELEVATOR_HATCH_LEVELS-1) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iHatchLevelPos[(hatchLevel+1)]);
         Robot::m_subElevator.SetHatchLevel(hatchLevel+1);
@@ -116,17 +116,20 @@ void CmdElevator::Execute() {
 //if down is pressed
   if( Robot::m_oi.auxController->GetPOV(0) == 180 && Robot::m_subElevator.m_iSelection == 1){
       // Call elevator down one level command
-    if(hatchBallSelection == 1){ // Ball deploy selected
+    if(hatchBallSelection == 0){ // Ball deploy selected
       if (ballLevel > (ELEV_BALL_GRAB)) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iBallLevelPos[(ballLevel-1)]);
         Robot::m_subElevator.SetBallLevel(ballLevel-1);
         Robot::m_subElevator.m_iSelection = 0;
       }
-      if(Robot::m_subElevator.GetBallLevel() < (ELEVATOR_BALL_LEVELS-1)){
-        Robot::m_oi.cargoTilt->SetPressed(false);
+      if(Robot::m_subElevator.GetBallLevel() > (ELEV_BALL_GRAB)){
+        Robot::m_oi.elevCargoTilt->SetPressed(false);
+      }
+      else {
+        Robot::m_oi.elevCargoTilt->SetPressed(true);
       }
     } 
-    if(hatchBallSelection == 0){ // Hatch deploy selected
+    if(hatchBallSelection == 1){ // Hatch deploy selected
       if (hatchLevel > (ELEV_HATCH_ROCKET_BTM-1)) {
         Robot::m_subElevator.ServoToPosition(Robot::m_subElevator.a_iHatchLevelPos[(hatchLevel-1)]);
         Robot::m_subElevator.SetHatchLevel(hatchLevel-1);

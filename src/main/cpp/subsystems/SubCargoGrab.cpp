@@ -24,14 +24,14 @@ void SubCargoGrab::InitDefaultCommand() {
 
 void SubCargoGrab::Intake(double leftspeed, double rightspeed){
   // This might need to be changed on the final robot
-  leftspeed = leftspeed * -1;
+  rightspeed = rightspeed * -1;
 	leftIntakeMotor->Set(ControlMode::PercentOutput, leftspeed);
   rightIntakeMotor->Set(ControlMode::PercentOutput, rightspeed);
 }
 
 void SubCargoGrab::Shoot(double leftspeed, double rightspeed){
   // This might need to be changed on the final robot
-  rightspeed = rightspeed * -1;
+  leftspeed = leftspeed * -1;
 	leftIntakeMotor->Set(ControlMode::PercentOutput, leftspeed);
   rightIntakeMotor->Set(ControlMode::PercentOutput, rightspeed);
 }

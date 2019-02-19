@@ -6,8 +6,8 @@
 #include "commands/CmdGrpCargoExtend.h"
 
 CmdGrpCargoExtend::CmdGrpCargoExtend(){
-	CommandGroup::AddSequential(new CmdCargoTilt(true));
-	CommandGroup::AddSequential(new CmdCargoExtend(3)); 
+	//CommandGroup::AddSequential(new CmdCargoTilt(true));
+	CommandGroup::AddSequential(new CmdCargoExtendTime(3,0.75)); 
 	CommandGroup::AddSequential(new CmdCargoTilt(false));
 }
 

@@ -31,18 +31,22 @@ OI::OI() {
     cargoShoot->WhenActive(new CmdCargoShoot());
     cargoStop->WhenPressed( new CmdCargoStop());
 
-    // Cargo tilt
-    cargoTilt->WhenPressed(new CmdCargoTilt(true));
-    cargoTilt->WhenReleased(new CmdCargoTilt(false));
+    // Cargo tilt with elevator
+    elevCargoTilt->WhenPressed(new CmdCargoTilt(true));
+    elevCargoTilt->WhenReleased(new CmdCargoTilt(false));
 
-	detectHatch->WhenPressed(new CmdHatchRelease());
+	  //detectHatch->WhenPressed(new CmdHatchRelease());
   
 
     // Extend Cargo
-    // cargoExtend->WhenPressed(new CmdGrpCargoExtend());
-    // cargoExtend->WhenReleased(new CmdGrpCargoRetract());
-    auxController_button_b->WhenPressed(new CmdGrpCargoRetract());
-    auxController_button_a->WhenPressed(new CmdGrpCargoExtend());
+    cargoExtend->WhenPressed(new CmdGrpCargoExtend());
+    cargoExtend->WhenInactive(new CmdGrpCargoRetract());
+
+    //auxController_button_a->WhenPressed(new CmdCargoTilt(true));
+    //auxController_button_b->WhenPressed(new CmdCargoTilt(false));
+
+    //auxController_button_a->WhenPressed(new CmdGrpCargoExtend());
+    //auxController_button_a->WhenReleased(new CmdGrpCargoRetract());
 
     // Opens and Closes Cargo Clamp
     cargoClamp->WhenPressed(new CmdCargoClampOpen());
@@ -99,13 +103,13 @@ void OI::PollController() {
        cargoShoot->SetPressed(false);
        //std::cout << "L_trig = 0" << std::endl;
   }
-
+/*
   if(Robot::m_subHatchGrab.hatchIsOn()){
 	  detectHatch->SetPressed(true);
   }else{
 	  detectHatch->SetPressed(false);
   }
-
+*/
       // Add more if statements
 }
 
@@ -116,8 +120,10 @@ void OI::SwitchControl(){
     // Cargo Extension
     if( auxController_button_rbump->Get() == 1){
       cargoExtend->SetPressed(true);
+      //std::cout << "Extend Cargo" << std::endl;
     } else if( auxController_button_rbump->Get() == 0 ){
       cargoExtend->SetPressed(false);
+      //std::cout << "Retract Cargo" << std::endl;
     }
 
     // Cargo Clamp

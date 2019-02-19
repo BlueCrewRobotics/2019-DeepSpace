@@ -3,36 +3,39 @@
 /*         Deep Space 2019         */
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
 
-#include "commands/CmdCargoIntake.h"
+#include "commands/CmdCargoTiltTime.h"
 
 #include "Robot.h"
-#include <iostream>
 
-CmdCargoIntake::CmdCargoIntake() {
+CmdCargoTiltTime::CmdCargoTiltTime(bool state, double time) {
+  this->m_bState = state;
+  this->m_dTime = time;
 	// Use Requires() here to declare subsystem dependencies
 	Requires(&Robot::m_subCargoGrab);
 }
 
 // Called just before this Command runs the first time
-void CmdCargoIntake::Initialize() {
-  // SetTimeout(4);  // set 4 second timeout
+void CmdCargoTiltTime::Initialize() {
+   SetTimeout(m_dTime);  // set x second timeout
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdCargoIntake::Execute() {
-  Robot::m_subCargoGrab.Intake(0.25, 0.25);
+void CmdCargoTiltTime::Execute() {
+    //bool state;
+    //state = Robot::m_oi.cargoTiltTrigger->Get();
+    //state = Robot::m_subCargoGrab.GetTiltPos();
+    //state = !state;
+    Robot::m_subCargoGrab.SetTiltPos(m_bState);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool CmdCargoIntake::IsFinished() {
-   // return true || IsTimedOut(); 
-   // Robot::m_subCargoGrab.Stop();
-   return true;
-   }
+bool CmdCargoTiltTime::IsFinished() {
+   return IsTimedOut();  
 
+}
 // Called once after isFinished returns true
-void CmdCargoIntake::End() {}
+void CmdCargoTiltTime::End() {}
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void CmdCargoIntake::Interrupted() {}
+void CmdCargoTiltTime::Interrupted() {}

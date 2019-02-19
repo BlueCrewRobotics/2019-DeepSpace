@@ -5,8 +5,10 @@
 
 #pragma once
 #include <frc/commands/CommandGroup.h>
-#include "commands/CmdCargoTilt.h"
+#include "commands/CmdCargoTiltTime.h"
 #include "commands/CmdCargoExtend.h"
+#include "commands/CmdCargoTilt.h"
+#include "commands/CmdCargoExtendTime.h"
 
 class CmdGrpCargoRetract: public frc::CommandGroup {
 	public:

@@ -78,7 +78,8 @@ class OI {
 		frc::InternalButton* cargoIntake = new frc::InternalButton();
 		frc::InternalButton* cargoShoot = new frc::InternalButton();
 		frc::InternalButton* cargoStop = new frc::InternalButton();
-		frc::InternalButton* cargoTilt = new frc::InternalButton();
+		frc::InternalButton* elevCargoTilt = new frc::InternalButton();
+		
 		frc::InternalButton* cargoExtend = new frc::InternalButton();
 		frc::InternalButton* cargoClamp = new frc::InternalButton();
 
@@ -88,7 +89,7 @@ class OI {
 
 
 
-		frc::InternalButton* detectHatch = new frc::InternalButton();
+		//frc::InternalButton* detectHatch = new frc::InternalButton();
 		
 
 		// D PAD UP // Move Elevator up 1 stage

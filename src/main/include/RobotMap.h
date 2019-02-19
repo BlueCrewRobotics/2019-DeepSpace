@@ -76,26 +76,27 @@ constexpr double DRIVE_RAMP_TIME = 0.2;
 
 // Maximum velocity in units/100ms
 constexpr int VELOCITY_MAX = 3000;
-constexpr int VELOCITY_SP_MAX_HG = 3000;
-constexpr int VELOCITY_SP_MAX_LG = 1400;
+constexpr int VELOCITY_SP_MAX_HG = 3000;  // Maximum velocity in actual high gear
+constexpr int VELOCITY_SP_MAX_LG = 1400;  // Maximum velocity in actual low gear
+constexpr int VELOCITY_SP_MAX_LL = 900;   // Maximum velocity in low low virtual gear
 
 
 // PID constants PID[0] Used for low speed right side
-constexpr double RIGHT_KF_0 = 0.6;   // 0.6576
-constexpr double RIGHT_KP_0 = 0.5;     // 0.73
-constexpr double RIGHT_KI_0 = 0.001;
+constexpr double RIGHT_KF_0 = 0.64;   // 0.6576
+constexpr double RIGHT_KP_0 = 0.4;     // 0.73
+constexpr double RIGHT_KI_0 = 0.0;
 constexpr double RIGHT_KD_0 = 0.0;
 
 // PID constants PID[1] uesd for high speed left side
-constexpr double RIGHT_KF_1 = 0.3;    // 0.296
+constexpr double RIGHT_KF_1 = 0.325;    // 0.296
 constexpr double RIGHT_KP_1 = 0;
 constexpr double RIGHT_KI_1 = 0;
 constexpr double RIGHT_KD_1 = 0;
 
 // PID constants PID[0] Used for low speed right side
 constexpr double LEFT_KF_0 = 0.6;    // 0.6941
-constexpr double LEFT_KP_0 = 0.5;      // 0.73
-constexpr double LEFT_KI_0 = 0.001;
+constexpr double LEFT_KP_0 = 0.4;      // 0.73
+constexpr double LEFT_KI_0 = 0.0;
 constexpr double LEFT_KD_0 = 0;
 
 // PID constants PID[1] uesd for high speed left side
@@ -187,4 +188,5 @@ constexpr int ELEV_HATCH_ROCKET_TOP_POS = 21500;
 constexpr double ELEV_DRIVE_RAMP_BTM = 0.0;
 constexpr double ELEV_DRIVE_RAMP_TOP = 1.0;
 
-
+// Digital input switches 
+constexpr int DIGITAL_INPUT_0 = 0;

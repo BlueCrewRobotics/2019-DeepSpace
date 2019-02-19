@@ -7,7 +7,7 @@
 
 CmdGrpCargoRetract::CmdGrpCargoRetract(){
 	CommandGroup::AddSequential(new CmdCargoTilt(true));
-	CommandGroup::AddSequential(new CmdCargoExtendTime(0,0.75)); 
+	CommandGroup::AddSequential(new CmdCargoExtendTime(0,0.5)); 
 	//CommandGroup::AddSequential(new CmdCargoTilt(false));
 }
 

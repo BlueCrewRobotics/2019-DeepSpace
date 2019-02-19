@@ -87,6 +87,7 @@ void CmdElevator::Execute() {
         else {
           Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_BTM);
         }
+        
       }
 
     }
@@ -128,6 +129,13 @@ void CmdElevator::Execute() {
       else {
         Robot::m_oi.elevCargoTilt->SetPressed(true);
       }
+      // Set the ramp level when higher than first level
+      if (ballLevel > 1){
+        Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_TOP);
+      }
+      else {
+        Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_BTM);
+      }
     } 
     if(hatchBallSelection == 1){ // Hatch deploy selected
       if (hatchLevel > (ELEV_HATCH_ROCKET_BTM-1)) {
@@ -135,6 +143,13 @@ void CmdElevator::Execute() {
         Robot::m_subElevator.SetHatchLevel(hatchLevel-1);
         Robot::m_subElevator.m_iSelection = 0;
       }
+      // Set the ramp level when higher than first level
+        if (hatchLevel > 0){
+         Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_TOP);
+       }
+       else {
+         Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_BTM);
+       }
 
     }
     

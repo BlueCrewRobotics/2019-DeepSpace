@@ -7,7 +7,7 @@
 
 CmdGrpCargoExtend::CmdGrpCargoExtend(){
 	//CommandGroup::AddSequential(new CmdCargoTilt(true));
-	CommandGroup::AddSequential(new CmdCargoExtendTime(3,0.75)); 
+	CommandGroup::AddSequential(new CmdCargoExtendTime(3,0.5)); 
 	CommandGroup::AddSequential(new CmdCargoTilt(false));
 }
 

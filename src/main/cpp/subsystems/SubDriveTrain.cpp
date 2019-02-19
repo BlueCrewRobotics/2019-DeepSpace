@@ -110,7 +110,7 @@ void SubDriveTrain::SetRamp(double ramp) {
 void SubDriveTrain::Drive(double speed, double rotation) {
 	// Drive 
 
-	driveTrain->SetDeadband(0.05);
+	driveTrain->SetDeadband(0.02);
 	driveTrain->ArcadeDrive(speed,rotation, false);
 
 }

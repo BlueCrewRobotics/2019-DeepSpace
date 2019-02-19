@@ -29,6 +29,7 @@
 #include "commands/CmdGrpCargoRetract.h"
 
 #include "RobotMap.h"
+#include "common/BC_Switch.h"
 
 
 class OI {
@@ -39,6 +40,11 @@ class OI {
 		void SwitchControl();
 		void HatchControl();
 		bool m_bHatchCargoCurrent;
+		bool m_bCargoExtendToggle = 0;
+		bool m_bSelector = false;
+
+		BC_Switch* m_cargoIntakeSw = new BC_Switch(DIGITAL_INPUT_0);
+
 
 		// Setup driver controller 
 		frc::Joystick* driverController = new frc::Joystick(DRIVER_CONTROLLER);

@@ -40,7 +40,7 @@ OI::OI() {
 
     // Extend Cargo
     cargoExtend->WhenPressed(new CmdGrpCargoExtend());
-    cargoExtend->WhenInactive(new CmdGrpCargoRetract());
+    cargoExtend->WhenReleased(new CmdGrpCargoRetract());
 
     //auxController_button_a->WhenPressed(new CmdCargoTilt(true));
     //auxController_button_b->WhenPressed(new CmdCargoTilt(false));
@@ -116,15 +116,24 @@ void OI::PollController() {
 void OI::SwitchControl(){
 
   if( Robot::m_oi.m_bHatchCargoCurrent == 0){
+    
+    if( auxController_button_rbump->Get() == 0){
+      m_bSelector = true;
+    }
 
     // Cargo Extension
-    if( auxController_button_rbump->Get() == 1){
-      cargoExtend->SetPressed(true);
+    if( auxController_button_rbump->Get() == 1 && m_bSelector == true){
+      std::cout << "Extend Selector " << m_bSelector << std::endl;
+      m_bCargoExtendToggle = !m_bCargoExtendToggle;
+      cargoExtend->SetPressed(m_bCargoExtendToggle);
+      m_bSelector = false;
+      std::cout << "Extend Toggle " << m_bCargoExtendToggle << std::endl;
+      //cargoExtend->SetPressed(true);
       //std::cout << "Extend Cargo" << std::endl;
-    } else if( auxController_button_rbump->Get() == 0 ){
-      cargoExtend->SetPressed(false);
+    } //else if( auxController_button_rbump->Get() == 0 ){
+      //cargoExtend->SetPressed(false);
       //std::cout << "Retract Cargo" << std::endl;
-    }
+    //}
 
     // Cargo Clamp
     if( auxController_button_lbump->Get() == 1){
@@ -150,8 +159,9 @@ void OI::SwitchControl(){
       hatchGrabOrRelease->SetPressed(false);
     }
 
-
   }
+
+
 }
 
 

@@ -77,7 +77,7 @@ constexpr double DRIVE_RAMP_TIME = 0.2;
 // Maximum velocity in units/100ms
 constexpr int VELOCITY_MAX = 3000;
 constexpr int VELOCITY_SP_MAX_HG = 3000;  // Maximum velocity in actual high gear
-constexpr int VELOCITY_SP_MAX_LG = 1400;  // Maximum velocity in actual low gear
+constexpr int VELOCITY_SP_MAX_LG = 1000;  // Maximum velocity in actual low gear
 constexpr int VELOCITY_SP_MAX_LL = 900;   // Maximum velocity in low low virtual gear
 
 
@@ -88,7 +88,7 @@ constexpr double RIGHT_KI_0 = 0.0;
 constexpr double RIGHT_KD_0 = 0.0;
 
 // PID constants PID[1] uesd for high speed left side
-constexpr double RIGHT_KF_1 = 0.325;    // 0.296
+constexpr double RIGHT_KF_1 = 0.3;    // 0.296
 constexpr double RIGHT_KP_1 = 0;
 constexpr double RIGHT_KI_1 = 0;
 constexpr double RIGHT_KD_1 = 0;
@@ -168,15 +168,15 @@ constexpr int ELEVATOR_BALL_LEVELS = 5;
 constexpr int ELEVATOR_HATCH_LEVELS = 3;
 
 constexpr int ELEV_BALL_GRAB = 0;
-constexpr int ELEV_BALL_GRAB_POS = 200;
+constexpr int ELEV_BALL_GRAB_POS = 0;
 constexpr int ELEV_BALL_ROCKET_BTM = 1;
-constexpr int ELEV_BALL_ROCKET_BTM_POS = 7400;
+constexpr int ELEV_BALL_ROCKET_BTM_POS = 7900;
 constexpr int ELEV_BALL_CONTAINER = 2;
-constexpr int ELEV_BALL_CONTAINER_POS = 12600;
+constexpr int ELEV_BALL_CONTAINER_POS = 12200;
 constexpr int ELEV_BALL_ROCKET_MID = 3;
-constexpr int ELEV_BALL_ROCKET_MID_POS = 18000;
+constexpr int ELEV_BALL_ROCKET_MID_POS = 18500;
 constexpr int ELEV_BALL_ROCKET_TOP = 4;
-constexpr int ELEV_BALL_ROCKET_TOP_POS = 25250;
+constexpr int ELEV_BALL_ROCKET_TOP_POS = 25500;
 
 constexpr int ELEV_HATCH_ROCKET_BTM = 0;
 constexpr int ELEV_HATCH_ROCKET_BTM_POS = 200;
@@ -185,8 +185,9 @@ constexpr int ELEV_HATCH_ROCKET_MID_POS = 10500;
 constexpr int ELEV_HATCH_ROCKET_TOP = 2;
 constexpr int ELEV_HATCH_ROCKET_TOP_POS = 21500;
 
-constexpr double ELEV_DRIVE_RAMP_BTM = 0.0;
-constexpr double ELEV_DRIVE_RAMP_TOP = 1.0;
+constexpr double ELEV_DRIVE_RAMP_BTM = 0.2;
+constexpr double ELEV_DRIVE_RAMP_MID = 1.0;
+constexpr double ELEV_DRIVE_RAMP_TOP = 1.5;
 
 // Digital input switches 
 constexpr int DIGITAL_INPUT_0 = 0;

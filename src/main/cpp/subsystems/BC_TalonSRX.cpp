@@ -33,10 +33,6 @@ void BC_TalonSRX::Set(double speed) {
 		ptr_talonSRX->SelectProfileSlot(1,0);
 	}
 
-	//printf( "err: "); 
-	//printf((char*)ptr_talonSRX->GetClosedLoopError(0));
-	//printf( "sp: "); 
-	//printf((char*)ptr_talonSRX->GetClosedLoopTarget(0));
 }
 
 void BC_TalonSRX::PIDWrite(double output) {

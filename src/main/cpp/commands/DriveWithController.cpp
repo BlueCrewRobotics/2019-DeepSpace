@@ -37,7 +37,7 @@ void DriveWithController::Execute()
 
 
 	if( Robot::m_subDriveTrain.leftDriveMotor->GetGear() == false) {
-		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.5;         
+		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.75;         
 	}else{
 		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.5;
 	}

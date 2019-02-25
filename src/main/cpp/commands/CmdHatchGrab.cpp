@@ -1,15 +1,15 @@
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 /*     Blue Crew Robotics #6153    */
 /*         Deep Space 2019         */
-/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 
 #include "commands/CmdHatchGrab.h"
 
 #include "Robot.h"
 
 CmdHatchGrab::CmdHatchGrab() {
-	// Use Requires() here to declare subsystem dependencies
-	Requires(&Robot::m_subHatchGrab);
+  // Use Requires() here to declare subsystem dependencies
+  Requires(&Robot::m_subHatchGrab);
 }
 
 // Called just before this Command runs the first time
@@ -18,15 +18,13 @@ void CmdHatchGrab::Initialize() {
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdHatchGrab::Execute() {
-    Robot::m_subHatchGrab.Set(false);
-}
+void CmdHatchGrab::Execute() { Robot::m_subHatchGrab.Set(false); }
 
 // Make this return true when this Command no longer needs to run execute()
 bool CmdHatchGrab::IsFinished() {
-   // return true || IsTimedOut(); 
-   return true;
-   }
+  // return true || IsTimedOut();
+  return true;
+}
 
 // Called once after isFinished returns true
 void CmdHatchGrab::End() {}

@@ -1,5 +1,5 @@
-// See Documentation : https://www.revrobotics.com/content/docs/REV-11-1105-UM.pdf
-// page 14
+// See Documentation :
+// https://www.revrobotics.com/content/docs/REV-11-1105-UM.pdf page 14
 //
 // This is implemented using Spark not Pulse Width
 //
@@ -22,28 +22,28 @@
 // 		SOL = Solid Colors
 //
 // Strip Patterns:
-// 		RBRB = Rainbow with Rainbow Palette 
+// 		RBRB = Rainbow with Rainbow Palette
 // 		RBPP = Rainbow with Party Palette
 // 		RBOP = Rainbow with Ocean Palette
 // 		RBLP = Rainbow with Lave Palette
 // 		RBFP = Rainbow with Forest Palette
-// 		RBG = Rainbow with Glitter 
+// 		RBG = Rainbow with Glitter
 // 		CONF = Confetti
 // 		SHOTR = Shot Red
 // 		SHOTB = Shot Blue
 //
-// 		--!-- There are about 100 more, it would be good to add them at some point --!--
-// 
+// 		--!-- There are about 100 more, it would be good to add them at
+// some point --!--
+//
 // Normal Adjustment:
 // PD = Pattern Density
 // WD = Width Density
 // DIM = DIMMING
-//  
+//
 //
 // I am only creating the Variables for the ones that we will be using
 // as of 2019
 //
-
 
 constexpr float FPP_BREATHB = -.15;
 constexpr float FPP_BREATHR = -.17;

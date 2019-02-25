@@ -42,10 +42,10 @@ void DriveWithController::Execute()
 		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.5;
 	}
 
-	if(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG) > 0){
+	if(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG) > .25){
 		Robot::m_subDriveTrain.Drive(velocityReverse,rotation);
-	}else{    
-		Robot::m_subDriveTrain.Drive(((velocityForward)),rotation);
+	}else if(Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG) > .25){    
+		Robot::m_subDriveTrain.Drive(velocityForward,rotation);
 	}
 
 

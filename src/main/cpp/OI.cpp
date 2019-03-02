@@ -13,6 +13,7 @@ OI::OI() {
   
   // Call switch gear command
   driverController_button_rbump->ToggleWhenPressed(new CmdSwitchGear());
+  
 
   // Elevator testing
   //driverController_button_a->WhileActive(new CmdElevatorTestDown());
@@ -34,9 +35,6 @@ OI::OI() {
     // Cargo tilt with elevator
     elevCargoTilt->WhenPressed(new CmdCargoTilt(true));
     elevCargoTilt->WhenReleased(new CmdCargoTilt(false));
-
-	  //detectHatch->WhenPressed(new CmdHatchRelease());
-  
 
     // Extend Cargo
     cargoExtend->WhenPressed(new CmdGrpCargoExtend());

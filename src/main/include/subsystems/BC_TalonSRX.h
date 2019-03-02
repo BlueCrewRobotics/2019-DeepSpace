@@ -23,6 +23,8 @@ class BC_TalonSRX : public virtual frc::SpeedController {
 		void StopMotor();
 		void SetGear(bool gear);
 		bool GetGear() const;
+		void SetMaxSpeed(double maxSpeed);
+		double GetMaxSpeed();
 
 		// Added calls
 		int GetCtrlLoopError();
@@ -34,5 +36,6 @@ class BC_TalonSRX : public virtual frc::SpeedController {
 		double m_dSpeed = 0;
 		bool m_bSelectedGear = 0;
 		int m_iCount;
+		double m_dMaxSpeed = VELOCITY_SP_MAX_LG;
 
 };

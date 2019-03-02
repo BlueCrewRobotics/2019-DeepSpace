@@ -28,11 +28,19 @@ void DriveWithController::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DriveWithController::Execute() 
 {
+	if (Robot::m_oi.driverController_button_b->Get()==1){
+		Robot::m_subDriveTrain.leftDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LL);
+		Robot::m_subDriveTrain.rightDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LL);
+	}
+	else{
+		Robot::m_subDriveTrain.leftDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LG);
+		Robot::m_subDriveTrain.rightDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LG);
+	}
+	double velocityReverse = m_lbumpReverseTriggerCal->GetCalibratedTrigger(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG),0.4,0.02);
+	double velocityForward = m_rbumpForwardTriggerCal->GetCalibratedTrigger(Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG),0.4,0.02);
 
-	double velocity;
-
-	double velocityReverse = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG);
-	double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG)*-1;
+	//double velocityReverse = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG);
+	//double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG)*-1;
 	double rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-1;
 
 
@@ -45,7 +53,7 @@ void DriveWithController::Execute()
 	if(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG) > 0){
 		Robot::m_subDriveTrain.Drive(velocityReverse,rotation);
 	}else{    
-		Robot::m_subDriveTrain.Drive(((velocityForward)),rotation);
+		Robot::m_subDriveTrain.Drive(velocityForward,rotation);
 	}
 
 

@@ -29,7 +29,6 @@ void Robot::RobotInit() {
   	m_subPCM.Configure();
   	m_subElevator.Configure();
 
-
 }
 
 /**

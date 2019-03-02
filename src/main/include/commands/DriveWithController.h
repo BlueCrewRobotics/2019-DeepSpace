@@ -9,6 +9,7 @@
 
 #include "OI.h"
 #include "subsystems/SubDriveTrain.h"
+#include "common/BC_TriggerCal.h"
 
 #include <frc/commands/Command.h>
 
@@ -20,4 +21,7 @@ class DriveWithController : public frc::Command {
 		bool IsFinished() override;
 		void End() override;
 		void Interrupted() override;
+
+		BC_TriggerCal* m_lbumpReverseTriggerCal = new BC_TriggerCal(false); 
+		BC_TriggerCal* m_rbumpForwardTriggerCal = new BC_TriggerCal(true); 
 };

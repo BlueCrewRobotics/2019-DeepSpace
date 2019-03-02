@@ -19,14 +19,15 @@ BC_TalonSRX::BC_TalonSRX(int device)  {
 void BC_TalonSRX::Set(double speed) {
 
 	// Run in low gear
-	if(m_bSelectedGear == 0){  
-		speed = speed*VELOCITY_SP_MAX_LG;
+	if(m_bSelectedGear == false){  
+		
+		speed = speed*m_dMaxSpeed;
 		ptr_talonSRX->Set(ControlMode::Velocity, speed);
 		m_dSpeed = speed;
 		ptr_talonSRX->SelectProfileSlot(0,0);
 	}
 	// Run in high gear
-	if(m_bSelectedGear == 1){  
+	if(m_bSelectedGear == true){  
 		speed = speed*VELOCITY_SP_MAX_HG;
 		ptr_talonSRX->Set(ControlMode::Velocity, speed);
 		m_dSpeed = speed;
@@ -75,4 +76,10 @@ void BC_TalonSRX::SetGear(bool gear) {
 
 bool BC_TalonSRX::GetGear() const {
 	return m_bSelectedGear;
+}
+void BC_TalonSRX::SetMaxSpeed(double maxSpeed) {
+	m_dMaxSpeed = maxSpeed;
+}
+double BC_TalonSRX::GetMaxSpeed() {
+	return m_dMaxSpeed;
 }

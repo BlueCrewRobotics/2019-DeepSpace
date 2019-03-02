@@ -2,8 +2,8 @@
 ## Highest Priority: 
 - Reimage with latest Roborio image
 - Move Camera to front for drivers
-- Slow Mode button (third gear in software)
-- Deadspace for triggers
+- ~~Slow Mode button (third gear in software)~~
+- ~~Deadspace for triggers~~
 - Camera Targetting
   - Tune for floor tape
   - calculate for the angle offset

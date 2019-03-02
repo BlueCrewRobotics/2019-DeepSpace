@@ -11,6 +11,7 @@
 
 ## Mid Priority:
 - Cargo bump button
+- Hatch limit switch
 - PID values on shuffleboard 
 - Rear Camera
 

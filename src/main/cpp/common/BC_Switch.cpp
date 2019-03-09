@@ -16,7 +16,5 @@ bool BC_Switch::GetSwitchState() {
         ptr_Counter->Reset();
         return true;
     }
-    else {
-        return false;
-    }
-}
+    return false;
+  }

@@ -64,7 +64,7 @@ OI::OI() {
   auxController_button_x->ToggleWhenPressed(new CmdHatchCargoNeutral());
 
   // Switches between Cargo and Hatch systems
-  auxController_button_y->ToggleWhenPressed(new CmdHatchCargoSwitch());
+  auxController_button_y->ToggleWhenPressed(new CmdGrpHatchCargoSwitch());
 }
 
 // Checks controller triggers and presses internal button based on value
@@ -76,7 +76,7 @@ void OI::PollController() {
   } else {
     cargoStop->SetPressed(false);
   }
-  if (auxController->GetRawAxis(AXIS_R_TRIG) > 0.1) {
+  if (auxController->GetRawAxis(AXIS_L_TRIG) > 0.1) {
     // std::cout << "R_trig = 1" << std::endl;
     cargoShoot->SetPressed(false);
     cargoIntake->SetPressed(true);
@@ -85,7 +85,7 @@ void OI::PollController() {
     // std::cout << "R_trig = 0" << std::endl;
   }
 
-  if (auxController->GetRawAxis(AXIS_L_TRIG) > 0.1) {
+  if (auxController->GetRawAxis(AXIS_R_TRIG) > 0.1) {
     // Call Cargo Shoot Command
     cargoIntake->SetPressed(false);
     cargoShoot->SetPressed(true);

@@ -19,6 +19,7 @@
 #include "commands/CmdElevatorTestUp.h"
 #include "commands/CmdGrpCargoExtend.h"
 #include "commands/CmdGrpCargoRetract.h"
+#include "commands/CmdGrpHatchCargoNeutral.h"
 #include "commands/CmdHatchCargoNeutral.h"
 #include "commands/CmdHatchCargoSwitch.h"
 #include "commands/CmdHatchExt.h"

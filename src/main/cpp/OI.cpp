@@ -61,10 +61,10 @@ OI::OI() {
   auxController_button_start->ToggleWhenPressed(new CmdElevatorResetHome());
 
   // Returns Cargo and Hatch to Neutral Position
-  auxController_button_x->ToggleWhenPressed(new CmdHatchCargoNeutral());
+  auxController_button_x->ToggleWhenPressed(new CmdGrpHatchCargoNeutral());
 
   // Switches between Cargo and Hatch systems
-  auxController_button_y->ToggleWhenPressed(new CmdGrpHatchCargoSwitch());
+  auxController_button_y->ToggleWhenPressed(new CmdHatchCargoSwitch());
 }
 
 // Checks controller triggers and presses internal button based on value

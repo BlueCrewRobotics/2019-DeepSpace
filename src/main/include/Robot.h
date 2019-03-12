@@ -1,33 +1,33 @@
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 /*     Blue Crew Robotics #6153    */
 /*         Deep Space 2019         */
-/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 
 #pragma once
 
+#include "cameraserver/CameraServer.h"
+#include "frc/WPILib.h"
+#include <ctre/Phoenix.h>
 #include <frc/TimedRobot.h>
 #include <frc/commands/Command.h>
 #include <frc/smartdashboard/SendableChooser.h>
-#include "frc/WPILib.h"
-#include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/core/core.hpp>
-#include <ctre/Phoenix.h>
-#include "cameraserver/CameraServer.h"
+#include <opencv2/imgproc/imgproc.hpp>
 
 #include "OI.h"
+#include "commands/CmdCargoClampClose.h"
+#include "commands/CmdCargoClampOpen.h"
+#include "commands/CmdCargoTilt.h"
+#include "commands/CmdSwitchGear.h"
 #include "commands/ExampleCommand.h"
 #include "commands/MyAutoCommand.h"
-#include "commands/CmdSwitchGear.h"
-#include "commands/CmdCargoClampOpen.h"
-#include "commands/CmdCargoClampClose.h"
-#include "commands/CmdCargoTilt.h"
 
 #include "subsystems/ExampleSubsystem.h"
-#include "subsystems/SubDriveTrain.h"
-#include "subsystems/SubPCM.h"
-#include "subsystems/SubElevator.h"
 #include "subsystems/SubCargoGrab.h"
+#include "subsystems/SubDriveTrain.h"
+#include "subsystems/SubElevator.h"
 #include "subsystems/SubHatchGrab.h"
+#include "subsystems/SubPCM.h"
 #include "common/BC_Blinkin.h"
 
 

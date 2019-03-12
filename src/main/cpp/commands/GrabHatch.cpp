@@ -1,15 +1,15 @@
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 /*     Blue Crew Robotics #6153    */
 /*         Deep Space 2019         */
-/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 
 #include "commands/GrabHatch.h"
 
 #include "Robot.h"
 
 GrabHatch::GrabHatch() {
-	// Use Requires() here to declare subsystem dependencies
-	Requires(&Robot::m_subsystem);
+  // Use Requires() here to declare subsystem dependencies
+  Requires(&Robot::m_subsystem);
 }
 
 // Called just before this Command runs the first time
@@ -19,17 +19,17 @@ void GrabHatch::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void GrabHatch::Execute() {
-    bool state;
-    state = Robot::m_subHatchGrab.GetHatchPos();
-    state = !state;
-    Robot::m_subHatchGrab.Set(state);
+  bool state;
+  state = Robot::m_subHatchGrab.GetHatchPos();
+  state = !state;
+  Robot::m_subHatchGrab.Set(state);
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool GrabHatch::IsFinished() {
-   // return true || IsTimedOut(); 
-   return true;
-   }
+  // return true || IsTimedOut();
+  return true;
+}
 
 // Called once after isFinished returns true
 void GrabHatch::End() {}

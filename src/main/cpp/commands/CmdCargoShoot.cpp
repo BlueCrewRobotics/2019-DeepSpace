@@ -1,15 +1,15 @@
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 /*     Blue Crew Robotics #6153    */
 /*         Deep Space 2019         */
-/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 
 #include "commands/CmdCargoShoot.h"
 
 #include "Robot.h"
 
 CmdCargoShoot::CmdCargoShoot() {
-	// Use Requires() here to declare subsystem dependencies
-	Requires(&Robot::m_subCargoGrab);
+  // Use Requires() here to declare subsystem dependencies
+  Requires(&Robot::m_subCargoGrab);
 }
 
 // Called just before this Command runs the first time
@@ -18,16 +18,14 @@ void CmdCargoShoot::Initialize() {
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdCargoShoot::Execute() {
-    Robot::m_subCargoGrab.Shoot(1.0, 1.0);
-}
+void CmdCargoShoot::Execute() { Robot::m_subCargoGrab.Shoot(1.0, 1.0); }
 
 // Make this return true when this Command no longer needs to run execute()
 bool CmdCargoShoot::IsFinished() {
-   // return true || IsTimedOut();
-   // Robot::m_subCargoGrab.Stop();
-   return true; 
-   }
+  // return true || IsTimedOut();
+  // Robot::m_subCargoGrab.Stop();
+  return true;
+}
 
 // Called once after isFinished returns true
 void CmdCargoShoot::End() {}

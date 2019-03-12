@@ -1,13 +1,12 @@
 /*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 /*     Blue Crew Robotics #6153    */
 /*         Deep Space 2019         */
-/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/ 
+/*-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-*/
 
 #pragma once
 
 #include <ctre/Phoenix.h>
-
-
+#include "RobotMap.h"
 class BC_TalonSRX : public virtual frc::SpeedController {
 
 	public: 

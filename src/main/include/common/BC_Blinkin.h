@@ -45,7 +45,23 @@
 // as of 2019
 //
 
-constexpr float FPP_BREATHB = -.15;
-constexpr float FPP_BREATHR = -.17;
-constexpr float SOL_R = .61;
-constexpr float SOL_B = .87;
+#include "frc/WPILib.h"
+
+constexpr double BREATH_BLUE = -0.15;
+constexpr double BREATH_RED = -0.17;
+constexpr double SOLID_RED = 0.61;
+constexpr double SOLID_ORANGE = 0.65;
+constexpr double SOLID_BLUE = 0.87;
+constexpr double STROBE_RED = -0.11;
+constexpr double STROBE_BLUE = -0.09;
+
+class BC_Blinkin {
+    public:
+        BC_Blinkin(int channel);
+        void Set(double setting);
+
+
+    private:
+        frc::Spark* ptr_BlinkinOutput = nullptr;
+
+};

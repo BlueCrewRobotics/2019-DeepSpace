@@ -44,10 +44,8 @@ void SubDriveTrain::Configure() {
   leftDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder, 0, 0);
   leftDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder, 0, 1);
   leftDriveMotor->ptr_talonSRX->SetSensorPhase(false);
-  rightDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder, 0,
-                                                              0);
-  rightDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder, 0,
-                                                              1);
+  rightDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder, 0, 0);
+  rightDriveMotor->ptr_talonSRX->ConfigSelectedFeedbackSensor(QuadEncoder, 0, 1);
   rightDriveMotor->ptr_talonSRX->SetSensorPhase(false);
 
   // Set current limit continuous, peak, and peak duration can only be set on

@@ -27,6 +27,7 @@ void Robot::RobotInit() {
   m_subDriveTrain.Configure();
   m_subPCM.Configure();
   m_subElevator.Configure();
+  m_blinkin->Set(STROBE_BLUE);
 }
 
 /**
@@ -44,9 +45,11 @@ void Robot::RobotPeriodic() {}
  * can use it to reset any subsystem information you want to clear when the
  * robot is disabled.
  */
-void Robot::DisabledInit() {}
+void Robot::DisabledInit() {
+	
+}
 
-void Robot::DisabledPeriodic() { frc::Scheduler::GetInstance()->Run(); }
+void Robot::DisabledPeriodic() { frc::Scheduler::GetInstance()->Run();}
 
 /**
  * This autonomous (along with the chooser code above) shows how to select

@@ -13,6 +13,7 @@ OI::OI() {
 
   // Call switch gear command
   driverController_button_rbump->ToggleWhenPressed(new CmdSwitchGear());
+  
 
   // Elevator testing
   // driverController_button_a->WhileActive(new CmdElevatorTestDown());

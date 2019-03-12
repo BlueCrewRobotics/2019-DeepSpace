@@ -28,6 +28,7 @@
 #include "subsystems/SubElevator.h"
 #include "subsystems/SubCargoGrab.h"
 #include "subsystems/SubHatchGrab.h"
+#include "common/BC_Blinkin.h"
 
 
 
@@ -40,8 +41,9 @@ class Robot : public frc::TimedRobot {
 		static SubPCM m_subPCM;
 		static SubElevator m_subElevator;
 		static SubCargoGrab m_subCargoGrab;
-		static SubHatchGrab m_subHatchGrab;		
-
+		static SubHatchGrab m_subHatchGrab;
+		BC_Blinkin* m_blinkin = new BC_Blinkin(0);
+		
     // static CameraServer m_cameraServer;
 
 		void RobotInit() override;

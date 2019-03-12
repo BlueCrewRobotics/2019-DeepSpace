@@ -46,12 +46,13 @@
 
 #include "frc/WPILib.h"
 
-constexpr double FPP_BREATHB = -.15;
-constexpr double FPP_BREATHR = -.17;
-constexpr double SOLID_RED = .61;
-constexpr double SOLID_BLUE = .87;
+constexpr double BREATH_BLUE = -0.15;
+constexpr double BREATH_RED = -0.17;
+constexpr double SOLID_RED = 0.61;
+constexpr double SOLID_ORANGE = 0.65;
+constexpr double SOLID_BLUE = 0.87;
 constexpr double STROBE_RED = -0.11;
-constexpr double STORBE_BLUE = -0.09;
+constexpr double STROBE_BLUE = -0.09;
 
 class BC_Blinkin {
     public:

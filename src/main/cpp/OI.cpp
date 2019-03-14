@@ -71,8 +71,7 @@ OI::OI() {
 // Checks controller triggers and presses internal button based on value
 void OI::PollController() {
   // Cargo intake, shoot and stop
-  if (auxController->GetRawAxis(AXIS_R_TRIG) < 0.1 &&
-      auxController->GetRawAxis(AXIS_L_TRIG) < 0.1) {
+  if (auxController->GetRawAxis(AXIS_R_TRIG) < 0.1 && auxController->GetRawAxis(AXIS_L_TRIG) < 0.1) {
     cargoStop->SetPressed(true);
   } else {
     cargoStop->SetPressed(false);
@@ -115,11 +114,11 @@ void OI::SwitchControl() {
 
     // Cargo Extension
     if (auxController_button_rbump->Get() == 1 && m_bSelector == true) {
-      std::cout << "Extend Selector " << m_bSelector << std::endl;
+      //std::cout << "Extend Selector " << m_bSelector << std::endl;
       m_bCargoExtendToggle = !m_bCargoExtendToggle;
       cargoExtend->SetPressed(m_bCargoExtendToggle);
       m_bSelector = false;
-      std::cout << "Extend Toggle " << m_bCargoExtendToggle << std::endl;
+      //std::cout << "Extend Toggle " << m_bCargoExtendToggle << std::endl;
       // cargoExtend->SetPressed(true);
       // std::cout << "Extend Cargo" << std::endl;
     } // else if( auxController_button_rbump->Get() == 0 ){

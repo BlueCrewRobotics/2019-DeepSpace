@@ -35,8 +35,8 @@ void DriveWithController::Execute()
 		Robot::m_subDriveTrain.leftDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LG);
 		Robot::m_subDriveTrain.rightDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LG);
 	}
-	double velocityReverse = m_lbumpReverseTriggerCal->GetCalibratedTrigger(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG),0.4,0.02);
-	double velocityForward = m_rbumpForwardTriggerCal->GetCalibratedTrigger(Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG),0.4,0.02);
+	double velocityReverse = m_lbumpReverseTriggerCal->GetCalibratedTrigger(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG),0.4,0.05);
+	double velocityForward = m_rbumpForwardTriggerCal->GetCalibratedTrigger(Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG),0.4,0.05);
 
 	//double velocityReverse = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG);
 	//double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG)*-1;

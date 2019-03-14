@@ -53,7 +53,7 @@ void CmdElevator::Execute() {
   if (Robot::m_oi.auxController->GetPOV(0) == 0 &&
       Robot::m_subElevator.m_iSelection == 1) {
     // Call elevator up one level command
-    if (hatchBallSelection == 0) { // Ball deploy selected
+    if (hatchBallSelection == false) { // Ball deploy selected
       if (ballLevel < ELEVATOR_BALL_LEVELS - 1) {
         Robot::m_subElevator.ServoToPosition(
             Robot::m_subElevator.a_iBallLevelPos[(ballLevel + 1)]);
@@ -78,7 +78,7 @@ void CmdElevator::Execute() {
         }
       }
     }
-    if (hatchBallSelection == 1) { // Hatch deploy selected
+    if (hatchBallSelection == true) { // Hatch deploy selected
       if (hatchLevel < ELEVATOR_HATCH_LEVELS - 1) {
         Robot::m_subElevator.ServoToPosition(
             Robot::m_subElevator.a_iHatchLevelPos[(hatchLevel + 1)]);
@@ -119,7 +119,7 @@ void CmdElevator::Execute() {
   if (Robot::m_oi.auxController->GetPOV(0) == 180 &&
       Robot::m_subElevator.m_iSelection == 1) {
     // Call elevator down one level command
-    if (hatchBallSelection == 0) { // Ball deploy selected
+    if (hatchBallSelection == false) { // Ball deploy selected
       if (ballLevel > (ELEV_BALL_GRAB)) {
         Robot::m_subElevator.ServoToPosition(
             Robot::m_subElevator.a_iBallLevelPos[(ballLevel - 1)]);
@@ -138,7 +138,7 @@ void CmdElevator::Execute() {
         Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_BTM);
       }
     }
-    if (hatchBallSelection == 1) { // Hatch deploy selected
+    if (hatchBallSelection == true) { // Hatch deploy selected
       if (hatchLevel > (ELEV_HATCH_ROCKET_BTM - 1)) {
         Robot::m_subElevator.ServoToPosition(
             Robot::m_subElevator.a_iHatchLevelPos[(hatchLevel - 1)]);

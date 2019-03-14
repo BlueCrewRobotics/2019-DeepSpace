@@ -39,8 +39,8 @@ public:
   void PollController();
   void SwitchControl();
   void HatchControl();
-  bool m_bHatchCargoCurrent;
-  bool m_bCargoExtendToggle = 0;
+  bool m_bHatchCargoCurrent = true;
+  bool m_bCargoExtendToggle = false;
   bool m_bSelector = false;
 
   BC_Switch *m_cargoIntakeSw = new BC_Switch(DIGITAL_INPUT_0);

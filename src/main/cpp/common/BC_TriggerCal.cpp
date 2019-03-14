@@ -7,8 +7,7 @@
 
 BC_TriggerCal::BC_TriggerCal(bool inverted) { m_bInverted = inverted; }
 
-double BC_TriggerCal::GetCalibratedTrigger(double xValue, double outputDeadband,
-                                           double joyStickZero) {
+double BC_TriggerCal::GetCalibratedTrigger(double xValue, double outputDeadband, double joyStickZero) {
   if (xValue > joyStickZero) {
     // Do calculation
     double y;

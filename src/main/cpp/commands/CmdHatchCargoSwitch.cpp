@@ -35,7 +35,7 @@ void CmdHatchCargoSwitch::Execute() {
     Robot::m_subCargoGrab.SetExtend5(false);
     Robot::m_oi.m_bHatchCargoCurrent = m_bPosition;
   } else if (m_bPosition == 0) {
-    Robot::m_subCargoGrab.SetTiltPos(false);
+    Robot::m_subCargoGrab.SetTiltPos(true);
     Robot::m_subHatchGrab.Extend7(false);
     Robot::m_subHatchGrab.Extend4(false);
     Robot::m_subCargoGrab.SetExtend7(false);

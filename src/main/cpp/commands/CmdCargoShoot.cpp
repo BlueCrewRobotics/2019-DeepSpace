@@ -18,7 +18,7 @@ void CmdCargoShoot::Initialize() {
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdCargoShoot::Execute() { Robot::m_subCargoGrab.Shoot(1.0, 1.0); }
+void CmdCargoShoot::Execute() { Robot::m_subCargoGrab.Shoot(0.8, 0.8); }
 
 // Make this return true when this Command no longer needs to run execute()
 bool CmdCargoShoot::IsFinished() {

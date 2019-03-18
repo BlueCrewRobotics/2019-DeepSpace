@@ -28,11 +28,18 @@ void DriveWithController::Initialize() {
 void DriveWithController::Execute() 
 {
 	double rotation;
+	// I am not sure if this will work 
 	if(Robot::m_oi.driverController_button_x->Get() == 1){
+		// The second variable is the default value if there is no data from the server
+		// so that if driver presses the button and something is broken it won't crash the 
+		// robot code 
 		double vtape_offset = frc::SmartDashboard::GetNumber("VTape_Offset", 0.0);
-		double cameraWidth = frc::SmartDashboard::GetNumber("cameraWidth", 400);
+		double cameraWidth = frc::SmartDashboard::GetNumber("cameraWidth", 1920);
 
-		rotation = (vtape_offset/2)/cameraWidth;
+		// this will give you a negative number between -1 and 1 to use as the rotation
+		if(vtape_offset > 10){
+			rotation = (vtape_offset/2)/cameraWidth;
+		}
 	} else {
 		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-1;
 	}

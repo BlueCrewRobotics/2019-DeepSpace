@@ -42,7 +42,9 @@ class Robot : public frc::TimedRobot {
 		static SubElevator m_subElevator;
 		static SubCargoGrab m_subCargoGrab;
 		static SubHatchGrab m_subHatchGrab;
-		BC_Blinkin* m_blinkin = new BC_Blinkin(0);
+		BC_Blinkin* m_blinkin_right = new BC_Blinkin(1);
+		BC_Blinkin* m_blinkin_left = new BC_Blinkin(0);
+		
 		
     // static CameraServer m_cameraServer;
 

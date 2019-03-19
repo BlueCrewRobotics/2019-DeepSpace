@@ -27,7 +27,8 @@ void Robot::RobotInit() {
   m_subDriveTrain.Configure();
   m_subPCM.Configure();
   m_subElevator.Configure();
-  m_blinkin->Set(STROBE_BLUE);
+  m_blinkin_left->Set(STROBE_BLUE);
+  m_blinkin_right->Set(STROBE_BLUE);
 }
 
 /**
@@ -79,7 +80,13 @@ void Robot::AutonomousInit() {
   }
 }
 
-void Robot::AutonomousPeriodic() { frc::Scheduler::GetInstance()->Run(); }
+void Robot::AutonomousPeriodic() { 
+
+  m_oi.PollController();
+  m_oi.SwitchControl();
+  frc::Scheduler::GetInstance()->Run(); 
+
+  }
 
 void Robot::TeleopInit() {
   // This makes sure that the autonomous stops running when

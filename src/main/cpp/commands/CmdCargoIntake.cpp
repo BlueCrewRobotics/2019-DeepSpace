@@ -19,7 +19,7 @@ void CmdCargoIntake::Initialize() {
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdCargoIntake::Execute() { Robot::m_subCargoGrab.Intake(0.3, 0.3); }
+void CmdCargoIntake::Execute() { Robot::m_subCargoGrab.Intake(0.4, 0.4); }
 
 // Make this return true when this Command no longer needs to run execute()
 bool CmdCargoIntake::IsFinished() {

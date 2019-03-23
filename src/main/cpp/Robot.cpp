@@ -29,6 +29,7 @@ void Robot::RobotInit() {
   m_subElevator.Configure();
   m_blinkin_left->Set(STROBE_BLUE);
   m_blinkin_right->Set(STROBE_BLUE);
+  
 }
 
 /**
@@ -81,7 +82,7 @@ void Robot::AutonomousInit() {
 }
 
 void Robot::AutonomousPeriodic() { 
-
+  m_oi.m_bcargoSwitchInput = m_cargoSwitch->GetSwitchState();
   m_oi.PollController();
   m_oi.SwitchControl();
   frc::Scheduler::GetInstance()->Run(); 
@@ -100,6 +101,8 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
+  
+  m_oi.m_bcargoSwitchInput = m_cargoSwitch->GetSwitchState();
   m_oi.PollController();
   m_oi.SwitchControl();
   frc::Scheduler::GetInstance()->Run();

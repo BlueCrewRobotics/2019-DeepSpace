@@ -44,7 +44,7 @@ class Robot : public frc::TimedRobot {
 		static SubHatchGrab m_subHatchGrab;
 		BC_Blinkin* m_blinkin_right = new BC_Blinkin(1);
 		BC_Blinkin* m_blinkin_left = new BC_Blinkin(0);
-		
+		BC_Switch* m_cargoSwitch = new BC_Switch(CARGO_INTAKE_SWITCH);
 		
     // static CameraServer m_cameraServer;
 

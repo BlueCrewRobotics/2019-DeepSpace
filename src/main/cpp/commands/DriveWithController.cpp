@@ -27,6 +27,17 @@ void DriveWithController::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DriveWithController::Execute() 
 {
+	double rotation;
+	if(Robot::m_oi.driverController_button_x->Get() == 1){
+		double vtape_offset = frc::SmartDashboard::GetNumber("VTape_Offset", 0.0);
+		double cameraWidth = frc::SmartDashboard::GetNumber("cameraWidth", 400);
+
+		rotation = (vtape_offset/2)/cameraWidth;
+	} else {
+		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-1;
+	}
+
+
 	if (Robot::m_oi.driverController_button_b->Get()==1){
 		Robot::m_subDriveTrain.leftDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LL);
 		Robot::m_subDriveTrain.rightDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LL);
@@ -40,7 +51,6 @@ void DriveWithController::Execute()
 
 	//double velocityReverse = Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG);
 	//double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG)*-1;
-	double rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-1;
 
 
 	if( Robot::m_subDriveTrain.leftDriveMotor->GetGear() == false) {

@@ -70,18 +70,28 @@ OI::OI() {
 
 // Checks controller triggers and presses internal button based on value
 void OI::PollController() {
+
+  
+
   // Cargo intake, shoot and stop
   if (auxController->GetRawAxis(AXIS_R_TRIG) < 0.1 && auxController->GetRawAxis(AXIS_L_TRIG) < 0.1) {
     cargoStop->SetPressed(true);
   } else {
     cargoStop->SetPressed(false);
   }
+
   if (auxController->GetRawAxis(AXIS_L_TRIG) > 0.1) {
     // std::cout << "R_trig = 1" << std::endl;
-    cargoShoot->SetPressed(false);
-    cargoIntake->SetPressed(true);
-  } else {
-    cargoIntake->SetPressed(false);
+
+    if (m_bcargoSwitchInput == false){
+      cargoShoot->SetPressed(false);
+      cargoIntake->SetPressed(true);       
+    } else if (m_bcargoSwitchInput == true){
+      cargoIntake->SetPressed(false);
+    } else {
+      cargoIntake->SetPressed(false);
+    }
+
     // std::cout << "R_trig = 0" << std::endl;
   }
 

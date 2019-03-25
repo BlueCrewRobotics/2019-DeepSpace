@@ -77,6 +77,14 @@ void CmdElevator::Execute() {
           Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_BTM);
         }
       }
+      switch(ballLevel){
+        case 0: Robot::m_oi.m_icargoLevel = 0;
+        case 1: Robot::m_oi.m_icargoLevel = 1;
+        case 2: Robot::m_oi.m_icargoLevel = 2;
+        case 3: Robot::m_oi.m_icargoLevel = 3;
+        case 4: Robot::m_oi.m_icargoLevel = 4;
+
+      }
     }
     if (hatchBallSelection == true) { // Hatch deploy selected
       if (hatchLevel < ELEVATOR_HATCH_LEVELS - 1) {

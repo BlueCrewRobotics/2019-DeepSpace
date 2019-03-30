@@ -29,6 +29,8 @@
 #include "subsystems/SubHatchGrab.h"
 #include "subsystems/SubPCM.h"
 #include "common/BC_Blinkin.h"
+#include "networktables/NetworkTableInstance.h"
+#include "networktables/NetworkTableEntry.h"
 
 
 

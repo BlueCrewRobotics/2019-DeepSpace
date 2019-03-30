@@ -29,12 +29,33 @@ void DriveWithController::Execute()
 {
 	double rotation;
 	if(Robot::m_oi.driverController_button_x->Get() == 1){
-		double vtape_offset = frc::SmartDashboard::GetNumber("VTape_Offset", 0.0);
-		double cameraWidth = frc::SmartDashboard::GetNumber("cameraWidth", 400);
+		//nt::NetworkTableEntry ntTargetCenter;
+		//auto ntinst = nt::NetworkTableInstance::GetDefault();
+		//auto table = ntinst.GetTable("visionTuning");
 
-		rotation = (vtape_offset/2)/cameraWidth;
+
+		double d_targetCenter = frc::SmartDashboard::GetNumber("targetCenter",160);
+		std::cout << d_targetCenter << std::endl;
+//		double d_targetCenter = nt::NetworkTableEntry::GetDouble("targetCenter");
+
+		rotation = ((160-d_targetCenter)/160) * -1;
+
+		if(rotation > 0){
+			rotation = m_rotationTriggerCalLeft->GetCalibratedTrigger(rotation, 0.2, 0.01);
+		} 
+		if(rotation < 0){
+			rotation = m_rotationTriggerCalRight->GetCalibratedTrigger(rotation*-1, 0.2, 0.01);
+		}
+		//double vtape_offset = frc::SmartDashboard::GetNumber("VTape_Offset", 0.0);
+		//double cameraWidth = frc::SmartDashboard::GetNumber("cameraWidth", 400);
+
+		//rotation = (vtape_offset/2)/cameraWidth;
 	} else {
-		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-1;
+	  if( Robot::m_subDriveTrain.leftDriveMotor->GetGear() == false) {
+		  rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.75;         
+	  }else{
+		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.5;
+	  }
 	}
 
 
@@ -53,11 +74,7 @@ void DriveWithController::Execute()
 	//double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG)*-1;
 
 
-	if( Robot::m_subDriveTrain.leftDriveMotor->GetGear() == false) {
-		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.75;         
-	}else{
-		rotation = Robot::m_oi.driverController->GetRawAxis(AXIS_LX)*-0.5;
-	}
+
 
 	if(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG) > 0){
 		Robot::m_subDriveTrain.Drive(velocityReverse,rotation);

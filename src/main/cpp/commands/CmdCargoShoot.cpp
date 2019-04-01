@@ -19,17 +19,7 @@ void CmdCargoShoot::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void CmdCargoShoot::Execute() { 
-  if (Robot::m_oi.m_icargoLevel == 0){
-    Robot::m_subCargoGrab.Shoot(0.8, 0.8);
-  } else if (Robot::m_oi.m_icargoLevel == 1){
-    Robot::m_subCargoGrab.Shoot(0.5, 0.5);
-  } else if (Robot::m_oi.m_icargoLevel == 2){
-    Robot::m_subCargoGrab.Shoot(0.25, 0.25);
-  } else if (Robot::m_oi.m_icargoLevel == 3){
-    Robot::m_subCargoGrab.Shoot(0.5, 0.5);
-  } else if (Robot::m_oi.m_icargoLevel == 4){
-    Robot::m_subCargoGrab.Shoot(0.8, 0.8);
-  }
+    Robot::m_subCargoGrab.Shoot(Robot::m_subCargoGrab.m_dShootingSpeed, Robot::m_subCargoGrab.m_dShootingSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()

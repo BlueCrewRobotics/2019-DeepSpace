@@ -82,23 +82,21 @@ void OI::PollController() {
 
   if (auxController->GetRawAxis(AXIS_L_TRIG) > 0.1) {
     // std::cout << "R_trig = 1" << std::endl;
-
     if (m_bcargoSwitchInput == false){
-      cargoShoot->SetPressed(false);
-      cargoIntake->SetPressed(true);       
+      cargoIntake->SetPressed(true);
+      cargoShoot->SetPressed(false);       
     } else if (m_bcargoSwitchInput == true){
       cargoIntake->SetPressed(false);
-    } else {
-      cargoIntake->SetPressed(false);
     }
-
     // std::cout << "R_trig = 0" << std::endl;
+  } else {
+    cargoIntake->SetPressed(false);
   }
 
   if (auxController->GetRawAxis(AXIS_R_TRIG) > 0.1) {
     // Call Cargo Shoot Command
-    cargoIntake->SetPressed(false);
     cargoShoot->SetPressed(true);
+    cargoIntake->SetPressed(false);
     // std::cout << "L_trig = 1" << std::endl;
   } else {
     cargoShoot->SetPressed(false);

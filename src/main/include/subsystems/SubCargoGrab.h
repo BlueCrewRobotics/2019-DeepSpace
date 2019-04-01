@@ -26,6 +26,7 @@ public:
   bool GetExtend5();
   void SetExtend7(bool state);
   bool GetExtend7();
+  double m_dShootingSpeed;
 
 private:
   // It's desirable that everything possible under private except

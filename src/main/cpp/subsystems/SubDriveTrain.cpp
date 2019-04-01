@@ -20,6 +20,30 @@ void SubDriveTrain::InitDefaultCommand() {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
+void SubDriveTrain::ConfigurePID() {
+  // PID constants for Profile 0 low gear Profile 1 high gear of Talon left
+  leftDriveMotor->ptr_talonSRX->Config_kF(0, frc::SmartDashboard::GetNumber("LEFT_KF_0",LEFT_KF_0), 0);
+  leftDriveMotor->ptr_talonSRX->Config_kP(0, frc::SmartDashboard::GetNumber("LEFT_KP_0",LEFT_KP_0), 0);
+  leftDriveMotor->ptr_talonSRX->Config_kI(0, frc::SmartDashboard::GetNumber("LEFT_KI_0",LEFT_KI_0), 0);
+  leftDriveMotor->ptr_talonSRX->Config_kD(0, frc::SmartDashboard::GetNumber("LEFT_KD_0",LEFT_KD_0), 0);
+
+  leftDriveMotor->ptr_talonSRX->Config_kF(1, frc::SmartDashboard::GetNumber("LEFT_KF_1",LEFT_KF_1), 0);
+  leftDriveMotor->ptr_talonSRX->Config_kP(1, frc::SmartDashboard::GetNumber("LEFT_KP_1",LEFT_KP_1), 0);
+  leftDriveMotor->ptr_talonSRX->Config_kI(1, frc::SmartDashboard::GetNumber("LEFT_KI_1",LEFT_KI_1), 0);
+  leftDriveMotor->ptr_talonSRX->Config_kD(1, frc::SmartDashboard::GetNumber("LEFT_KD_1",LEFT_KD_1), 0);
+
+  // PID constants for Profile 0 low gear Profile 1 high gear of Talon Right
+  rightDriveMotor->ptr_talonSRX->Config_kF(0, frc::SmartDashboard::GetNumber("RIGHT_KF_0",RIGHT_KF_0), 0);
+  rightDriveMotor->ptr_talonSRX->Config_kP(0, frc::SmartDashboard::GetNumber("RIGHT_KP_0",RIGHT_KP_0), 0);
+  rightDriveMotor->ptr_talonSRX->Config_kI(0, frc::SmartDashboard::GetNumber("RIGHT_KI_0",RIGHT_KI_0), 0);
+  rightDriveMotor->ptr_talonSRX->Config_kD(0, frc::SmartDashboard::GetNumber("RIGHT_KD_0",RIGHT_KD_0), 0);
+
+  rightDriveMotor->ptr_talonSRX->Config_kF(1, frc::SmartDashboard::GetNumber("RIGHT_KF_1",RIGHT_KF_1), 0);
+  rightDriveMotor->ptr_talonSRX->Config_kP(1, frc::SmartDashboard::GetNumber("RIGHT_KP_1",RIGHT_KP_1), 0);
+  rightDriveMotor->ptr_talonSRX->Config_kI(1, frc::SmartDashboard::GetNumber("RIGHT_KI_1",RIGHT_KI_1), 0);
+  rightDriveMotor->ptr_talonSRX->Config_kD(1, frc::SmartDashboard::GetNumber("RIGHT_KD_1",RIGHT_KD_1), 0);
+}
+
 /*
    Configure the Talons and Victors for the drive
    */
@@ -76,10 +100,20 @@ void SubDriveTrain::Configure() {
   rightDriveMotor->ptr_talonSRX->ConfigPeakOutputReverse(-12, 0);
 
   // PID constants for Profile 0 low gear Profile 1 high gear of Talon left
+  frc::SmartDashboard::PutNumber("LEFT_KF_0",LEFT_KF_0);
+  frc::SmartDashboard::PutNumber("LEFT_KP_0",LEFT_KP_0);
+  frc::SmartDashboard::PutNumber("LEFT_KI_0",LEFT_KI_0);
+  frc::SmartDashboard::PutNumber("LEFT_KD_0",LEFT_KD_0);
+
   leftDriveMotor->ptr_talonSRX->Config_kF(0, LEFT_KF_0, 0);
   leftDriveMotor->ptr_talonSRX->Config_kP(0, LEFT_KP_0, 0);
   leftDriveMotor->ptr_talonSRX->Config_kI(0, LEFT_KI_0, 0);
   leftDriveMotor->ptr_talonSRX->Config_kD(0, LEFT_KD_0, 0);
+
+  frc::SmartDashboard::PutNumber("LEFT_KF_1",LEFT_KF_1);
+  frc::SmartDashboard::PutNumber("LEFT_KP_1",LEFT_KP_1);
+  frc::SmartDashboard::PutNumber("LEFT_KI_1",LEFT_KI_1);
+  frc::SmartDashboard::PutNumber("LEFT_KD_1",LEFT_KD_1);
 
   leftDriveMotor->ptr_talonSRX->Config_kF(1, LEFT_KF_1, 0);
   leftDriveMotor->ptr_talonSRX->Config_kP(1, LEFT_KP_1, 0);
@@ -87,10 +121,21 @@ void SubDriveTrain::Configure() {
   leftDriveMotor->ptr_talonSRX->Config_kD(1, LEFT_KD_1, 0);
 
   // PID constants for Profile 0 low gear Profile 1 high gear of Talon Right
+
+  frc::SmartDashboard::PutNumber("RIGHT_KF_0",RIGHT_KF_0);
+  frc::SmartDashboard::PutNumber("RIGHT_KP_0",RIGHT_KP_0);
+  frc::SmartDashboard::PutNumber("RIGHT_KI_0",RIGHT_KI_0);
+  frc::SmartDashboard::PutNumber("RIGHT_KD_0",RIGHT_KD_0);
+
   rightDriveMotor->ptr_talonSRX->Config_kF(0, RIGHT_KF_0, 0);
   rightDriveMotor->ptr_talonSRX->Config_kP(0, RIGHT_KP_0, 0);
   rightDriveMotor->ptr_talonSRX->Config_kI(0, RIGHT_KI_0, 0);
   rightDriveMotor->ptr_talonSRX->Config_kD(0, RIGHT_KD_0, 0);
+
+  frc::SmartDashboard::PutNumber("RIGHT_KF_1",RIGHT_KF_1);
+  frc::SmartDashboard::PutNumber("RIGHT_KP_1",RIGHT_KP_1);
+  frc::SmartDashboard::PutNumber("RIGHT_KI_1",RIGHT_KI_1);
+  frc::SmartDashboard::PutNumber("RIGHT_KD_1",RIGHT_KD_1);
 
   rightDriveMotor->ptr_talonSRX->Config_kF(1, RIGHT_KF_1, 0);
   rightDriveMotor->ptr_talonSRX->Config_kP(1, RIGHT_KP_1, 0);

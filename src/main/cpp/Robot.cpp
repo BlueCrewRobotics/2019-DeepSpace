@@ -98,6 +98,7 @@ void Robot::TeleopInit() {
     m_autonomousCommand->Cancel();
     m_autonomousCommand = nullptr;
   }
+  m_subDriveTrain.ConfigurePID();
 }
 
 void Robot::TeleopPeriodic() {
@@ -105,6 +106,7 @@ void Robot::TeleopPeriodic() {
   m_oi.m_bcargoSwitchInput = m_cargoSwitch->GetSwitchState();
   m_oi.PollController();
   m_oi.SwitchControl();
+  //m_subDriveTrain.ConfigurePID();
   frc::Scheduler::GetInstance()->Run();
 }
 

@@ -38,7 +38,7 @@ void DriveWithController::Execute()
 		std::cout << d_targetCenter << std::endl;
 //		double d_targetCenter = nt::NetworkTableEntry::GetDouble("targetCenter");
 
-		rotation = ((160-d_targetCenter)/160) * -1;
+		rotation = ((160-d_targetCenter)/160);
 
 		if(rotation > 0){
 			rotation = m_rotationTriggerCalLeft->GetCalibratedTrigger(rotation, 0.2, 0.01);
@@ -59,7 +59,7 @@ void DriveWithController::Execute()
 	}
 
 
-	if (Robot::m_oi.driverController_button_b->Get()==1){
+	if (Robot::m_oi.driverController_button_b->Get()==1 || Robot::m_oi.driverController_button_x->Get()==1){
 		Robot::m_subDriveTrain.leftDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LL);
 		Robot::m_subDriveTrain.rightDriveMotor->SetMaxSpeed(VELOCITY_SP_MAX_LL);
 	}
@@ -74,14 +74,15 @@ void DriveWithController::Execute()
 	//double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG)*-1;
 
 
-
-
 	if(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG) > 0){
 		Robot::m_subDriveTrain.Drive(velocityReverse,rotation);
 	}else{    
 		Robot::m_subDriveTrain.Drive(velocityForward,rotation);
 	}
 
+	if(Robot::m_oi.driverController_button_start->Get() == 1){
+		Robot::m_subDriveTrain.ConfigurePID();
+	}
 
 }
 

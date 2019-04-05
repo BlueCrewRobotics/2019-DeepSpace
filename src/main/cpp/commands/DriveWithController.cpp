@@ -80,9 +80,9 @@ void DriveWithController::Execute()
 		Robot::m_subDriveTrain.Drive(velocityForward,rotation);
 	}
 
-	if(Robot::m_oi.driverController_button_start->Get() == 1){
-		Robot::m_subDriveTrain.ConfigurePID();
-	}
+	//if(Robot::m_oi.driverController_button_start->Get() == 1){
+		//Robot::m_subDriveTrain.ConfigurePID();
+	//}
 
 }
 

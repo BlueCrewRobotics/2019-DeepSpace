@@ -6,6 +6,7 @@
 #pragma once
 
 #include <frc/commands/Command.h>
+#include "frc/WPILib.h"
 
 class CmdCargoShoot : public frc::Command {
 public:
@@ -15,4 +16,5 @@ public:
   bool IsFinished() override;
   void End() override;
   void Interrupted() override;
+  frc::DigitalInput *bumpSwitch = new frc::DigitalInput(4);
 };

@@ -22,31 +22,6 @@ void SubElevator::ResetHomePosition() {
   elevatorDrive->SetSelectedSensorPosition(ELEVATOR_RESET_HOME_POS, 0, 0);
 }
 
-// Used for testing elevator movements
-/*void SubElevator::MoveElevatorToPosition(int position) {
-    // Raise elevator to requested position
-    int currentPosition;
-    int moveDirection;
-
-    currentPosition =
-elevatorDrive->GetSensorCollection().GetQuadraturePosition(); moveDirection =
-position - currentPosition;
-
-    if((elevatorDrive->GetSensorCollection().IsFwdLimitSwitchClosed() == 1) &&
-(moveDirection > 0))  {
-        elevatorDrive->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic,
-position);
-    }
-    else {
-        if((elevatorDrive->GetSensorCollection().IsRevLimitSwitchClosed() ==1)
-&& (moveDirection < 0)) {
-            elevatorDrive->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic,
-position);
-        }
-    }
-
-}
-*/
 
 // Servo to the requested position
 void SubElevator::ServoToPosition(double position) {

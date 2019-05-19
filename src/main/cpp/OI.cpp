@@ -25,8 +25,8 @@ OI::OI() {
   // auxController_button_a->ToggleWhenPressed(new CmdCargoTilt());
 
   // Cargo intake shoot and stop
-  cargoIntake->WhenActive(new CmdCargoIntake());
-  cargoShoot->WhenActive(new CmdCargoShoot());
+  cargoIntake->WhenPressed(new CmdCargoIntake());
+  cargoShoot->WhenPressed(new CmdCargoShoot());
   cargoStop->WhenPressed(new CmdCargoStop());
 
   // Cargo tilt with elevator

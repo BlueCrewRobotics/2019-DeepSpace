@@ -52,8 +52,11 @@ constexpr double BREATH_RED = -0.17;
 constexpr double SOLID_RED = 0.61;
 constexpr double SOLID_ORANGE = 0.65;
 constexpr double SOLID_BLUE = 0.87;
+constexpr double SOLID_YELLOW = 0.69;
 constexpr double STROBE_RED = -0.11;
 constexpr double STROBE_BLUE = -0.09;
+constexpr double CONFETTI = -0.87;
+
 
 class BC_Blinkin {
     public:

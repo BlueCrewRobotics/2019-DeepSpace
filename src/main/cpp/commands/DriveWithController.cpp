@@ -35,10 +35,15 @@ void DriveWithController::Execute()
 
 
 		double d_targetCenter = frc::SmartDashboard::GetNumber("targetCenter",160);
-		std::cout << d_targetCenter << std::endl;
+		double d_targetAngle = frc::SmartDashboard::GetNumber("targetAngle", 0);
+		double d_gain = .6;
+
+		
 //		double d_targetCenter = nt::NetworkTableEntry::GetDouble("targetCenter");
 
-		rotation = ((160-d_targetCenter)/160);
+		rotation = (d_gain*(((160-d_targetCenter)/160) - (d_targetAngle/15.6)));
+		std::cout << rotation << std::endl;
+
 
 		if(rotation > 0){
 			rotation = m_rotationTriggerCalLeft->GetCalibratedTrigger(rotation, 0.2, 0.01);
@@ -74,15 +79,19 @@ void DriveWithController::Execute()
 	//double velocityForward = Robot::m_oi.driverController->GetRawAxis(AXIS_R_TRIG)*-1;
 
 
+
+
 	if(Robot::m_oi.driverController->GetRawAxis(AXIS_L_TRIG) > 0){
 		Robot::m_subDriveTrain.Drive(velocityReverse,rotation);
 	}else{    
 		Robot::m_subDriveTrain.Drive(velocityForward,rotation);
 	}
 
-	if(Robot::m_oi.driverController_button_start->Get() == 1){
-		Robot::m_subDriveTrain.ConfigurePID();
-	}
+
+	//if(Robot::m_oi.driverController_button_start->Get() == 1){
+		//Robot::m_subDriveTrain.ConfigurePID();
+	//}
+
 
 }
 

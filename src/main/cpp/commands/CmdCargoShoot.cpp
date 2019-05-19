@@ -18,11 +18,8 @@ void CmdCargoShoot::Initialize() {
 }
 
 // Called repeatedly when this Command is scheduled to run
-void CmdCargoShoot::Execute() { 
-	if(!bumpSwitch->Get()){
-		Robot::m_subCargoGrab.Shoot(Robot::m_subCargoGrab.m_dShootingSpeed, Robot::m_subCargoGrab.m_dShootingSpeed);
-	}
-}
+void CmdCargoShoot::Execute() { Robot::m_subCargoGrab.Shoot(0.6, 0.6); }
+
 
 // Make this return true when this Command no longer needs to run execute()
 bool CmdCargoShoot::IsFinished() {

@@ -35,10 +35,14 @@ void DriveWithController::Execute()
 
 
 		double d_targetCenter = frc::SmartDashboard::GetNumber("targetCenter",160);
-		std::cout << d_targetCenter << std::endl;
+		double d_targetAngle = frc::SmartDashboard::GetNumber("targetAngle", 0);
+		double d_gain = .6;
+
+		
 //		double d_targetCenter = nt::NetworkTableEntry::GetDouble("targetCenter");
 
-		rotation = ((160-d_targetCenter)/160);
+		rotation = (d_gain*(((160-d_targetCenter)/160) - (d_targetAngle/15.6)));
+		std::cout << rotation << std::endl;
 
 		if(rotation > 0){
 			rotation = m_rotationTriggerCalLeft->GetCalibratedTrigger(rotation, 0.2, 0.01);

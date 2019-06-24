@@ -71,7 +71,7 @@ void CmdElevator::Execute() {
           // << std::endl;
         }
         // Set the ramp level when higher than first level
-        if (ballLevel > 2) {
+        if (ballLevel > 1) {
           Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_TOP);
         } else {
           Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_BTM);
@@ -132,7 +132,7 @@ void CmdElevator::Execute() {
         Robot::m_oi.elevCargoTilt->SetPressed(true);
       }
       // Set the ramp level when higher than first level
-      if (ballLevel > 2) {
+      if (ballLevel > 1) {
         Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_TOP);
       } else {
         Robot::m_subDriveTrain.SetRamp(ELEV_DRIVE_RAMP_BTM);

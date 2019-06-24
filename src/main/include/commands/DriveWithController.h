@@ -22,7 +22,6 @@ class DriveWithController : public frc::Command {
 		void End() override;
 		void Interrupted() override;
 
-
 		BC_TriggerCal* m_rotationTriggerCalLeft = new BC_TriggerCal(false);
 		BC_TriggerCal* m_rotationTriggerCalRight = new BC_TriggerCal(true);
 		BC_TriggerCal* m_lbumpReverseTriggerCal = new BC_TriggerCal(false); 

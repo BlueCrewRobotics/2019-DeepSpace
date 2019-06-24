@@ -19,6 +19,7 @@ public:
   SubDriveTrain();
   void InitDefaultCommand() override;
   void Configure();
+  void ConfigurePID();
   void Drive(double speed, double rotation);
   void DriveVelocityControl(double speed, double rotation);
   void SetRamp(double ramp);

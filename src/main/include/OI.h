@@ -42,8 +42,8 @@ public:
   bool m_bHatchCargoCurrent = true;
   bool m_bCargoExtendToggle = false;
   bool m_bSelector = false;
-
-  BC_Switch *m_cargoIntakeSw = new BC_Switch(DIGITAL_INPUT_0);
+  bool m_bcargoSwitchInput;
+  int m_icargoLevel;
 
   // Setup driver controller
   frc::Joystick *driverController = new frc::Joystick(DRIVER_CONTROLLER);
